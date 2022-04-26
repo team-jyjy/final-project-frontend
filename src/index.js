@@ -9,13 +9,26 @@ import { Provider } from 'react-redux';
 import { createStore } from "redux";
 import logger from "redux-logger";
 import { composeWithDevTools } from "redux-devtools-extension";
+import styled from 'styled-components';
 
+const Button = styled.button`
+  display:block;
+  padding:6px 10px;
+  color: #fff;
+  font-size:18px;
+  border-radius:3px;
+  background-color: crimson;
+  border: 0;
+`;
 const store = createStore(reducers);
 const rootNode = ReactDOM.createRoot(document.getElementById('root'));
 const listener = () => {
   rootNode.render(
     <Provider store = {store}>
       <App indexProp = "코딩병원119"/>
+      <div>
+        <Button>버튼이에용</Button>
+      </div>
     </Provider>,
   );
 }
