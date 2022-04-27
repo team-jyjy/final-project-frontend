@@ -2,40 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-import reducers from "./reducers";
-import { Provider } from 'react-redux';
-import { createStore } from "redux";
-import logger from "redux-logger";
-import { composeWithDevTools } from "redux-devtools-extension";
-import styled from 'styled-components';
 
-const Button = styled.button`
-  display:block;
-  padding:6px 10px;
-  color: #fff;
-  font-size:18px;
-  border-radius:3px;
-  background-color: crimson;
-  border: 0;
-`;
-const store = createStore(reducers);
 const rootNode = ReactDOM.createRoot(document.getElementById('root'));
-const listener = () => {
   rootNode.render(
-    <Provider store = {store}>
-      <App indexProp = "코딩병원119"/>
-      <div>
-        <Button>버튼이에용</Button>
-      </div>
-    </Provider>,
+    //라우터 적용
+    //BrowserRouter : 웹 애플리케이션에 HTML5의 History API를 사용하여 
+    //페이지를 새로 불러오지 않고도 주소를 변경하고 현재 주소의경로에 관련된 정보를 리액트 컴포넌트에서 사용가능 하게 해줌
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   );
-}
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-//reportWebVitals();
-store.subscribe(listener);
-listener();
