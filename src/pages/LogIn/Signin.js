@@ -82,6 +82,7 @@ export default function Signin() {
               label="아이디 저장"
             />
             <Button
+              href = "/"
               type="submit"
               fullWidth
               variant="contained"
@@ -96,7 +97,7 @@ export default function Signin() {
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="/Signup" variant="body2">
                   {"회원 가입"}
                 </Link>
               </Grid>

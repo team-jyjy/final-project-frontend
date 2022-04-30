@@ -1,6 +1,6 @@
 import {Outlet, useNavigate} from 'react-router-dom';
 
-const Layout = () => {
+const Footer = () => {
   const navigate = useNavigate();
 
   const goBack = () => {
@@ -13,16 +13,18 @@ const Layout = () => {
 
   return (
     <div>
-      <header style={{background : 'lightgray', padding:16, fontSize:24}}>
-        <button onClick={goBack}>뒤로 가기</button>
-        <button onClick={goArticles}>게시글 목록</button>
+      <header >
       </header>
       <main>
         <Outlet>
         </Outlet>
       </main>
+      <footer style={{background : 'lightgray', padding:16, fontSize:24}}> 
+        <button onClick={goBack}>뒤에 </button>
+        <button onClick={goArticles}>게시글 dpd</button>
+      </footer>
     </div>
   );
 };
 
-export default Layout;
+export default Footer;

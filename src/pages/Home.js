@@ -7,6 +7,7 @@ const Home = () => {
       <p>프로젝트 홈페이지 입니다</p>
       {/* 로그인 페이지로 가는 링크 */}
       <button><Link to ="/Signin">로그인하기</Link></button>
+      <button><Link to ="/Signup">회원가입하기</Link></button>
       <ul>
         <li>
           <Link to="/profiles/velopert">velopert의 프로필</Link>
