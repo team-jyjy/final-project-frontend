@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom'
 import Pricing from './Pricing' 
+import FAQ from './FAQ'
+import "./Home.css"
+import styled from "styled-components"
 
 const Home = () => {
   return (
@@ -9,22 +12,20 @@ const Home = () => {
       {/* 로그인 페이지로 가는 링크 */}
       <button><Link to ="/Signin">로그인하기</Link></button>
       <button><Link to ="/Signup">회원가입하기</Link></button>
-      <ul>
-        <li>
-          <Link to="/profiles/velopert">velopert의 프로필</Link>
-        </li>
-        <li>
-          <Link to="/profiles/gildong">gildong의 프로필</Link>
-        </li>
-        <li>
-          <Link to="/profiles/void">존재하지 않는 프로필</Link>
-        </li>
-        <li>
-          <Link to="/articles">게시글 목록</Link>
-        </li>
-      </ul>
+
       <Pricing />
+
+      <div className="faq">
+        <p id="faqs">
+          FAQS
+        </p>
+        <span id="qa">Q & A </span> <span id="about">about JYGY</span>
+      </div>
+
+      <FAQ />
+      
     </div>
+
   );
 };
 
