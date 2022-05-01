@@ -3,7 +3,7 @@ import Header from './pages/components/common/Header'
 import Footer from './pages/components/common/Footer'
 import Signin from './pages/LogIn/Signin';
 import Signup from './pages/LogIn/Signup';
-import Home from './pages/Home'
+import Home from './pages/Home/Home'
 import Profile from './pages/Profile'
 import Articles from "./pages/Articles";
 import Article from "./pages/Article";
