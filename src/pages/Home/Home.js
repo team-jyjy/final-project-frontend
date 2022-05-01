@@ -4,10 +4,11 @@ import FAQ from '../FAQ'
 import "./Home.css"
 import styled from "styled-components"
 import Parallax from "./Parallax"
-
+import Main from './main'
 const Home = () => {
   return (
     <div>
+      <Main />
       {/* <h1>KB 4조</h1>
       <p>프로젝트 홈페이지 입니다</p> */}
       {/* 로그인 페이지로 가는 링크 */}

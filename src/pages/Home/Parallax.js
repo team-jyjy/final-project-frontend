@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import item1 from "../../assets/images/salad.jpg";
 import item2 from "../../assets/images/health.jpg";
+import item3 from "../../assets/images/calendar.jpg";
 import "./Parallax.css"
 
 export default function Parallax() {
   const [position, setPosition] = useState(0);
   function onScroll() {
-    console.log(window.scrollY)
+    console.log(window.scrollY);
     setPosition(window.scrollY);
   }
   useEffect(() => {
@@ -40,24 +41,30 @@ export default function Parallax() {
           transform: `translateX(${-position}px)`,
         }}
       >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
+        나의 관리 현황을 캘린더를 통해<br></br>
+        기록하고 친구들과 공유해 보세요
       </p>
+      <img className = "item3" src={item3} style={{
+          opacity: (position - 850) / 50,
+        }}>
+      </img>
+
       <p
         className="desc2"
         style={{
-          transform: `translateX(${position}px)`,
+          // transform: `translateX(${position}px)`,
+          opacity: (position - 1600) / 100,
         }}
       >
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        여기서 끝이냐구요?<br></br>
+        금융 혜택이 <br></br>당신을 기다리고 있습니다.
       </p>
+      <img className = "item4" src={item3} ></img>
+
       <p
         className="desc3"
         style={{
-          // 2000은 나중에 화면 구성 바껴지면 console.log찍어서 확인해야함.
-          opacity: (position - 2000) / 100,
+          opacity: (position - 2200) / 50,
         }}
       >
         자신과의 싸움,
@@ -65,7 +72,7 @@ export default function Parallax() {
       <p
         className="desc3"
         style={{
-          opacity: (position - 2150) / 50,
+          opacity: (position - 2400) / 50,
         }}
       >
         더 이상 지지 않을 당신을
@@ -73,27 +80,27 @@ export default function Parallax() {
       <p
         className="desc3"
         style={{
-          opacity: (position - 2300) / 50,
+          opacity: (position - 2600) / 50,
         }}
       >
         JYGY합니다.
       </p>
-      <img
+      {/* <img
         src={item1}
         className="item"
         alt=""
         style={{
           transform: `translateY(${position / 2}px)`,
         }}
-      />
-      <img
+      /> */}
+      {/* <img
         src={item2}
         className="item item_snow"
         alt=""
         style={{
           transform: `translateY(${position / 4}px)`,
         }}
-      />
+      /> */}
     </div>
   );
 }
