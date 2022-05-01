@@ -16,14 +16,14 @@ const Home = () => {
       <Pricing />
 
       <div className="faq">
-        <p id="faqs">
+        <p id="faqs"  style={{marginTop : 50, marginBottom : 20}}>
           FAQS
         </p>
         <span id="qa">Q & A </span> <span id="about">about JYGY</span>
       </div>
 
       <FAQ />
-      
+
     </div>
 
   );

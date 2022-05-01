@@ -5,13 +5,14 @@ import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
+import { RoundedCorner } from '@material-ui/icons';
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
   // spacing : [30, 50, 70, 90],
   border: `5px solid ${theme.palette.divider}`,
-  width : 700,
+  width : 900,
   '&:not(:last-child)': {
     borderBottom: 0,
   },
