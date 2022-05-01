@@ -9,8 +9,17 @@ import Articles from "./pages/Articles";
 import Article from "./pages/Article";
 import MyPage from "./pages/MyPage"
 import NotFound from "./pages/NotFound";
+import './pages/components/common/Header.css';
+import { ThemeProvider } from "styled-components";
+import { createTheme } from "@mui/material";
+const theme = createTheme({
+  typography:{
+    fontFamily: "Black+Han+Sans"
+  }
+})
 const App = () => {
   return (
+    <ThemeProvider theme={theme}>
     <Routes>
       <Route element={<Header />}>
         <Route element={<Footer />}>
@@ -25,6 +34,7 @@ const App = () => {
       {/* 중첩된 라우터 */}
       <Route path="*" element={<NotFound />}></Route>
     </Routes>
+    </ThemeProvider>
   );
 };
 

@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom' 
+import { Link } from 'react-router-dom'
+import Pricing from './Pricing' 
 
 const Home = () => {
   return (
@@ -22,6 +23,7 @@ const Home = () => {
           <Link to="/articles">게시글 목록</Link>
         </li>
       </ul>
+      <Pricing />
     </div>
   );
 };

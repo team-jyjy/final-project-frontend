@@ -12,6 +12,7 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import {Outlet, useNavigate, Link} from 'react-router-dom';
+import {styled} from '@material-ui/core/styles';
 
 const pages = ['식단관리', '운동',  'Calender', 'about us'];
 const settings = ['MyPage', 'Account', 'SignIn']; // 'Dashboard', 나중에 SignOut(?)
@@ -43,14 +44,14 @@ const Header = () => {
         <Toolbar disableGutters>
           <Typography
             variant="h6"
+            className='logo'
             noWrap
             //component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
             {/* 이거 누르면 홈으로 가야함 */}
-            <Link to="/" style={{ textDecoration: 'none' }}>JYGY</Link>
+            <Link to="/" style={{ textDecoration: 'none' }}> JYGY</Link>
           </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -88,6 +89,7 @@ const Header = () => {
             </Menu>
           </Box>
           <Typography
+            className='logo'
             variant="h6"
             noWrap
             component="div"
