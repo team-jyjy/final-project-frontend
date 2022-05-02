@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import item1 from "../../assets/images/salad.jpg";
 import item2 from "../../assets/images/health.jpg";
 import item3 from "../../assets/images/calendar.jpg";
+import item4 from "../../assets/images/finance.png"
 import "./Parallax.css"
 
 export default function Parallax() {
@@ -63,7 +64,10 @@ export default function Parallax() {
         여기서 끝이냐구요?<br></br>
         금융 혜택이 <br></br>당신을 기다리고 있습니다.
       </p>
-      <img className = "item4" src={item3} ></img>
+      <img className = "item4" src={item4} 
+      style={{
+        opacity: (position - 2100) / 100,
+      }}></img>
 
       <p
         className="desc3"

@@ -12,7 +12,7 @@ const Accordion = styled((props) => (
 ))(({ theme }) => ({
   // spacing : [30, 50, 70, 90],
   border: `5px solid ${theme.palette.divider}`,
-  width : 900,
+  width : '70%',
   '&:not(:last-child)': {
     borderBottom: 0,
   },

@@ -15,7 +15,7 @@ import {Outlet, useNavigate, Link} from 'react-router-dom';
 import {styled} from '@material-ui/core/styles';
 
 const pages = ['식단관리', '운동',  'Calender', 'about us'];
-const settings = ['MyPage', 'Account', 'SignIn']; // 'Dashboard', 나중에 SignOut(?)
+const settings = ['My Page', 'Account', 'Log In']; // 'Dashboard', 나중에 SignOut(?)
 const Header = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -33,6 +33,7 @@ const Header = () => {
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
+    //여기에 click한 애가 몇번쨰인지 추려서 0번쨰 : 마이페이지.. 1번쨰 : account, 2번: login
   };
 
   return (
