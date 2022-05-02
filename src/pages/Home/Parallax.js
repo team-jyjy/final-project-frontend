@@ -27,6 +27,7 @@ export default function Parallax() {
       >
         <div>식단을 관리하세요</div>
       </div>
+      
       <div
         className="bg bg2"
         style={{
@@ -35,17 +36,20 @@ export default function Parallax() {
       >
         <div>운동을 통해 목표를 달성하세요</div>
       </div>
+
       <p
         className="desc"
         style={{
-          transform: `translateX(${-position}px)`,
+          transform: `translateX(${-position/2}px)`,
         }}
       >
         나의 관리 현황을 캘린더를 통해<br></br>
         기록하고 친구들과 공유해 보세요
       </p>
+
+
       <img className = "item3" src={item3} style={{
-          opacity: (position - 850) / 50,
+          opacity: (position - 900) / 50,
         }}>
       </img>
 
@@ -53,7 +57,7 @@ export default function Parallax() {
         className="desc2"
         style={{
           // transform: `translateX(${position}px)`,
-          opacity: (position - 1600) / 100,
+          opacity: (position - 1900) / 100,
         }}
       >
         여기서 끝이냐구요?<br></br>
@@ -64,7 +68,7 @@ export default function Parallax() {
       <p
         className="desc3"
         style={{
-          opacity: (position - 2200) / 50,
+          opacity: (position - 2600) / 50,
         }}
       >
         자신과의 싸움,
@@ -72,7 +76,7 @@ export default function Parallax() {
       <p
         className="desc3"
         style={{
-          opacity: (position - 2400) / 50,
+          opacity: (position - 2750) / 50,
         }}
       >
         더 이상 지지 않을 당신을
@@ -80,7 +84,7 @@ export default function Parallax() {
       <p
         className="desc3"
         style={{
-          opacity: (position - 2600) / 50,
+          opacity: (position - 2900) / 50,
         }}
       >
         JYGY합니다.
