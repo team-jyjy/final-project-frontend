@@ -34,11 +34,11 @@ code {
 }
 
 .item3 {
-  width: 700px;
+  width: 60%;
 }
 
 .item4 {
-  width: 600px;
+  width: 60%;
   display: block;
   margin: 0 auto;
 }
@@ -64,28 +64,37 @@ code {
   background: rgba(255, 255, 255, 0.5);
   text-align: center;
   padding: 40px 120px;
-  font-size: 50px;
+  /* font-size: 50px; */
+  font-size: 5vw;
 }
 
 .bg1 {
-  background: url("../../assets/images/salad.jpg") no-repeat;
+  background-repeat: no-repeat;
+  /* border-right: 1px solid red; */
+  background-size: cover;
+  width: 70%;
+  background-image: url("../../assets/images/salad.jpg");
+  /*background: url("https://via.placeholder.com/100x50") no-repeat;*/
 }
 
 .bg2 {
+  /* width: 70%; */
   margin-top: 50px;
   background: url("../../assets/images/health.jpg") no-repeat;
 }
 
 .desc {
   font-weight: bold;
-  font-size: 50px;
+  /* font-size: 50px; */
+  font-size: 5.5vw;
   color: tomato;
   left: 50%;
 }
 
 .desc2 {
   font-weight: bold;
-  font-size: 60px;
+  /* font-size: 60px; */
+  font-size: 5.5vw;
   color: rgb(70, 70, 223);
   text-align: center;
   /* right: 50%; */
@@ -94,7 +103,8 @@ code {
 .desc3 {
   font-weight: bold;
   text-align: center;
-  font-size: 60px;
+  /* font-size: 60px; */
+  font-size: 5.5vw;
   color: #666;
   opacity: 1;
 }

@@ -6,9 +6,9 @@ import MainFeaturedPost from './mainfeature';
 import img from "../../assets/images/health.jpg";
 
 const mainFeaturedPost = {
-  title: 'Title of a longer featured blog post',
+  title: '서비스 한줄 요약',
   description:
-    "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
+    "서비스 특징 나열~~~서비스 특징 나열~~~~서비스 특징 나열~~~~서비스 특징 나열~~~~서비스 특징 나열~~~~",
   image: img,
   imageText: 'main image description',
   linkText: 'Join Us',

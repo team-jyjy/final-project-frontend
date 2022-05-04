@@ -7,8 +7,10 @@ import "./Parallax.css"
 
 export default function Parallax() {
   const [position, setPosition] = useState(0);
+
   function onScroll() {
-    console.log(window.scrollY);
+    //console.log(window.scrollY);
+    // console.log(window.innerHeight, window.innerWidth);
     setPosition(window.scrollY);
   }
   useEffect(() => {
@@ -24,6 +26,7 @@ export default function Parallax() {
         className="bg bg1"
         style={{
           backgroundPositionY: position / 2,
+          // backgroundPositionY: 'calc((position / 2)/window.innerHeight*100%)',
         }}
       >
         <div>식단을 관리하세요</div>

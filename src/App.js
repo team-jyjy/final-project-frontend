@@ -7,7 +7,7 @@ import Home from './pages/Home/Home'
 import Profile from './pages/Profile'
 import Articles from "./pages/Articles";
 import Article from "./pages/Article";
-import MyPage from "./pages/MyPage"
+import MyPage from "./pages/MyPage/MyPage"
 import NotFound from "./pages/NotFound";
 import './pages/components/common/Header.css';
 import { ThemeProvider } from "styled-components";
