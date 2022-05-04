@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Baloo');
-@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
 @font-face {
   font-family: 'EliceDigitalBaeum-Bd';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_elice@1.0/EliceDigitalBaeum-Bd.woff2') format('woff2');
@@ -7,8 +5,6 @@
   font-style: normal;
 }
 
-/* @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap'); */
 * {
   font-family : 'EliceDigitalBaeum-Bd'
-  /* font-family: 'Ballo'; */
 } 

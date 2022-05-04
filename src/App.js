@@ -4,9 +4,7 @@ import Footer from './pages/components/common/Footer'
 import Signin from './pages/LogIn/Signin';
 import Signup from './pages/LogIn/Signup';
 import Home from './pages/Home/Home'
-import Profile from './pages/Profile'
-import Articles from "./pages/Articles";
-import Article from "./pages/Article";
+// import Profile from './pages/Profile'
 import MyPage from "./pages/MyPage/MyPage"
 import NotFound from "./pages/NotFound";
 import './pages/components/common/Header.css';
@@ -28,7 +26,7 @@ const App = () => {
         <Route path="/signin" element = {<Signin />} />
         <Route path="/signup" element = {<Signup />} />
         <Route path="/mypage" element = {<MyPage />} />
-        <Route path="/profiles/:username" element={<Profile />}/>
+        {/* <Route path="/profiles/:username" element={<Profile />}/> */}
         </Route>
       </Route>
       {/* 중첩된 라우터 */}
