@@ -1,15 +1,7 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
 }
 
 .wrapper {
@@ -25,36 +17,21 @@ code {
   z-index: 2;
 }
 
-.item {
-  position: absolute;
-  top: 1600px;
-  right: 0;
-  opacity: 0.5;
-  z-index: 1;
-}
-
 .item3 {
-  width: 60%;
+  width: 70%;
 }
 
 .item4 {
-  width: 60%;
+  width: 70%;
   display: block;
   margin: 0 auto;
 }
-
-/* .item_snow {
-  left: 100px;
-  right: auto;
-  width: 200px;
-  opacity: 1;
-} */
 
 .bg {
   width: 100%;
   margin: 0 auto;
   display: flex;
-  height: 400px;
+  /* height: 800px; */
   justify-content: center;
   align-items: center;
 }
@@ -65,15 +42,15 @@ code {
   text-align: center;
   padding: 40px 120px;
   /* font-size: 50px; */
-  font-size: 5vw;
+  font-size: 3.5vw;
 }
 
 .bg1 {
+    /* border-right: 1px solid red; */
   background-repeat: no-repeat;
-  /* border-right: 1px solid red; */
   background-size: cover;
   width: 70%;
-  background-image: url("../../assets/images/salad.jpg");
+  background-image: url("../../assets/images/foodschedule.jpg");
   /*background: url("https://via.placeholder.com/100x50") no-repeat;*/
 }
 
@@ -86,16 +63,16 @@ code {
 .desc {
   font-weight: bold;
   /* font-size: 50px; */
-  font-size: 5.5vw;
-  color: tomato;
+  font-size: 3vw;
+  color: #ff5a33;
   left: 50%;
 }
 
 .desc2 {
   font-weight: bold;
   /* font-size: 60px; */
-  font-size: 5.5vw;
-  color: rgb(70, 70, 223);
+  font-size: 4vw;
+  color: #146152;
   text-align: center;
   /* right: 50%; */
 }
@@ -104,7 +81,7 @@ code {
   font-weight: bold;
   text-align: center;
   /* font-size: 60px; */
-  font-size: 5.5vw;
-  color: #666;
+  font-size: 4vw;
+  color: #a5a5a5;
   opacity: 1;
 }

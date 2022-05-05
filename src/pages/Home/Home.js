@@ -9,20 +9,16 @@ const Home = () => {
   return (
     <div>
       <Main />
-      {/* <h1>KB 4조</h1>
-      <p>프로젝트 홈페이지 입니다</p> */}
-      {/* 로그인 페이지로 가는 링크 */}
-      {/* <button><Link to ="/Signin">로그인하기</Link></button>
-      <button><Link to ="/Signup">회원가입하기</Link></button> */}
+      
       <Parallax />
 
       <Pricing />
 
       <div className="faq">
-        <p id="faqs"  style={{marginTop : 50, marginBottom : 20}}>
+        <p id="faqs"  style={{marginTop : 170, marginBottom : 20, fontFamily : 'EliceDigitalBaeum'}}>
           FAQS
         </p>
-        <span id="qa">Q & A </span> <span id="about">about JYGY</span>
+        <span id="qa" style={{fontFamily:'EliceDigitalBaeum'}}>Q & A </span> <span id="about" style={{fontFamily:'EliceDigitalBaeum'}}>about JYGY</span>
       </div>
 
       <FAQ />

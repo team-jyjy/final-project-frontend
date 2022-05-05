@@ -26,7 +26,12 @@ function Copyright(props) {
   );
 }
 
-const theme = createTheme();
+const theme = createTheme(
+  {
+    typography: {
+      fontFamily: 'EliceDigitalBaeum',
+    },
+  });
 
 export default function Signin() {
   const handleSubmit = (event) => {

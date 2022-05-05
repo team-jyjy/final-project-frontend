@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import item1 from "../../assets/images/foodschedule.jpg";
-import item2 from "../../assets/images/health.jpg";
 import item3 from "../../assets/images/calendar.jpg";
 import item4 from "../../assets/images/finance.png"
 import "./Parallax.css"
@@ -96,22 +95,6 @@ export default function Parallax() {
       >
         JYGY합니다.
       </p>
-      {/* <img
-        src={item1}
-        className="item"
-        alt=""
-        style={{
-          transform: `translateY(${position / 2}px)`,
-        }}
-      /> */}
-      {/* <img
-        src={item2}
-        className="item item_snow"
-        alt=""
-        style={{
-          transform: `translateY(${position / 4}px)`,
-        }}
-      /> */}
     </div>
   );
 }

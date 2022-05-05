@@ -5,13 +5,14 @@
 
 #faqs {
   color : rgb(57, 57, 209);
-  font-size: 50px;
+  /* font-size: 50px; */
+  font-size: 4vw;
 }
 
 #qa {
-  font-size: 70px;
+  font-size: 5vw;
 }
 
 #about {
-  font-size: 50px;
+  font-size: 3vw;
 }

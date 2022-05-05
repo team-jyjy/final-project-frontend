@@ -55,33 +55,33 @@ export default function FAQ() {
   };
 
   return (
-    <div style={{marginBottom:50}}>
+    <div style={{marginBottom:150}}>
       <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} sx={{mx : "auto"}}>
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography>식단 조절이 필요 없는 사람도 이용할 수 있나요?</Typography>
+          <Typography fontFamily={'EliceDigitalBaeum'}>식단 조절이 필요 없는 사람도 이용할 수 있나요?</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography fontFamily={'EliceDigitalBaeum'}>
             닙!
           </Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')} sx={{mx : "auto"}}>
         <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-          <Typography>보험은 어쩌구 저쩌구 인가요!?</Typography>
+          <Typography fontFamily={'EliceDigitalBaeum'}>보험은 어쩌구 저쩌구 인가요!?</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography fontFamily={'EliceDigitalBaeum'}>
             예 예 고객님
           </Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')} sx={{mx: "auto"}}>
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-          <Typography>다른 서비스 어쩌구 저쩌구 할 계획은요!?</Typography>
+          <Typography fontFamily={'EliceDigitalBaeum'}>다른 서비스 어쩌구 저쩌구 할 계획은요!?</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography fontFamily={'EliceDigitalBaeum'}>
             업습니다!!
           </Typography>
         </AccordionDetails>

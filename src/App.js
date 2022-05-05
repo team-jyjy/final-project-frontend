@@ -4,20 +4,12 @@ import Footer from './pages/components/common/Footer'
 import Signin from './pages/LogIn/Signin';
 import Signup from './pages/LogIn/Signup';
 import Home from './pages/Home/Home'
-// import Profile from './pages/Profile'
 import MyPage from "./pages/MyPage/MyPage"
 import NotFound from "./pages/NotFound";
 import './pages/components/common/Header.css';
-import { ThemeProvider } from "styled-components";
-import { createTheme } from "@mui/material";
-const theme = createTheme({
-  typography:{
-    fontFamily: "Black+Han+Sans"
-  }
-})
+import Responsive from "./pages/responsive"
 const App = () => {
   return (
-    <ThemeProvider theme={theme}>
     <Routes>
       <Route element={<Header />}>
         <Route element={<Footer />}>
@@ -26,13 +18,13 @@ const App = () => {
         <Route path="/signin" element = {<Signin />} />
         <Route path="/signup" element = {<Signup />} />
         <Route path="/mypage" element = {<MyPage />} />
+        <Route path="/responsive" element = {<Responsive />} />
         {/* <Route path="/profiles/:username" element={<Profile />}/> */}
         </Route>
       </Route>
       {/* 중첩된 라우터 */}
       <Route path="*" element={<NotFound />}></Route>
     </Routes>
-    </ThemeProvider>
   );
 };
 

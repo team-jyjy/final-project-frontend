@@ -11,6 +11,14 @@ import StarIcon from '@mui/icons-material/StarBorder';
 import Typography from '@mui/material/Typography';
 import GlobalStyles from '@mui/material/GlobalStyles';
 import Container from '@mui/material/Container';
+import { createTheme, responsiveFontSizes } from '@mui/material/styles';
+import { ThemeProvider } from 'styled-components';
+
+const theme = createTheme({
+  typography: {
+    fontFamily: 'EliceDigitalBaeum',
+  },
+}); 
 
 const tiers = [
   {
@@ -58,84 +66,96 @@ function PricingContent() {
       <Container disableGutters maxWidth="sm" component="main" sx={{ pt: 8, pb: 6 }}>
         <Typography
           component="h1"
-          variant="h2"
+          fontSize={'4.5vw'}
           align="center"
           color="text.primary"
           gutterBottom
+          fontFamily={'EliceDigitalBaeum'}
         >
           나의 건강관리
         </Typography>
-        <Typography variant="h5" align="center" color="text.secondary" component="p">
-           적합한 플랜을 찾아보세요
+        <Typography
+          fontSize={'2.5vw'}
+          align="center" 
+          color="text.secondary" 
+          component="p"
+          fontFamily={'EliceDigitalBaeum'}>
+          적합한 플랜을 찾아보세요
         </Typography>
       </Container>
       {/* End hero unit */}
-      <Container maxWidth="md" component="main">
-        <Grid container spacing={5} alignItems="flex-end">
-          {tiers.map((tier) => (
-            // Enterprise card is full width at sm breakpoint
-            <Grid
-              item
-              key={tier.title}
-              xs={12}
-              sm={tier.title === 'Enterprise' ? 12 : 6}
-              md={4}
-            >
-              <Card>
-                <CardHeader
-                  title={tier.title}
-                  subheader={tier.subheader}
-                  titleTypographyProps={{ align: 'center' }}
-                  action={tier.title === 'Pro' ? <StarIcon /> : null}
-                  subheaderTypographyProps={{
-                    align: 'center',
-                  }}
-                  sx={{
-                    backgroundColor: (theme) =>
-                      theme.palette.mode === 'light'
-                        ? theme.palette.grey[200]
-                        : theme.palette.grey[700],
-                  }}
-                />
-                <CardContent>
-                  <Box
-                    sx={{
-                      display: 'flex',
-                      justifyContent: 'center',
-                      alignItems: 'baseline',
-                      mb: 2,
+        <Container maxWidth="md" component="main">
+          <Grid container spacing={5} alignItems="flex-end">
+            {tiers.map((tier) => (
+              // Enterprise card is full width at sm breakpoint
+              <Grid
+                item
+                key={tier.title}
+                xs={12}
+                sm={tier.title === 'Enterprise' ? 12 : 6}
+                md={4}
+              >
+                <Card>
+                  <CardHeader
+                    title={tier.title}
+                    subheader={tier.subheader}
+                    titleTypographyProps={{ align: 'center' }}
+                    action={tier.title === 'Pro' ? <StarIcon /> : null}
+                    subheaderTypographyProps={{
+                      align: 'center',
                     }}
-                  >
-                    <Typography component="h2" variant="h3" color="text.primary">
-                      ${tier.price}
-                    </Typography>
-                    <Typography variant="h6" color="text.secondary">
-                      /mo
-                    </Typography>
-                  </Box>
-                  <ul>
-                    {tier.description.map((line) => (
-                      <Typography
-                        component="li"
-                        variant="subtitle1"
-                        align="center"
-                        key={line}
-                      >
-                        {line}
+                    sx={{
+                      backgroundColor: (theme) =>
+                        theme.palette.mode === 'light'
+                          ? theme.palette.grey[200]
+                          : theme.palette.grey[700],
+                    }}
+                  />
+                  <CardContent>
+                    <Box
+                      sx={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'baseline',
+                        mb: 2,
+                      }}
+                    >
+                        <Typography component="h2" fontSize={'3vw'} color="text.primary" fontFamily={'EliceDigitalBaeum'}>
+                          ${tier.price}
+                        </Typography>
+
+                      <Typography fontSize={'2.5vw'} color="text.secondary" fontFamily={'EliceDigitalBaeum'}>
+                        /mo
                       </Typography>
-                    ))}
-                  </ul>
-                </CardContent>
-                <CardActions>
-                  <Button fullWidth variant={tier.buttonVariant}>
-                    {tier.buttonText}
-                  </Button>
-                </CardActions>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
+                    </Box>
+                    <ul>
+                      {tier.description.map((line) => (
+                        <Typography
+                          component="li"
+                          // variant="subtitle1"
+                          fontSize={'1.5vw'}
+                          align="center"
+                          key={line}
+                          fontFamily={'EliceDigitalBaeum'}
+                        >
+                          {line}
+                        </Typography>
+                      ))}
+                    </ul>
+                  </CardContent>
+                  <CardActions>
+                    <Button fullWidth variant={tier.buttonVariant}
+                    >
+                    <Typography fontFamily={'EliceDigitalBaeum'}>
+                      {tier.buttonText}
+                    </Typography>
+                    </Button>
+                  </CardActions>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
     </React.Fragment>
   );
 }
