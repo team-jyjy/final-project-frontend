@@ -8,7 +8,7 @@ import img from "../../assets/images/main.png";
 import { fontFamily } from '@mui/system';
 
 const mainFeaturedPost = {
-  title: '서비스 한줄 요약',
+  title: '당신을 위한 건강 관리 도우미',
   description:
     "서비스 특징 나열~~~서비스 특징 나열~~~~서비스 특징 나열~~~~서비스 특징 나열~~~~서비스 특징 나열~~~~",
   image: img,

@@ -13,6 +13,8 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import {Outlet, useNavigate, Link} from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material';
+import logo from "../../../assets/images/logo.png";
+import { makeStyles } from '@material-ui/core/styles';
 
 const pages = ['식단관리', '운동',  'Calender', 'about us'];
 const settings = ['My Page', 'Account', 'Log In']; // 'Dashboard', 나중에 SignOut(?)
@@ -23,7 +25,28 @@ const theme = createTheme({
   },
 });
 
+const useStyles = makeStyles((theme) => ({
+  logo_on: {
+
+    [theme.breakpoints.only("xs")]: {
+      display: "none",
+    },
+  },
+  logo_off: {
+
+     [theme.breakpoints.up("xs")]: {
+      display: "none",
+     },
+    [theme.breakpoints.only("xs")]: {
+      display: "flex",
+    }
+  },
+
+
+}));
+
 const Header = () => {
+  const classes = useStyles();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -51,17 +74,17 @@ const Header = () => {
       <AppBar position="static">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <Typography
-              variant="h6"
-              className='logo'
-              noWrap
-              //component="div"
-              sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-            >
-              {/* 이거 누르면 홈으로 가야함 */}
-              <Link to="/" style={{ textDecoration: 'none' }}> JYGY</Link>
-            </Typography>
-            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <Box display="block">
+              <Link to="/">
+                <img
+                  src = {logo}
+                  width = {80}
+                  className={classes.logo_on}
+                >
+                </img>
+              </Link>
+            </Box>
+            <Box sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'none' } }}>
               <IconButton
                 size="large"
                 aria-label="account of current user"
@@ -87,7 +110,7 @@ const Header = () => {
                 open={Boolean(anchorElNav)}
                 onClose={handleCloseNavMenu}
                 sx={{
-                  display: { xs: 'block', md: 'none' },
+                  display: { xs: 'block', sm: 'none' },
                 }}
               >
                 {pages.map((page) => (
@@ -97,16 +120,27 @@ const Header = () => {
                 ))}
               </Menu>
             </Box>
-            <Typography
+            {/* <Typography
               className='logo'
               variant="h6"
               noWrap
               component="div"
-              sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
+              sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'none' } }}
             >
               JYGY
-            </Typography>
-            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            </Typography> */}
+            <Box display="block" style={{backgroundColor:'white'}}>
+              <img
+                
+                // src = {logo}
+                src = {logo}
+                width = {80}
+                className={classes.logo_off}
+                // noWrap
+              >
+              </img>
+            </Box>
+            <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' } }}>
               {pages.map((page) => (
                 <Button
                   key={page}
