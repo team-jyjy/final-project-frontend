@@ -96,6 +96,7 @@ const Header = () => {
             </Box>
             {/* 모바일 로고 */}
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'none' } }}> 
+            <GreenFont>
               <IconButton 
                 size="large"
                 aria-label="account of current user"
@@ -106,6 +107,7 @@ const Header = () => {
               >
                 <MenuIcon />
               </IconButton>
+              </GreenFont>
               <Menu
                 id="menu-appbar"
                 anchorEl={anchorElNav}
