@@ -15,6 +15,8 @@ import {Outlet, useNavigate, Link} from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material';
 import logo from "../../../assets/images/logo.png";
 import { makeStyles } from '@material-ui/core/styles';
+import { withStyles } from "@material-ui/core/styles";
+import { typography } from '@mui/system';
 
 const pages = ['식단관리', '운동',  'Calender', 'about us'];
 const settings = ['My Page', 'Account', 'Log In']; // 'Dashboard', 나중에 SignOut(?)
@@ -24,6 +26,12 @@ const theme = createTheme({
     fontFamily: 'EliceDigitalBaeum-Bd',
   },
 });
+
+const GreenFont = withStyles({
+  root:{
+    color:"#146152"
+  }
+})(Typography);
 
 const useStyles = makeStyles((theme) => ({
   logo_on: {
@@ -71,21 +79,24 @@ const Header = () => {
     <ThemeProvider theme={theme}>
       <div>
       <header>
-      <AppBar position="static">
+      <AppBar position="static" sx={{bgcolor:'white'}}>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Box display="block">
+              {/* - */}
               <Link to="/">
                 <img
                   src = {logo}
-                  width = {80}
+                  width = {100}
                   className={classes.logo_on}
+                  style={{marginRight : '20px'}}
                 >
                 </img>
               </Link>
             </Box>
-            <Box sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'none' } }}>
-              <IconButton
+            {/* 모바일 로고 */}
+            <Box sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'none' } }}> 
+              <IconButton 
                 size="large"
                 aria-label="account of current user"
                 aria-controls="menu-appbar"
@@ -115,26 +126,19 @@ const Header = () => {
               >
                 {pages.map((page) => (
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
+                    <GreenFont>
+                    <Typography textAlign="center"
+                    >{page}</Typography>
+                    </GreenFont>
                   </MenuItem>
                 ))}
               </Menu>
             </Box>
-            {/* <Typography
-              className='logo'
-              variant="h6"
-              noWrap
-              component="div"
-              sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'none' } }}
-            >
-              JYGY
-            </Typography> */}
-            <Box display="block" style={{backgroundColor:'white'}}>
+            <Box sx={{ flexGrow: 1}} display="block">
               <img
-                
                 // src = {logo}
                 src = {logo}
-                width = {80}
+                width = {100}
                 className={classes.logo_off}
                 // noWrap
               >
@@ -145,21 +149,22 @@ const Header = () => {
                 <Button
                   key={page}
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: 'white', display: 'block' }}
+                  sx={{ my: 2, color: '#146152', display: 'block' }}
                 >
                   {page}
                 </Button>
               ))}
             </Box>
 
-            <Box sx={{ flexGrow: 0 }}>
+            <Box sx={{ flexGrow: 0}}>
               <Tooltip title="Open settings">
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                <IconButton onClick={handleOpenUserMenu} sx={{p: 0 }}>
                   <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
                 </IconButton>
               </Tooltip>
               <Menu
-                sx={{ mt: '45px' }}
+
+                sx={{mt: '45px' }}
                 id="menu-appbar"
                 anchorEl={anchorElUser}
                 anchorOrigin={{
@@ -175,8 +180,8 @@ const Header = () => {
                 onClose={handleCloseUserMenu}
               >
                 {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">{setting}</Typography>
+                  <MenuItem key={setting} onClick={handleCloseUserMenu}> 
+                    <Typography textAlign="center" >{setting}</Typography>
                   </MenuItem>
                 ))}
               </Menu>
