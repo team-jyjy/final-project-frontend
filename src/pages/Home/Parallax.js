@@ -21,37 +21,38 @@ export default function Parallax() {
 
   return (
     <div className="wrapper">
+      <div className="bg1Container">
       <div
-        className="bg bg1"
+        className="bg1"
         style={{
           // backgroundPositionY: position / 2,
           // backgroundPositionY: 'calc((position / 2)/window.innerHeight*100%)',
         }}
       >
-        <div>식단을 관리하세요</div>
+        <div className="copy"><p>사진 업로드 하나로 칼로리와 영양성분 정보를 받아보세요</p></div>
+        </div>
       </div>
       
       <div
         className="bg bg2"
         style={{
-          // backgroundPositionY: position / -3,
+          backgroundPositionY: position / -3,
         }}
       >
-        <div>운동을 통해 목표를 달성하세요</div>
+        <div>~~하세요 JYGY가 정확한 운동량을 카운트 해드립니다</div>
       </div>
 
       <p
         className="desc"
         style={{
-          // transform: `translateX(${-position/2}px)`,
+          transform: `translateX(${-position/2}px)`,
         }}
       >
-        나의 관리 현황을 캘린더를 통해<br></br>
-        기록하고 친구들과 공유해 보세요
+        JYGY와 함께한 건강한 생활을 한눈에 확인하세요
       </p>
 
 
-      <img className = "item3" style={{
+      <img className = "item3" src={item3} style={{
           opacity: (position - 900) / 50,
         }}>
       </img>

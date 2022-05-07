@@ -10,7 +10,7 @@ import { fontFamily } from '@mui/system';
 const mainFeaturedPost = {
   title: '당신을 위한 건강 관리 도우미',
   description:
-    "서비스 특징 나열~~~서비스 특징 나열~~~~서비스 특징 나열~~~~서비스 특징 나열~~~~서비스 특징 나열~~~~",
+    'JYGY와 함께 건강한 생활을 유지해 보세요 식단 관리와 운동을 지지해드립니다.',
   image: img,
   imageText: 'main image description',
   linkText: 'Join Us',

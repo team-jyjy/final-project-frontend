@@ -17,72 +17,82 @@ body {
   z-index: 2;
 }
 
-.item3 {
-  width: 70%;
-}
-
-.item4 {
-  width: 70%;
-  display: block;
-  margin: 0 auto;
-}
-
-.bg {
+.bg1Container {
   width: 100%;
   margin: 0 auto;
   display: flex;
-  /* color: #146152; */
-  /* height: 800px; */
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
-.bg div {
+.bg1Container .copy {
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
   display: inline-block;
   background: rgba(255, 255, 255, 0.5);
   text-align: center;
-  padding: 40px 120px;
-  /* font-size: 50px; */
-  font-size: 3.5vw;
+  width: 100%;
+  /* font-size: 3vw; */
+  
+  /* font-size: 3.5vw; */
+}
+
+.copy {
+  font-size: 3rem;
+}
+
+@media (max-width:600px) {
+  .copy {
+    font-size: 20px;
+  }
+}
+
+
+.bg1Container {
+  width: 70vmin;
+  height:90vmin;
 }
 
 .bg1 {
     /* border-right: 1px solid red; */
+  /* position: absolute; */
   background-repeat: no-repeat;
-  background-size: cover;
-  width: 70%;
+  background-attachment: fixed;
+  /* background-size: cover; */
+  /* background-size:fill; */
+  background-position: center;
+  width: 100%;
+  height:100%;
+  /* height: ; */
   background-image: url("../../assets/images/foodschedule.jpg");
   /*background: url("https://via.placeholder.com/100x50") no-repeat;*/
 }
 
-.bg2 {
-  /* width: 70%; */
+/* .bg2 {
   margin-top: 50px;
   background: url("../../assets/images/health.jpg") no-repeat;
 }
 
 .desc {
   font-weight: bold;
-  /* font-size: 50px; */
   font-size: 3vw;
-  color: #146152;
+  color: #ff5a33;
   left: 50%;
 }
 
 .desc2 {
   font-weight: bold;
-  /* font-size: 60px; */
   font-size: 4vw;
   color: #146152;
   text-align: center;
-  /* right: 50%; */
 }
 
 .desc3 {
   font-weight: bold;
   text-align: center;
-  /* font-size: 60px; */
   font-size: 4vw;
   color: #a5a5a5;
   opacity: 1;
-}
+} */
