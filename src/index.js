@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 
+
 const rootNode = ReactDOM.createRoot(document.getElementById('root'));
   rootNode.render(
     //라우터 적용

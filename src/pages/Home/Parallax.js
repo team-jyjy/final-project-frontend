@@ -24,7 +24,7 @@ export default function Parallax() {
       <div
         className="bg bg1"
         style={{
-          backgroundPositionY: position / 2,
+          // backgroundPositionY: position / 2,
           // backgroundPositionY: 'calc((position / 2)/window.innerHeight*100%)',
         }}
       >
@@ -34,7 +34,7 @@ export default function Parallax() {
       <div
         className="bg bg2"
         style={{
-          backgroundPositionY: position / -3,
+          // backgroundPositionY: position / -3,
         }}
       >
         <div>운동을 통해 목표를 달성하세요</div>
@@ -43,7 +43,7 @@ export default function Parallax() {
       <p
         className="desc"
         style={{
-          transform: `translateX(${-position/2}px)`,
+          // transform: `translateX(${-position/2}px)`,
         }}
       >
         나의 관리 현황을 캘린더를 통해<br></br>
@@ -51,7 +51,7 @@ export default function Parallax() {
       </p>
 
 
-      <img className = "item3" src={item3} style={{
+      <img className = "item3" style={{
           opacity: (position - 900) / 50,
         }}>
       </img>

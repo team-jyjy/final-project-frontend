@@ -31,6 +31,7 @@ body {
   width: 100%;
   margin: 0 auto;
   display: flex;
+  /* color: #146152; */
   /* height: 800px; */
   justify-content: center;
   align-items: center;
@@ -64,7 +65,7 @@ body {
   font-weight: bold;
   /* font-size: 50px; */
   font-size: 3vw;
-  color: #ff5a33;
+  color: #146152;
   left: 50%;
 }
 

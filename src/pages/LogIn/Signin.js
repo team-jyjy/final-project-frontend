@@ -12,10 +12,36 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import {makeStyles} from "@material-ui/core"
+import { hover } from '@testing-library/user-event/dist/hover';
+import { ClassNames } from '@emotion/react';
+
+// const useStyle = makeStyles({
+//   textfield : {
+//     color : "#146152",
+//     backgroundColor : "#146152",
+//     "&textfield:focus":{
+//       borderColor : '#146152',
+//     },
+//   },
+// });
+// const useStyles = makeStyles({
+//   input: {
+//     "& input + fieldset":{
+//       borderColor:(props) => props.color,
+//     },
+//     "& input:valid:focus + fieldset" : {
+//       borderColor:(props) => props.color,
+//     },
+//     "& input:valid:hover + fieldset": {
+//       borderColor: (props) => props.color,
+//     },
+//   },
+// })
 
 function Copyright(props) {
   return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
+    <Typography variant="body2" color='#146152' align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
         Your Website
@@ -31,16 +57,18 @@ const theme = createTheme(
     typography: {
       fontFamily: 'EliceDigitalBaeum',
     },
+    tf : {
+      '&:focus':{
+        borderColor :"#146152",
+      },
+    }
+    
   });
 
 export default function Signin() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    // console.log({
-    //   email: data.get('email'),
-    //   password: data.get('password'),
-    // });
   };
 
   return (
@@ -53,9 +81,10 @@ export default function Signin() {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Avatar sx={{ m: 1, bgcolor: '#146152' }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
@@ -63,6 +92,7 @@ export default function Signin() {
           </Typography>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
             <TextField
+              // InputProps={{className:useStyles({color : "#146152"}).input,}}
               margin="normal"
               required
               fullWidth
@@ -71,6 +101,8 @@ export default function Signin() {
               name="email"
               autoComplete="email"
               autoFocus
+              color="success"
+
             />
             <TextField
               margin="normal"
@@ -81,9 +113,10 @@ export default function Signin() {
               type="password"
               id="password"
               autoComplete="current-password"
+              color="success"
             />
             <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
+              control={<Checkbox value="remember" color="success" />}
               label="아이디 저장"
             />
             <Button
@@ -91,7 +124,8 @@ export default function Signin() {
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{ mt: 3, mb: 2, }}
+              color="success"
             >
               로그인
             </Button>

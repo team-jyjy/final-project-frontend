@@ -8,23 +8,27 @@ import MyPage from "./pages/MyPage/MyPage"
 import NotFound from "./pages/NotFound";
 import './pages/components/common/Header.css';
 import Responsive from "./pages/responsive"
+import CssBaseline from "@material-ui/core/CssBaseline"
+
 const App = () => {
   return (
-    <Routes>
-      <Route element={<Header />}>
-        <Route element={<Footer />}>
-      {/* index : path="/" 명시적 표시 */}
-        <Route index element={<Home />}/>
-        <Route path="/signin" element = {<Signin />} />
-        <Route path="/signup" element = {<Signup />} />
-        <Route path="/mypage" element = {<MyPage />} />
-        <Route path="/responsive" element = {<Responsive />} />
-        {/* <Route path="/profiles/:username" element={<Profile />}/> */}
+    <CssBaseline>
+      <Routes>
+        <Route element={<Header />}>
+          <Route element={<Footer />}>
+        {/* index : path="/" 명시적 표시 */}
+          <Route index element={<Home />}/>
+          <Route path="/signin" element = {<Signin />} />
+          <Route path="/signup" element = {<Signup />} />
+          <Route path="/mypage" element = {<MyPage />} />
+          <Route path="/responsive" element = {<Responsive />} />
+          {/* <Route path="/profiles/:username" element={<Profile />}/> */}
+          </Route>
         </Route>
-      </Route>
-      {/* 중첩된 라우터 */}
-      <Route path="*" element={<NotFound />}></Route>
-    </Routes>
+        {/* 중첩된 라우터 */}
+        <Route path="*" element={<NotFound />}></Route>
+      </Routes>
+    </CssBaseline>
   );
 };
 

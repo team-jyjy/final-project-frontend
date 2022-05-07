@@ -54,7 +54,7 @@ export default function Signup() {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Avatar sx={{ m: 1, bgcolor: "#146152" }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
@@ -70,6 +70,7 @@ export default function Signup() {
                   label="이름"
                   name="Name"
                   autoComplete="family-name"
+                  color="success"
                 />
               </Grid>
               <Grid item xs={12}>
@@ -80,6 +81,7 @@ export default function Signup() {
                   label="이메일"
                   name="email"
                   autoComplete="email"
+                  color="success"
                 />
               </Grid>
               <Grid item xs={12}>
@@ -91,17 +93,18 @@ export default function Signup() {
                   type="password"
                   id="password"
                   autoComplete="new-password"
+                  color="success"
                 />
               </Grid>
               <Grid item xs={12}>
                 <FormControlLabel
-                  control={<Checkbox value="allowExtraEmails" color="primary" />}
+                  control={<Checkbox value="allowExtraEmails" color="success" />}
                   label="회원 약관 및 개인정보 처리방침에 동의합니다. (필수)"
                 />
               </Grid>
               <Grid item xs={12}>
                 <FormControlLabel
-                  control={<Checkbox value="allowExtraEmails" color="primary" />}
+                  control={<Checkbox value="allowExtraEmails" color="success" />}
                   label="광고 동의 (선택)"
                 />
               </Grid>
@@ -112,6 +115,7 @@ export default function Signup() {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
+              color="success"
             >
               회원 가입
             </Button>
