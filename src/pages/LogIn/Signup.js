@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
+import Checkbox, { checkboxClasses } from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -12,6 +12,42 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import {styled} from '@mui/material/styles'
+import InputLabel from '@mui/material/InputLabel';
+import FormControl from '@mui/material/FormControl';
+
+const CssTextField = styled(TextField)({
+  '& label.Mui-focused':{
+    color: '#146152',
+  },
+  '& .MuiInput-underline:after': {
+    borderBottomColor: '#146152',
+  },
+  '& .MuiOutlinedInput-root': {
+    '& fieldset': {
+      borderColor: '#146152',
+    },
+    '&:hover fieldset': {
+      borderColor: '#146152',
+    },
+    '&.Mui-focused fieldset': {
+      borderColor: '#146152',
+    },
+  },
+})
+
+const CssButton = styled(Button)({
+  '&:hover':{
+    backgroundColor:'#146152',
+    borderColor: '#b4cf66',
+  },
+  '&:active':{
+    backgroundColor:'#146152'
+  },
+  '&:focus':{
+    boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
+  },
+})
 
 function Copyright(props) {
   return (
@@ -63,18 +99,18 @@ export default function Signup() {
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               <Grid item xs={12}>
-                <TextField
+                <CssTextField
                   required
                   fullWidth
                   id="Name"
                   label="이름"
                   name="Name"
                   autoComplete="family-name"
-                  color="success"
+                  // color="success"
                 />
               </Grid>
               <Grid item xs={12}>
-                <TextField
+                <CssTextField
                   required
                   fullWidth
                   id="email"
@@ -85,7 +121,7 @@ export default function Signup() {
                 />
               </Grid>
               <Grid item xs={12}>
-                <TextField
+                <CssTextField
                   required
                   fullWidth
                   name="password"
@@ -98,27 +134,36 @@ export default function Signup() {
               </Grid>
               <Grid item xs={12}>
                 <FormControlLabel
-                  control={<Checkbox value="allowExtraEmails" color="success" />}
+                  control={<Checkbox value="allowExtraEmails" sx={{
+                    [`&, &.${checkboxClasses.checked}`]: {
+                      color: '#146152',
+                    },
+                  }}/>}
                   label="회원 약관 및 개인정보 처리방침에 동의합니다. (필수)"
                 />
               </Grid>
               <Grid item xs={12}>
                 <FormControlLabel
-                  control={<Checkbox value="allowExtraEmails" color="success" />}
+                  control={<Checkbox value="allowExtraEmails" 
+                  sx={{
+                    [`&, &.${checkboxClasses.checked}`]: {
+                      color: '#146152',
+                    },
+                  }}/>}
                   label="광고 동의 (선택)"
                 />
               </Grid>
             </Grid>
-            <Button
+            <CssButton
               href = "/Signin"
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-              color="success"
+              sx={{ mt: 3, mb: 2,bgcolor:'#146152'}}
+              
             >
               회원 가입
-            </Button>
+            </CssButton>
             <Grid container justifyContent="flex-end">
               <Grid item>
                 <Link href="/Signin" variant="body2">

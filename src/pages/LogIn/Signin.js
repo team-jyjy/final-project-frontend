@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
+import Checkbox, { checkboxClasses } from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -16,27 +16,47 @@ import {makeStyles} from "@material-ui/core"
 import { hover } from '@testing-library/user-event/dist/hover';
 import { ClassNames } from '@emotion/react';
 
-// const useStyle = makeStyles({
-//   textfield : {
-//     color : "#146152",
-//     backgroundColor : "#146152",
-//     "&textfield:focus":{
-//       borderColor : '#146152',
-//     },
-//   },
-// });
-// const useStyles = makeStyles({
-//   input: {
-//     "& input + fieldset":{
-//       borderColor:(props) => props.color,
-//     },
-//     "& input:valid:focus + fieldset" : {
-//       borderColor:(props) => props.color,
-//     },
-//     "& input:valid:hover + fieldset": {
-//       borderColor: (props) => props.color,
-//     },
-//   },
+import {styled} from '@mui/material/styles'
+import InputLabel from '@mui/material/InputLabel';
+import FormControl from '@mui/material/FormControl';
+
+const CssTextField = styled(TextField)({
+  '& label.Mui-focused':{
+    color: '#146152',
+  },
+  '& .MuiInput-underline:after': {
+    borderBottomColor: '#146152',
+  },
+  '& .MuiOutlinedInput-root': {
+    '& fieldset': {
+      borderColor: '#146152',
+    },
+    '&:hover fieldset': {
+      borderColor: '#146152',
+    },
+    '&.Mui-focused fieldset': {
+      borderColor: '#146152',
+    },
+  },
+})
+
+const CssButton = styled(Button)({
+  '&:hover':{
+    backgroundColor:'#146152',
+    borderColor: '#b4cf66',
+  },
+  '&:active':{
+    backgroundColor:'#146152'
+  },
+  '&:focus':{
+    boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
+  },
+})
+
+// const CssCheckBox = styled(Checkbox)({
+//   '.Mui-checked' : {
+//     color: 'success'
+//     }
 // })
 
 function Copyright(props) {
@@ -57,12 +77,6 @@ const theme = createTheme(
     typography: {
       fontFamily: 'EliceDigitalBaeum',
     },
-    tf : {
-      '&:focus':{
-        borderColor :"#146152",
-      },
-    }
-    
   });
 
 export default function Signin() {
@@ -91,8 +105,7 @@ export default function Signin() {
             Sign in
           </Typography>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-            <TextField
-              // InputProps={{className:useStyles({color : "#146152"}).input,}}
+            <CssTextField
               margin="normal"
               required
               fullWidth
@@ -101,10 +114,10 @@ export default function Signin() {
               name="email"
               autoComplete="email"
               autoFocus
-              color="success"
+              // color="success"
 
             />
-            <TextField
+            <CssTextField
               margin="normal"
               required
               fullWidth
@@ -113,22 +126,29 @@ export default function Signin() {
               type="password"
               id="password"
               autoComplete="current-password"
-              color="success"
+              // color="success"
             />
             <FormControlLabel
-              control={<Checkbox value="remember" color="success" />}
+              control={<Checkbox value="remember"
+              sx={{
+                [`&, &.${checkboxClasses.checked}`]: {
+                  color: '#146152',
+                },
+              }}
+              // color="success"
+              />}
               label="아이디 저장"
             />
-            <Button
+            <CssButton
               href = "/"
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2, }}
-              color="success"
+              sx={{ mt: 3, mb: 2, bgcolor:'#146152'}}
+              // color="success"
             >
               로그인
-            </Button>
+            </CssButton>
             <Grid container>
               <Grid item xs>
                 <Link href="#" variant="body2">
