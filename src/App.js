@@ -8,11 +8,9 @@ import MyPage from "./pages/MyPage/MyPage"
 import NotFound from "./pages/NotFound";
 import './pages/components/common/Header.css';
 import Responsive from "./pages/responsive"
-import CssBaseline from "@material-ui/core/CssBaseline"
 
 const App = () => {
   return (
-    <CssBaseline>
       <Routes>
         <Route element={<Header />}>
           <Route element={<Footer />}>
@@ -28,7 +26,6 @@ const App = () => {
         {/* 중첩된 라우터 */}
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
-    </CssBaseline>
   );
 };
 

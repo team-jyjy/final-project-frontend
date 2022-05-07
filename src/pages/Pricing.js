@@ -13,6 +13,26 @@ import GlobalStyles from '@mui/material/GlobalStyles';
 import Container from '@mui/material/Container';
 import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 import { ThemeProvider } from 'styled-components';
+import {styled} from '@mui/material/styles'
+import InputLabel from '@mui/material/InputLabel';
+import FormControl from '@mui/material/FormControl';
+
+const CssButton = styled(Button)({
+  // '&':{
+  //   backgroundColor:"#146152"
+  // },
+  '&:hover':{
+    backgroundColor:'#f9f9f9',
+    borderColor: '#146152',
+    
+  },
+  '&:active':{
+    backgroundColor:'#146152'
+  },
+  '&:focus':{
+    boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
+  },
+})
 
 const theme = createTheme({
   typography: {
@@ -68,7 +88,7 @@ function PricingContent() {
           component="h1"
           fontSize={'4.5vw'}
           align="center"
-          color="text.primary"
+          color="#146152"
           gutterBottom
           fontFamily={'EliceDigitalBaeum'}
         >
@@ -107,8 +127,9 @@ function PricingContent() {
                     sx={{
                       backgroundColor: (theme) =>
                         theme.palette.mode === 'light'
-                          ? theme.palette.grey[200]
+                          ? theme.palette.grey[100]
                           : theme.palette.grey[700],
+                      color:'#146152',
                     }}
                   />
                   <CardContent>
@@ -120,7 +141,7 @@ function PricingContent() {
                         mb: 2,
                       }}
                     >
-                        <Typography component="h2" fontSize={'3vw'} color="text.primary" fontFamily={'EliceDigitalBaeum'}>
+                        <Typography component="h2" fontSize={'3vw'} fontFamily={'EliceDigitalBaeum'} sx={{color:'#146152'}}>
                           ${tier.price}
                         </Typography>
 
@@ -144,12 +165,13 @@ function PricingContent() {
                     </ul>
                   </CardContent>
                   <CardActions>
-                    <Button fullWidth variant={tier.buttonVariant}
+                    <CssButton fullWidth variant={tier.buttonVariant}
+                    sx={{borderColor:"#b4cf66", color:"#146152", bgcolor:"#b4cf66"}}
                     >
                     <Typography fontFamily={'EliceDigitalBaeum'}>
                       {tier.buttonText}
                     </Typography>
-                    </Button>
+                    </CssButton>
                   </CardActions>
                 </Card>
               </Grid>

@@ -15,10 +15,10 @@ const Home = () => {
       <Pricing />
 
       <div className="faq">
-        <p id="faqs"  style={{marginTop : 170, marginBottom : 20, fontFamily : 'EliceDigitalBaeum'}}>
+        <p id="faqs"  style={{marginTop : 170, marginBottom : 20, fontFamily : 'EliceDigitalBaeum', color:'#146152'}}>
           FAQS
         </p>
-        <span id="qa" style={{fontFamily:'EliceDigitalBaeum'}}>Q & A </span> <span id="about" style={{fontFamily:'EliceDigitalBaeum'}}>about JYGY</span>
+        <span id="qa" style={{fontFamily:'EliceDigitalBaeum', color:'#146152'}}>Q & A </span> <span id="about" style={{fontFamily:'EliceDigitalBaeum', color:'#146152'}}>about JYGY</span>
       </div>
 
       <FAQ />
