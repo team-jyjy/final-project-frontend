@@ -116,9 +116,10 @@ body {
 }
 
 .desc {
-  text-align: center;
+  text-align: right;
   font-size: 3rem;
   color : #146152;
+  margin-right: 6rem;
 }
 
 @media (max-width:600px) {
@@ -126,3 +127,38 @@ body {
     font-size: 20px;
   }
 }
+
+.item4Container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 80vmin;
+  height:50vmin;
+}
+
+.item4Container .item4 {
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  width: 100%;
+  height:100%;
+}
+
+.desc2 {
+  text-align: center;
+  font-size: 3rem;
+  color : #146152;
+  margin-top: 5rem;
+  margin-bottom: 3.5rem;
+}
+
+@media (max-width:600px) {
+  .desc2 {
+    font-size: 20px;
+  }
+}
+
+

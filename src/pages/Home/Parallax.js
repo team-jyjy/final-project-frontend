@@ -43,13 +43,8 @@ export default function Parallax() {
         </div>
       </div>
 
-    <div className="animate__animated animate__fadeIn animate__slower animate__delay-4s animate__infinite">
-      <p
-        className="desc"
-        // style={{
-        //   transform: `translateX(${-position/2}px)`,
-        // }}
-      >
+    <div className="">
+      <p className="desc animate__animated animate__fadeIn animate__slower animate__delay-4s animate__infinite">
         JYGY와 함께한 건강한 생활을 <br></br>한눈에 확인하세요
       </p>
 
@@ -63,45 +58,19 @@ export default function Parallax() {
         </div>
       </div>
 
-      <p
-        className="desc2"
-        style={{
-          // transform: `translateX(${position}px)`,
-          opacity: (position - 1900) / 100,
-        }}
-      >
-        여기서 끝이냐구요?<br></br>
-        금융 혜택이 <br></br>당신을 기다리고 있습니다.
-      </p>
-      <img className = "item4" src={item4} 
-      style={{
-        opacity: (position - 2100) / 100,
-      }}></img>
+      <div className="animate__animated animate__bounceIn animate__slower animate__delay-4s animate__infinite">
+        <p className="desc2">
+          여기서 끝이냐구요?<br></br>
+          금융 혜택이 <br></br>당신을 기다리고 있습니다.
+        </p>
+        <div className="item4Container">
+          <img className = "item4" src={item4}></img>
+        </div> 
+      </div>
 
-      <p
-        className="desc3"
-        style={{
-          opacity: (position - 2600) / 50,
-        }}
-      >
-        자신과의 싸움,
-      </p>
-      <p
-        className="desc3"
-        style={{
-          opacity: (position - 2750) / 50,
-        }}
-      >
-        더 이상 지지 않을 당신을
-      </p>
-      <p
-        className="desc3"
-        style={{
-          opacity: (position - 2900) / 50,
-        }}
-      >
-        JYGY합니다.
-      </p>
+      <p className="desc3">자신과의 싸움, </p>
+      <p className="desc3">더 이상 지지 않을 당신을</p>
+      <p className="desc3">JYGY합니다.</p>
     </div>
   );
 }
