@@ -35,28 +35,33 @@ export default function Parallax() {
         </div>
       </div>
       
-      <div className="bg2Container animate__animated animate__lightSpeedInLeft animate__slower animate__infinite">
+      <div className="bg2Container ">
       <div
         className="bg2"
       >
-        <div className="copy " >~~하세요<br></br> JYGY가 <br></br>정확한 운동량을 카운트 해드립니다</div>
+        <div className="copy animate__animated animate__slideInLeft animate__slower animate__infinite" >~~하세요<br></br> JYGY가 <br></br>정확한 운동량을 카운트 해드립니다</div>
         </div>
       </div>
 
+    <div className="animate__animated animate__fadeIn animate__slower animate__delay-4s animate__infinite">
       <p
         className="desc"
-        style={{
-          transform: `translateX(${-position/2}px)`,
-        }}
+        // style={{
+        //   transform: `translateX(${-position/2}px)`,
+        // }}
       >
-        JYGY와 함께한 건강한 생활을 한눈에 확인하세요
+        JYGY와 함께한 건강한 생활을 <br></br>한눈에 확인하세요
       </p>
 
-
-      <img className = "item3" src={item3} style={{
-          opacity: (position - 900) / 50,
-        }}>
-      </img>
+        <div className="item3Container">
+          <img className = "item3" src={item3} 
+          // style={{
+          //     opacity: (position - 900) / 50,
+          //   }}
+            >
+          </img>
+        </div>
+      </div>
 
       <p
         className="desc2"

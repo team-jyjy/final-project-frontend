@@ -19,12 +19,13 @@ body {
 }
 
 .bg1Container {
-  width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  width: 70vmin;
+  height:90vmin;
 }
 
 .bg1Container .copy {
@@ -51,12 +52,6 @@ body {
   }
 }
 
-
-.bg1Container {
-  width: 70vmin;
-  height:90vmin;
-}
-
 .bg1 {
     /* border-right: 1px solid red; */
   /* position: absolute; */
@@ -73,13 +68,15 @@ body {
 }
 
 .bg2Container {
-  width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-
+  margin-top: 4rem;
+  padding: 3rem;
+  width: 90vmin;
+  height:70vmin;
 }
 
 .bg2Container .copy {
@@ -91,12 +88,6 @@ body {
 
 }
 
-.bg2Container {
-  margin-top: 4rem;
-  width: 90vmin;
-  height:70vmin;
-}
-
 .bg2 {
   background-repeat: no-repeat;
   /* background-attachment: fixed; */
@@ -104,29 +95,34 @@ body {
   height:100%;
   background-image: url("../../assets/images/health.jpg");
 }
-/* .bg2 {
-  margin-top: 50px;
-  background: url("../../assets/images/health.jpg") no-repeat;
+
+.item3Container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 90vmin;
+  height:70vmin;
+}
+
+.item3Container .item3 {
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  width: 100%;
+  height:100%;
 }
 
 .desc {
-  font-weight: bold;
-  font-size: 3vw;
-  color: #ff5a33;
-  left: 50%;
+  text-align: center;
+  font-size: 3rem;
+  color : #146152;
 }
 
-.desc2 {
-  font-weight: bold;
-  font-size: 4vw;
-  color: #146152;
-  text-align: center;
+@media (max-width:600px) {
+  .desc {
+    font-size: 20px;
+  }
 }
-
-.desc3 {
-  font-weight: bold;
-  text-align: center;
-  font-size: 4vw;
-  color: #a5a5a5;
-  opacity: 1;
-} */
