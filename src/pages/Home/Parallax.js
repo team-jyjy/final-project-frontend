@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import item1 from "../../assets/images/foodschedule.jpg";
+import item2 from "../../assets/images/health.jpg";
 import item3 from "../../assets/images/calendar.jpg";
 import item4 from "../../assets/images/finance.png"
 import "./Parallax.css"
+import 'animate.css';
 
 export default function Parallax() {
   const [position, setPosition] = useState(0);
@@ -29,17 +31,16 @@ export default function Parallax() {
           // backgroundPositionY: 'calc((position / 2)/window.innerHeight*100%)',
         }}
       >
-        <div className="copy"><p>사진 업로드 하나로 칼로리와 영양성분 정보를 받아보세요</p></div>
+        <div className="copy"><p>사진 업로드 하나로 <br></br>칼로리와 영양성분 정보를 <br></br>받아보세요</p></div>
         </div>
       </div>
       
+      <div className="bg2Container animate__animated animate__lightSpeedInLeft animate__slower animate__infinite">
       <div
-        className="bg bg2"
-        style={{
-          backgroundPositionY: position / -3,
-        }}
+        className="bg2"
       >
-        <div>~~하세요 JYGY가 정확한 운동량을 카운트 해드립니다</div>
+        <div className="copy " >~~하세요<br></br> JYGY가 <br></br>정확한 운동량을 카운트 해드립니다</div>
+        </div>
       </div>
 
       <p

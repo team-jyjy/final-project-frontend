@@ -8,6 +8,7 @@ body {
   width: 100%;
   overflow: hidden;
   margin-bottom: 190px;
+  padding: 2vw;
   /* min-height: 3700px; */
 }
 
@@ -32,8 +33,9 @@ body {
   transform: translateY(-50%);
   display: inline-block;
   background: rgba(255, 255, 255, 0.5);
-  text-align: center;
+  text-align: right;
   width: 100%;
+  color : #146152;
   /* font-size: 3vw; */
   
   /* font-size: 3.5vw; */
@@ -70,6 +72,38 @@ body {
   /*background: url("https://via.placeholder.com/100x50") no-repeat;*/
 }
 
+.bg2Container {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+}
+
+.bg2Container .copy {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.5);
+  text-align: left;
+  width: 100%;
+  color : #146152;
+
+}
+
+.bg2Container {
+  margin-top: 4rem;
+  width: 90vmin;
+  height:70vmin;
+}
+
+.bg2 {
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  width: 100%;
+  height:100%;
+  background-image: url("../../assets/images/health.jpg");
+}
 /* .bg2 {
   margin-top: 50px;
   background: url("../../assets/images/health.jpg") no-repeat;
