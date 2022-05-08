@@ -5,6 +5,7 @@ import item3 from "../../assets/images/calendar.jpg";
 import item4 from "../../assets/images/finance.png"
 import "./Parallax.css"
 import 'animate.css';
+import ReactTypingEffectDemo from "./typing"
 
 export default function Parallax() {
   const [position, setPosition] = useState(0);
@@ -68,9 +69,9 @@ export default function Parallax() {
         </div> 
       </div>
 
-      <p className="desc3">자신과의 싸움, </p>
-      <p className="desc3">더 이상 지지 않을 당신을</p>
-      <p className="desc3">JYGY합니다.</p>
+      {/*  */}
+      <ReactTypingEffectDemo />
     </div>
+    
   );
 }

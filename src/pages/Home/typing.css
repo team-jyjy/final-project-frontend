@@ -1,0 +1,11 @@
+.typing {
+  margin-top: 12rem;
+  text-align: center;
+  font-size: 5rem;
+}
+
+@media (max-width:600px) {
+  .typing {
+    font-size: 30px;
+  }
+}
