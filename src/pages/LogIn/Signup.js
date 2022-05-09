@@ -20,6 +20,10 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormLabel from '@mui/material/FormLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
+import axios from 'axios';
+import { useState } from 'react';
+
+
 
 const CssTextField = styled(TextField)({
   '& label.Mui-focused':{
@@ -74,6 +78,66 @@ const theme = createTheme({
 });
 
 export default function Signup() {
+  const [id, setId] = useState("");
+  const [password, setPassword] = useState("");
+  const [height, setHeight] = useState("");
+  const [weight, setWeight] = useState("");
+  const [age, setAge] = useState("");
+  const [sex, setSex] = useState("");
+  const [pa, setPa] = useState("");
+
+  const joinIn = (e) => {
+    e.preventDefault();
+    console.log(id);
+    console.log(password);
+    console.log(height);
+    console.log(weight);
+    console.log(age);
+    console.log(sex);
+    console.log(pa);
+    axios({
+      url:'http://54.187.241.111/api/signup/', //서버 주소
+      method:'post',
+      data:{
+        id : id,
+        password : password,
+        height : height,
+        weight : weight,
+        age : age,
+        sex : sex,
+        PA : pa,
+      }
+    }).then((response) => {
+      console.log(response);
+      alert("회원가입에 성공하셨습니다.");
+      // REDIRECT
+    }).catch((error)=>{
+      console.error(error);
+      if (error.response) {
+        // 요청이 이루어졌으며 서버가 2xx의 범위를 벗어나는 상태 코드로 응답했습니다.
+        console.log(error.response.data);
+        console.log(error.response.status);
+        console.log(error.response.headers);
+        if(error.response.status === 403) {
+          alert("이미 가입된 아이디입니다. 혹은 파라미터가 부족합니다");
+        }
+      }
+      else if (error.request) {
+        // 요청이 이루어 졌으나 응답을 받지 못했습니다.
+        // `error.request`는 브라우저의 XMLHttpRequest 인스턴스 또는
+        // Node.js의 http.ClientRequest 인스턴스입니다.
+        console.log(error.request);
+      }
+      else {
+        // 오류를 발생시킨 요청을 설정하는 중에 문제가 발생했습니다.
+        console.log('Error', error.message);
+      }
+      console.log(error.config);
+    })
+
+
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -110,6 +174,8 @@ export default function Signup() {
                   id="id"
                   label="아이디"
                   name="id"
+                  value={id}
+                  onChange={({target:{value}})=>setId(value)}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -121,6 +187,8 @@ export default function Signup() {
                   type="password"
                   id="password"
                   autoComplete="new-password"
+                  value={password}
+                  onChange={({target:{value}})=>setPassword(value)}
                 />
               </Grid>
               {/* new */}
@@ -132,6 +200,8 @@ export default function Signup() {
                   label="키"
                   id="height"
                   autoComplete="new-password"
+                  value={height}
+                  onChange={({target:{value}})=>setHeight(value)}
                 />
               </Grid>
               <Grid item xs={6}>
@@ -142,6 +212,8 @@ export default function Signup() {
                   label="몸무게"
                   id="weight"
                   autoComplete="new-password"
+                  value={weight}
+                  onChange={({target:{value}})=>setWeight(value)}
                 />
               </Grid>
               <Grid item xs={6}>
@@ -152,6 +224,8 @@ export default function Signup() {
                   label="나이"
                   id="age"
                   autoComplete="new-password"
+                  value={age}
+                  onChange={({target:{value}})=>setAge(value)}
                 />
               </Grid>
               <Grid item xs={6}>
@@ -165,8 +239,18 @@ export default function Signup() {
                         // value={value}
                         // onChange={handleChange}
                       >
-                        <FormControlLabel value="1" control={<Radio />} label="여성" />
-                        <FormControlLabel value="0" control={<Radio />} label="남성" />
+                        <FormControlLabel 
+                        value="1" 
+                        control={<Radio />} 
+                        label="여성"
+                        onChange={({target:{value}})=>setSex(value)}
+                        />
+                        <FormControlLabel 
+                        value="0" 
+                        control={<Radio />} 
+                        label="남성" 
+                        onChange={({target:{value}})=>setSex(value)}
+                        />
                       </RadioGroup>
                     </FormControl>
                 /* <CssTextField
@@ -184,14 +268,13 @@ export default function Signup() {
                 <Select
                   labelId="demo-simple-select-label"
                   id="demo-simple-select"
-                  // value={age}
                   label="PA"
-                  // onChange={handleChange}
+                  onChange={({target:{value}})=>setPa(value)}
                 >
-                  <MenuItem value={0}>비활동적</MenuItem>
-                  <MenuItem value={1}>저활동적</MenuItem>
-                  <MenuItem value={2}>활동적</MenuItem>
-                  <MenuItem value={3}>매우 활동적</MenuItem>
+                  <MenuItem value={0} >비활동적</MenuItem>
+                  <MenuItem value={1} >저활동적</MenuItem>
+                  <MenuItem value={2} >활동적</MenuItem>
+                  <MenuItem value={3} >매우 활동적</MenuItem>
                 </Select>
             </FormControl>
                 {/* <CssTextField
@@ -228,10 +311,11 @@ export default function Signup() {
               </Grid>
             </Grid>
             <CssButton
-              href = "/Signin"
+              // href = "/Signin"
               type="submit"
               fullWidth
               variant="contained"
+              onClick={joinIn}
               sx={{ mt: 3, mb: 2,bgcolor:'#146152'}}
               
             >
