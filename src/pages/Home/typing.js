@@ -5,8 +5,10 @@ import "./typing.css"
 const ReactTypingEffectDemo = () => {
   return (
     <div className='typing'>
+      <p>자신과의 싸움,</p>
+      <p>더 이상 지지 않을 당신을</p>
         <ReactTypingEffect
-          text={["자신과의 싸움,", "더 이상 지지 않을 당신을","JYGY 합니다."]}
+          text={["JYGY 합니다."]}
         />
     </div>
   );

@@ -18,7 +18,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { withStyles } from "@material-ui/core/styles";
 import { typography } from '@mui/system';
 
-const pages = ['식단관리', '운동',  'Calender', 'about us'];
+const pages = ['식단관리', '운동',  '캘린더', '상품 소개'];
 const settings = ['My Page', 'Account', 'Log In']; // 'Dashboard', 나중에 SignOut(?)
 
 const theme = createTheme({

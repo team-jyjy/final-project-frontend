@@ -32,7 +32,7 @@ export default function Parallax() {
           // backgroundPositionY: 'calc((position / 2)/window.innerHeight*100%)',
         }}
       >
-        <div className="copy"><p>사진 업로드 하나로 <br></br>칼로리와 영양성분 정보를 <br></br>받아보세요</p></div>
+        <div className="copy animate__animated animate__slideInRight animate__slower animate__infinite"><p>사진 업로드 하나로 <br></br>칼로리와 <br></br>영양 성분 정보를 <br></br>받아보세요</p></div>
         </div>
       </div>
       
@@ -59,8 +59,8 @@ export default function Parallax() {
         </div>
       </div>
 
-      <div className="animate__animated animate__bounceIn animate__slower animate__delay-4s animate__infinite">
-        <p className="desc2">
+      <div className="">
+        <p className="desc2 animate__animated animate__fadeIn animate__slower animate__delay-4s animate__infinite">
           여기서 끝이냐구요?<br></br>
           금융 혜택이 <br></br>당신을 기다리고 있습니다.
         </p>
