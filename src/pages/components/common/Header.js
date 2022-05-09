@@ -18,8 +18,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import { withStyles } from "@material-ui/core/styles";
 import { typography } from '@mui/system';
 
-const pages = ['식단관리', '운동',  '캘린더', '상품 소개'];
-const settings = ['My Page', 'Account', 'Log In']; // 'Dashboard', 나중에 SignOut(?)
 
 const theme = createTheme({
   typography: {
@@ -57,6 +55,16 @@ const Header = () => {
   const classes = useStyles();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const pages = [
+    {menu: '식단관리', link: "/foodschedule" }, 
+    {menu: '운동', link: "/foodschedule" },
+    {menu: '캘린더', link: "/foodschedule" }, 
+    {menu: '상품소개', link: "/product" }];
+
+  const settings = [
+    {myfunc: 'My Page', link:"/foodschedule"}, 
+    {myfunc: 'Account', link:"/foodschedule"},
+    {myfunc: 'LogIn', link:"/signin"}];
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -127,36 +135,45 @@ const Header = () => {
                 }}
               >
                 {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <GreenFont>
-                    <Typography textAlign="center"
-                    >{page}</Typography>
-                    </GreenFont>
-                  </MenuItem>
+                  <Link style={{ textDecoration: 'none' }} to={page.link} key={page.menu}>
+                    <MenuItem onClick={handleCloseNavMenu}>
+                      <GreenFont>
+                      <Typography textAlign="center"
+                      >{page.menu}</Typography>
+                      </GreenFont>
+                    </MenuItem>
+                  </Link>
                 ))}
               </Menu>
             </Box>
             <Box sx={{ flexGrow: 1}} display="block">
-              <img
-                // src = {logo}
-                src = {logo}
-                width = {100}
-                className={classes.logo_off}
-                // noWrap
-              >
-              </img>
+              <Link to="/">
+                <img
+                  // src = {logo}
+                  src = {logo}
+                  width = {100}
+                  className={classes.logo_off}
+                  // noWrap
+                >
+                </img>
+              </Link>
             </Box>
+
             <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' } }}>
               {pages.map((page) => (
+                <Link style={{ textDecoration: 'none' }} to={page.link} key={page.menu}>
                 <Button
-                  key={page}
+                  key={page.menu}
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: '#146152', display: 'block' }}
                 >
-                  {page}
+                  {page.menu}
                 </Button>
+                </Link>
               ))}
+              
             </Box>
+            
 
             <Box sx={{ flexGrow: 0}}>
               <Tooltip title="Open settings">
@@ -182,9 +199,11 @@ const Header = () => {
                 onClose={handleCloseUserMenu}
               >
                 {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu}> 
-                    <Typography textAlign="center" >{setting}</Typography>
-                  </MenuItem>
+                  <Link style={{ textDecoration: 'none' }} to={setting.link} key={setting.myfunc}>
+                    <MenuItem key={setting.myfunc} onClick={handleCloseUserMenu}> 
+                      <Typography textAlign="center" >{setting.myfunc}</Typography>
+                    </MenuItem>
+                  </Link>
                 ))}
               </Menu>
             </Box>

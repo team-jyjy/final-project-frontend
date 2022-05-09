@@ -109,10 +109,10 @@ export default function Signin() {
               margin="normal"
               required
               fullWidth
-              id="email"
-              label="이메일 주소"
-              name="email"
-              autoComplete="email"
+              id="id"
+              label="아이디 입력"
+              name="id"
+              autoComplete="id"
               autoFocus
               // color="success"
 

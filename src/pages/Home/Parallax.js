@@ -6,6 +6,7 @@ import item4 from "../../assets/images/finance.png"
 import "./Parallax.css"
 import 'animate.css';
 import ReactTypingEffectDemo from "./typing"
+import { Link } from "react-router-dom";
 
 export default function Parallax() {
   const [position, setPosition] = useState(0);
@@ -65,7 +66,11 @@ export default function Parallax() {
           금융 혜택이 <br></br>당신을 기다리고 있습니다.
         </p>
         <div className="item4Container">
-          <img className = "item4" src={item4}></img>
+          <img className = "item4" src={item4}>
+          </img>
+          <Link to={"/product"}>
+          <div id="productlink">상품 안내 바로 가기</div>
+          </Link>
         </div> 
       </div>
 

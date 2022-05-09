@@ -15,6 +15,11 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {styled} from '@mui/material/styles'
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormLabel from '@mui/material/FormLabel';
+import MenuItem from '@mui/material/MenuItem';
+import Select from '@mui/material/Select';
 
 const CssTextField = styled(TextField)({
   '& label.Mui-focused':{
@@ -102,22 +107,9 @@ export default function Signup() {
                 <CssTextField
                   required
                   fullWidth
-                  id="Name"
-                  label="이름"
-                  name="Name"
-                  autoComplete="family-name"
-                  // color="success"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <CssTextField
-                  required
-                  fullWidth
-                  id="email"
-                  label="이메일"
-                  name="email"
-                  autoComplete="email"
-                  color="success"
+                  id="id"
+                  label="아이디"
+                  name="id"
                 />
               </Grid>
               <Grid item xs={12}>
@@ -129,9 +121,90 @@ export default function Signup() {
                   type="password"
                   id="password"
                   autoComplete="new-password"
-                  color="success"
                 />
               </Grid>
+              {/* new */}
+              <Grid item xs={6}>
+                <CssTextField
+                  required
+                  fullWidth
+                  name="height"
+                  label="키"
+                  id="height"
+                  autoComplete="new-password"
+                />
+              </Grid>
+              <Grid item xs={6}>
+                <CssTextField
+                  required
+                  fullWidth
+                  name="weight"
+                  label="몸무게"
+                  id="weight"
+                  autoComplete="new-password"
+                />
+              </Grid>
+              <Grid item xs={6}>
+                <CssTextField
+                  required
+                  fullWidth
+                  name="age"
+                  label="나이"
+                  id="age"
+                  autoComplete="new-password"
+                />
+              </Grid>
+              <Grid item xs={6}>
+                {
+                      <FormControl>
+                      <FormLabel id="demo-controlled-radio-buttons-group"></FormLabel>
+                      <RadioGroup
+                        row
+                        aria-labelledby="demo-controlled-radio-buttons-group"
+                        name="controlled-radio-buttons-group"
+                        // value={value}
+                        // onChange={handleChange}
+                      >
+                        <FormControlLabel value="1" control={<Radio />} label="여성" />
+                        <FormControlLabel value="0" control={<Radio />} label="남성" />
+                      </RadioGroup>
+                    </FormControl>
+                /* <CssTextField
+                  required
+                  fullWidth
+                  name="sex"
+                  label="성별"
+                  id="sex"
+                  autoComplete="new-password"
+                /> */}
+              </Grid>
+              <Grid item xs={12}>
+              <FormControl fullWidth>
+                <InputLabel id="demo-simple-select-label">활동지수</InputLabel>
+                <Select
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  // value={age}
+                  label="PA"
+                  // onChange={handleChange}
+                >
+                  <MenuItem value={0}>비활동적</MenuItem>
+                  <MenuItem value={1}>저활동적</MenuItem>
+                  <MenuItem value={2}>활동적</MenuItem>
+                  <MenuItem value={3}>매우 활동적</MenuItem>
+                </Select>
+            </FormControl>
+                {/* <CssTextField
+                  required
+                  fullWidth
+                  name="pa"
+                  label="pa?"
+                  id="pa"
+                  autoComplete="new-password"
+                /> */}
+              </Grid>
+              
+
               <Grid item xs={12}>
                 <FormControlLabel
                   control={<Checkbox value="allowExtraEmails" sx={{
