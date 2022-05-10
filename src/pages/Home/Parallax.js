@@ -69,7 +69,9 @@ export default function Parallax() {
           <img className = "item4" src={item4}>
           </img>
           <Link to={"/product"}>
-          <div id="productlink">상품 안내 바로 가기</div>
+          <button id="productlink" sx={{bgcolor:'#9509fe'}}>
+            <div>상세 페이지</div>
+          </button>
           </Link>
         </div> 
       </div>

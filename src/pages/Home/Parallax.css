@@ -2,6 +2,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background-color: #ffba4a; */
 }
 
 .wrapper {
@@ -132,8 +133,8 @@ body {
   position: relative;
   padding-left: 1rem;
   padding-right: 1rem;
-  width: 80vmin;
-  height:50vmin;
+  width: 90vmin;
+  height:100vmin;
 }
 
 .item4Container .item4 {
@@ -158,9 +159,17 @@ body {
 }
 
 #productlink {
-  top:80%;
-  left:20%;
+  top:88%;
+  left:50%;
   position: absolute;
   z-index: 5;
+  color: white;
+  background-color: #9509fe;
+  border-radius: 30px;
+  padding: .3rem 1.7rem;
+  margin: 0 auto;
+  border: none;
+  transform: translate(-50%,-50%);
 }
+
 
