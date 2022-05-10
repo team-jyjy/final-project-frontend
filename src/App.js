@@ -8,8 +8,9 @@ import MyPage from "./pages/MyPage/MyPage"
 import NotFound from "./pages/NotFound";
 import './pages/components/common/Header.css';
 import Responsive from "./pages/responsive"
-import Foodschedule from "./pages/DLModel/foodschedule"
+import Foodschedule from "./pages/main/DLModel/foodschedule"
 import Product from "./pages/main/Product"
+import Calendar from "./pages/main/Calendar"
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/mypage" element = {<MyPage />} />
           <Route path="/responsive" element = {<Responsive />} />
           <Route path="/foodschedule" element = {<Foodschedule/>}/>
+          <Route path ="/calendar" element = {<Calendar/>}/>
           <Route path="/product" element = {<Product/>}/>
           {/* <Route path="/profiles/:username" element={<Profile />}/> */}
           </Route>
