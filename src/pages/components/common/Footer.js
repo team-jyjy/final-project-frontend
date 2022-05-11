@@ -12,13 +12,13 @@ const Footer = () => {
   };
 
   return (
-    <div>
-      <header >
-      </header>
-      <main>
-        <Outlet>
-        </Outlet>
-      </main>
+    <div className='wrap'>
+        <header >
+        </header>
+        <main>
+          <Outlet>
+          </Outlet>
+        </main>
       <footer style={{background : 'lightgray', padding:16, fontSize:24}}> 
         <button onClick={goBack}>뒤에 </button>
         <button onClick={goArticles}>게시글 dpd</button>
