@@ -79,6 +79,7 @@ const theme = createTheme({
 
 export default function Signup() {
   const [id, setId] = useState("");
+  const [nickname, setNickname] = useState("");
   const [password, setPassword] = useState("");
   const [height, setHeight] = useState("");
   const [weight, setWeight] = useState("");
@@ -89,6 +90,7 @@ export default function Signup() {
   const joinIn = (e) => {
     e.preventDefault();
     console.log(id);
+    console.log(nickname);
     console.log(password);
     console.log(height);
     console.log(weight);
@@ -100,12 +102,13 @@ export default function Signup() {
       method:'post',
       data:{
         id : id,
+        nickname : nickname,
         password : password,
         height : height,
         weight : weight,
         age : age,
         sex : sex,
-        PA : pa,
+        pa : pa,
       }
     }).then((response) => {
       console.log(response);
@@ -176,6 +179,17 @@ export default function Signup() {
                   name="id"
                   value={id}
                   onChange={({target:{value}})=>setId(value)}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <CssTextField
+                  required
+                  fullWidth
+                  id="nickname"
+                  label="닉네임"
+                  name="nickname"
+                  value={nickname}
+                  onChange={({target:{value}})=>setNickname(value)}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -268,7 +282,7 @@ export default function Signup() {
                 <Select
                   labelId="demo-simple-select-label"
                   id="demo-simple-select"
-                  label="PA"
+                  label="pa"
                   onChange={({target:{value}})=>setPa(value)}
                 >
                   <MenuItem value={0} >비활동적</MenuItem>
