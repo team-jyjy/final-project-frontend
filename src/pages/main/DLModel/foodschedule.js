@@ -43,6 +43,8 @@ const Foodschedule = () => {
       let test = document.getElementById('test');
       model.predict(inputRef.current, false).then(result => {
         console.log("예측 성공");
+        result.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
+        console.log(result[0]);
       }).catch(error=>{
         console.error(error);
       });
