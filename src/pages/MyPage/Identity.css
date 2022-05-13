@@ -1,0 +1,81 @@
+.Container1 {
+  margin-top: 30px;
+  margin-left: 30px;
+  background-color: antiquewhite;
+}
+
+#pf {
+  width: 100%;
+  object-fit: cover;
+}
+
+.avater {
+}
+
+.info {
+  background-color: aquamarine;
+  /* left:50px; */
+}
+
+@media (max-width:800px) {
+  .info {
+    width: 80vmin;
+    padding: 10px;
+  }
+}
+
+.inner {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  width: 110vmin;
+  height: 30vmin;
+  background-color: yellow;
+  margin: auto;
+  box-shadow: 3px 3px 3px gray;
+  border-radius: 10px;
+}
+
+@media (max-width:800px) {
+  .inner {
+    width: 80vmin;
+    padding: 10px;
+  }
+}
+
+#name {
+  font-weight: bold;
+}
+
+#id{
+  text-align: right;
+}
+
+#sex{
+  text-align: right;
+}
+
+#weight{
+  text-align: right;
+}
+
+#height{
+  text-align: right;
+}
+
+.name {
+  margin-left: 30px;
+}
+
+.agesex {
+  margin-left:30px
+}
+
+.body {
+  margin-left:30px
+}
+
+span {
+  padding: 10px;
+}

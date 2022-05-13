@@ -23,11 +23,12 @@ const CssButton = styled(Button)({
   // },
   '&:hover':{
     backgroundColor:'#f9f9f9',
-    borderColor: '#146152',
+    borderColor: '#46057f',
+    color : '#46057f',
     
   },
   '&:active':{
-    backgroundColor:'#146152'
+    backgroundColor:'#46057f'
   },
   '&:focus':{
     boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
@@ -88,7 +89,7 @@ function PricingContent() {
           component="h1"
           fontSize={'4.5vw'}
           align="center"
-          color="#146152"
+          color="black"
           gutterBottom
           fontFamily={'EliceDigitalBaeum'}
         >
@@ -129,7 +130,7 @@ function PricingContent() {
                         theme.palette.mode === 'light'
                           ? theme.palette.grey[100]
                           : theme.palette.grey[700],
-                      color:'#146152',
+                      color:'black',
                     }}
                   />
                   <CardContent>
@@ -141,7 +142,7 @@ function PricingContent() {
                         mb: 2,
                       }}
                     >
-                        <Typography component="h2" fontSize={'3vw'} fontFamily={'EliceDigitalBaeum'} sx={{color:'#146152'}}>
+                        <Typography component="h2" fontSize={'3vw'} fontFamily={'EliceDigitalBaeum'} sx={{color:'black'}}>
                           ${tier.price}
                         </Typography>
 
@@ -166,7 +167,7 @@ function PricingContent() {
                   </CardContent>
                   <CardActions>
                     <CssButton fullWidth variant={tier.buttonVariant}
-                    sx={{borderColor:"#b4cf66", color:"#146152", bgcolor:"#b4cf66"}}
+                    sx={{borderColor:"#b4cf66", color:"white", bgcolor:"#46057f"}}
                     >
                     <Typography fontFamily={'EliceDigitalBaeum'}>
                       {tier.buttonText}

@@ -37,7 +37,7 @@ body {
   background: rgba(255, 255, 255, 0.5);
   text-align: right;
   width: 100%;
-  color : #146152;
+  color : black;
   /* font-size: 3vw; */
   
   /* font-size: 3.5vw; */
@@ -79,7 +79,7 @@ body {
   background: rgba(255, 255, 255, 0.5);
   text-align: left;
   width: 100%;
-  color : #146152;
+  color : black;
 
 }
 
@@ -114,7 +114,7 @@ body {
 .desc {
   text-align: right;
   font-size: 3rem;
-  color : #146152;
+  color : black;
   margin-right: 6rem;
 }
 
@@ -147,7 +147,7 @@ body {
 .desc2 {
   text-align: center;
   font-size: 3rem;
-  color : #146152;
+  color : black;
   margin-top: 5rem;
   margin-bottom: 3.5rem;
 }

@@ -27,7 +27,7 @@ const theme = createTheme({
 
 const GreenFont = withStyles({
   root:{
-    color:"#146152"
+    color:"black"
   }
 })(Typography);
 
@@ -62,7 +62,7 @@ const Header = () => {
     {menu: '상품소개', link: "/product" }];
 
   const settings = [
-    {myfunc: 'My Page', link:"/foodschedule"}, 
+    {myfunc: 'My Page', link:"/mypage"}, 
     {myfunc: 'Account', link:"/foodschedule"},
     {myfunc: 'LogIn', link:"/signin"}];
 
@@ -165,7 +165,7 @@ const Header = () => {
                 <Button
                   key={page.menu}
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: '#146152', display: 'block' }}
+                  sx={{ my: 2, color: 'black', display: 'block' }}
                 >
                   {page.menu}
                 </Button>

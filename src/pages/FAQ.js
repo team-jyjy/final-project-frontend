@@ -12,7 +12,7 @@ const Accordion = styled((props) => (
 ))(({ theme }) => ({
   // spacing : [30, 50, 70, 90],
   //border: `5px solid ${theme.palette.divider}`,
-  border: `5px solid rgba(20,97,82,.5)`,
+  border: `5px solid rgba(149, 9, 254, .5)`,
   width : '70%',
   '&:not(:last-child)': {
     borderBottom: 0,
@@ -31,8 +31,8 @@ const AccordionSummary = styled((props) => (
   backgroundColor:
     theme.palette.mode === 'dark'
     // 칸 배경
-      ? 'rgba(180,207,102,.9)'
-      : 'rgba(180,207,102,.9)',
+      ? theme.palette.grey[100]
+      : theme.palette.grey[100],
   flexDirection: 'row-reverse',
   '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
     transform: 'rotate(90deg)',
@@ -45,7 +45,7 @@ const AccordionSummary = styled((props) => (
 const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   padding: theme.spacing(2),
   // 사이 배경
-  borderTop: '3px solid rgba(20, 97, 82, .5)',
+  borderTop: '3px solid rgba(149, 9, 254, .5)',
 }));
 
 export default function FAQ() {
