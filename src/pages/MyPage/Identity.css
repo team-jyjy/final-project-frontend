@@ -1,7 +1,44 @@
 .Container1 {
-  margin-top: 30px;
-  margin-left: 30px;
-  background-color: antiquewhite;
+  margin-top: 50px;
+  margin-left: 50px;
+  /* display: flex; */
+  padding: 10px;
+}
+.wrapper{
+  width: 100vmin;
+  margin: 0 auto;
+}
+
+.wrapper span{
+  color: rgba(79,84,86);
+}
+
+@media (max-width:1200px){
+  .wrapper{
+    width:80vmin;
+    margin: 0 auto;
+  }
+}
+
+
+.mypf {
+  /* margin-left: 120px; */
+  margin-left: 20px;
+  font-size:30px;
+  color:rgba(79,84,86);
+}
+@media (max-width:1200px){
+  .mypf {
+    font-size:25px;
+    margin-left: 30px;
+  }
+}
+
+@media (max-width:600px){
+  .mypf {
+    font-size:20px;
+    margin-left: 20px;
+  }
 }
 
 #pf {
@@ -13,69 +50,113 @@
 }
 
 .info {
-  background-color: aquamarine;
-  /* left:50px; */
+  /* background-color: aquamarine; */
+  font-size: 30px;
+  margin-left: 30px;
 }
 
-@media (max-width:800px) {
+@media (max-width:1200px) {
   .info {
     width: 80vmin;
     padding: 10px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width:600px) {
+  .info {
+    width: 70vmin;
+    padding: 10px;
+    font-size: 13px;
+    margin-left: 10px;
+  }
+}
+
+@media (max-width:400px) {
+  .info {
+    width: 70vmin;
+    padding: 10px;
+    font-size: 5px;
+    margin-left: 10px;
   }
 }
 
 .inner {
   position: relative;
   padding: 20px;
+  margin-top: 20px;
   display: flex;
   align-items: center;
-  width: 110vmin;
-  height: 30vmin;
-  background-color: yellow;
-  margin: auto;
+  width: 120vmin;
+  height: 20vmin;
+  margin-left: 120px;
+  border: 1px solid rgba(210, 215, 211, 1);
   box-shadow: 3px 3px 3px gray;
   border-radius: 10px;
 }
 
-@media (max-width:800px) {
+@media (max-width:1200px) {
   .inner {
     width: 80vmin;
     padding: 10px;
+    margin-left: 30px;
   }
 }
 
-#name {
-  font-weight: bold;
+@media (max-width:600pc) {
+  .inner {
+    width: 70vmin;
+    padding: 10px;
+    margin-left: 20px;
+  }
 }
 
-#id{
-  text-align: right;
+.info span{
+  padding-right: 10px;
+  /* box-sizing: border-box; */
+}
+.age {
+  display: inline-block;
+  /* background-color: blue; */
+  width: 20vmin;
+  box-sizing: border-box;
 }
 
-#sex{
-  text-align: right;
+.sex {
+  display: inline-block;
+  /* background-color: red; */
+  width: 20vmin;
+  box-sizing: border-box;
+}
+.height {
+  display: inline-block;
+  /* background-color: red; */
+  width: 20vmin;
+  box-sizing: border-box;
+}
+.weight {
+  display: inline-block;
+  /* background-color: blue; */
+  width: 20vmin;
+  box-sizing: border-box;
 }
 
-#weight{
-  text-align: right;
+#age {
+  /* background-color: aqua; */
+  float: right;
 }
 
-#height{
-  text-align: right;
+#sex {
+  /* background-color: aqua; */
+  float: right;
 }
 
-.name {
-  margin-left: 30px;
+#height {
+  /* background-color: aqua; */
+  float: right;
 }
 
-.agesex {
-  margin-left:30px
-}
-
-.body {
-  margin-left:30px
-}
-
-span {
-  padding: 10px;
+#weight {
+  /* background-color: aqua; */
+  float: right;
 }
