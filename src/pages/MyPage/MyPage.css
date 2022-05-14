@@ -87,7 +87,7 @@
   width: 120vmin;
   height: 20vmin;
   margin-left: 120px;
-  border: 1px solid rgba(210, 215, 211, 1);
+  border: 1px solid rgba(210, 215, 211, 1); 
   box-shadow: 3px 3px 3px gray;
   border-radius: 10px;
 }

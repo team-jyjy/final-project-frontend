@@ -22,36 +22,56 @@ import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import axios from 'axios';
 import { useState } from 'react';
-
-
+import item1 from "./../../assets/images/bg.jpg"
+import "./Signup.css"
 
 const CssTextField = styled(TextField)({
   '& label.Mui-focused':{
-    color: '#146152',
+    color: '#9509fe',
   },
   '& .MuiInput-underline:after': {
-    borderBottomColor: '#146152',
+    borderBottomColor: '#9509fe',
   },
   '& .MuiOutlinedInput-root': {
     '& fieldset': {
-      borderColor: '#146152',
+      borderColor: '#9509fe',
     },
     '&:hover fieldset': {
-      borderColor: '#146152',
+      borderColor: '#9509fe',
     },
     '&.Mui-focused fieldset': {
-      borderColor: '#146152',
+      borderColor: '#9509fe',
+    },
+  },
+})
+
+const CssFormControl = styled(FormControl)({
+  '& label.Mui-focused':{
+    color: '#9509fe',
+  },
+  '& .MuiInput-underline:after': {
+    borderBottomColor: '#9509fe',
+  },
+  '& .MuiOutlinedInput-root': {
+    '& fieldset': {
+      borderColor: '#9509fe',
+    },
+    '&:hover fieldset': {
+      borderColor: '#9509fe',
+    },
+    '&.Mui-focused fieldset': {
+      borderColor: '#9509fe',
     },
   },
 })
 
 const CssButton = styled(Button)({
   '&:hover':{
-    backgroundColor:'#146152',
+    backgroundColor:'#9509fe',
     borderColor: '#b4cf66',
   },
   '&:active':{
-    backgroundColor:'#146152'
+    backgroundColor:'#9509fe'
   },
   '&:focus':{
     boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
@@ -151,6 +171,7 @@ export default function Signup() {
   };
 
   return (
+    <div className='Container'>
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
@@ -162,7 +183,7 @@ export default function Signup() {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "#146152" }}>
+          <Avatar sx={{ m: 1, bgcolor: "#9509fe" }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
@@ -255,13 +276,21 @@ export default function Signup() {
                       >
                         <FormControlLabel 
                         value="1" 
-                        control={<Radio />} 
+                        control={<Radio sx={{
+                          [`&, &.${checkboxClasses.checked}`]: {
+                            color: '#9509fe',
+                          },
+                        }}/>} 
                         label="여성"
                         onChange={({target:{value}})=>setSex(value)}
                         />
                         <FormControlLabel 
                         value="0" 
-                        control={<Radio />} 
+                        control={<Radio sx={{
+                          [`&, &.${checkboxClasses.checked}`]: {
+                            color: '#9509fe',
+                          },
+                        }}/>} 
                         label="남성" 
                         onChange={({target:{value}})=>setSex(value)}
                         />
@@ -277,7 +306,7 @@ export default function Signup() {
                 /> */}
               </Grid>
               <Grid item xs={12}>
-              <FormControl fullWidth>
+              <CssFormControl fullWidth>
                 <InputLabel id="demo-simple-select-label">활동지수</InputLabel>
                 <Select
                   labelId="demo-simple-select-label"
@@ -290,7 +319,7 @@ export default function Signup() {
                   <MenuItem value={2} >활동적</MenuItem>
                   <MenuItem value={3} >매우 활동적</MenuItem>
                 </Select>
-            </FormControl>
+            </CssFormControl>
                 {/* <CssTextField
                   required
                   fullWidth
@@ -306,7 +335,7 @@ export default function Signup() {
                 <FormControlLabel
                   control={<Checkbox value="allowExtraEmails" sx={{
                     [`&, &.${checkboxClasses.checked}`]: {
-                      color: '#146152',
+                      color: '#9509fe',
                     },
                   }}/>}
                   label="회원 약관 및 개인정보 처리방침에 동의합니다. (필수)"
@@ -317,7 +346,7 @@ export default function Signup() {
                   control={<Checkbox value="allowExtraEmails" 
                   sx={{
                     [`&, &.${checkboxClasses.checked}`]: {
-                      color: '#146152',
+                      color: '#9509fe',
                     },
                   }}/>}
                   label="광고 동의 (선택)"
@@ -330,7 +359,7 @@ export default function Signup() {
               fullWidth
               variant="contained"
               onClick={joinIn}
-              sx={{ mt: 3, mb: 2,bgcolor:'#146152'}}
+              sx={{ mt: 3, mb: 2,bgcolor:'#9509fe'}}
               
             >
               회원 가입
@@ -347,5 +376,6 @@ export default function Signup() {
         <Copyright sx={{ mt: 5 }} />
       </Container>
     </ThemeProvider>
+    </div>
   );
 }

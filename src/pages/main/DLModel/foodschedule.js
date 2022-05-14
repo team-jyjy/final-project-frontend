@@ -5,10 +5,16 @@ import * as tmImage from '@teachablemachine/image';
 import styled from "styled-components";
 import { useNavigate } from 'react-router-dom';
 
-const URL = 'https://teachablemachine.withgoogle.com/models/8ioYuXbUM/';
+// 우리 꺼
+const URL = 'https://teachablemachine.withgoogle.com/models/NqT_4_VDW/';
+
+// 테스트 용 남의 거
+// const URL = 'https://teachablemachine.withgoogle.com/models/KAoZrcPlp/'; 
 const modelURL  = URL + 'model.json';
 const metadataURL = URL + 'metadata.json';
-let model;
+const weights = URL + 'model.weights.bin';
+
+let model
 
 const Container = styled.div`
   margin-left:auto;
@@ -98,9 +104,11 @@ const Foodschedule = () => {
 
   async function init() {
     model = await tmImage.load(modelURL, metadataURL);
+    // model = await tmImage.loadFromFiles(modelURL, weights, metadataURL);
     //총 클래스 수
     let maxPredictions;
     maxPredictions = model.getTotalClasses();
+    console.log(model);
   }
 
   async function predict() {
@@ -108,7 +116,7 @@ const Foodschedule = () => {
     model = await tmImage.load(modelURL, metadataURL);
     const tempImage = document.getElementById('srcImg');
     const prediction = await model.predict(tempImage, false);
-    // prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
+    prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
     console.log(model);
     setPredictionArr(prediction)
     setShowResult(true)

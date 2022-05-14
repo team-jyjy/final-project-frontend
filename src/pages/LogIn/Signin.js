@@ -21,34 +21,35 @@ import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import axios from 'axios';
 import { useState } from 'react';
+import "./Signin.css"
 
 const CssTextField = styled(TextField)({
   '& label.Mui-focused':{
-    color: '#146152',
+    color: '#9509fe',
   },
   '& .MuiInput-underline:after': {
-    borderBottomColor: '#146152',
+    borderBottomColor: '#9509fe',
   },
   '& .MuiOutlinedInput-root': {
     '& fieldset': {
-      borderColor: '#146152',
+      borderColor: '#9509fe',
     },
     '&:hover fieldset': {
-      borderColor: '#146152',
+      borderColor: '#9509fe',
     },
     '&.Mui-focused fieldset': {
-      borderColor: '#146152',
+      borderColor: '#9509fe',
     },
   },
 })
 
 const CssButton = styled(Button)({
   '&:hover':{
-    backgroundColor:'#146152',
+    backgroundColor:'#9509fe',
     borderColor: '#b4cf66',
   },
   '&:active':{
-    backgroundColor:'#146152'
+    backgroundColor:'#9509fe'
   },
   '&:focus':{
     boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
@@ -63,7 +64,7 @@ const CssButton = styled(Button)({
 
 function Copyright(props) {
   return (
-    <Typography variant="body2" color='#146152' align="center" {...props}>
+    <Typography variant="body2" color='#9509fe' align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
         Your Website
@@ -133,6 +134,7 @@ export default function Signin() {
   };
 
   return (
+    <div className='Container'>
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
@@ -145,7 +147,7 @@ export default function Signin() {
             
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: '#146152' }}>
+          <Avatar sx={{ m: 1, bgcolor: '#9509fe' }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
@@ -183,7 +185,7 @@ export default function Signin() {
               control={<Checkbox value="remember"
               sx={{
                 [`&, &.${checkboxClasses.checked}`]: {
-                  color: '#146152',
+                  color: '#9509fe',
                 },
               }}
               // color="success"
@@ -196,7 +198,7 @@ export default function Signin() {
               fullWidth
               variant="contained"
               onClick={logIn}
-              sx={{ mt: 3, mb: 2, bgcolor:'#146152'}}
+              sx={{ mt: 3, mb: 2, bgcolor:'#9509fe'}}
               // color="success"
             >
               로그인
@@ -218,5 +220,6 @@ export default function Signin() {
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
     </ThemeProvider>
+    </div>
   );
 }

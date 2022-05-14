@@ -16,3 +16,10 @@
 #about {
   font-size: 3vw;
 }
+
+.Container {
+  background-image: url(./../../assets/images/bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 100%;
+}

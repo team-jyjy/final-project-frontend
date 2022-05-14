@@ -7,7 +7,7 @@ import Parallax from "./Parallax"
 import Main from './main'
 const Home = () => {
   return (
-    <div>
+    <div className='Container'>
       <Main />
       
       <Parallax />
