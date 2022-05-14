@@ -46,9 +46,6 @@
   object-fit: cover;
 }
 
-.avater {
-}
-
 .info {
   /* background-color: aquamarine; */
   font-size: 30px;
@@ -159,4 +156,95 @@
 #weight {
   /* background-color: aqua; */
   float: right;
+}
+
+/* finance */
+.Container2 {
+  margin-top: 50px;
+  margin-left: 110px;
+  margin-bottom: 150px;
+  padding: 10px;
+  /* background-color: aliceblue; */
+}
+
+@media (max-width:1200px){
+  .Container2{
+    margin-left: 70px;
+  }
+  
+}
+
+.finance{
+  width: 100vmin;
+  margin: 0 auto;
+}
+
+@media (max-width:1200px){
+  .finance{
+    width:80vmin;
+    margin: 0 auto;
+  }
+}
+
+.inner2{
+  padding: 20px;
+  margin-top: 20px;
+  width: 120vmin;
+  height: 20vmin;
+  border: 1px solid rgba(210, 215, 211, 1);
+  box-shadow: 3px 3px 3px gray;
+  border-radius: 10px;
+}
+
+@media (max-width:1200px) {
+  .inner2 {
+    width: 80vmin;
+    padding: 10px;
+    margin-left: 30px;
+  }
+}
+
+@media (max-width:600pc) {
+  .inner2 {
+    width: 70vmin;
+    padding: 10px;
+    margin-left: 20px;
+  }
+}
+
+.graph{
+  margin-left: 20px;
+  margin-bottom: 35px;
+}
+
+.ment {
+  margin-left: 80px;
+  font-size: 28px;
+  color: rgba(79,84,86);
+}
+
+@media (max-width:1200px) {
+  .ment {
+    width: 80vmin;
+    padding: 10px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width:600px) {
+  .ment {
+    width: 70vmin;
+    padding: 10px;
+    font-size: 13px;
+    margin-left: 10px;
+  }
+}
+
+@media (max-width:400px) {
+  .ment {
+    width: 70vmin;
+    padding: 10px;
+    font-size: 5px;
+    margin-left: 10px;
+  }
 }
