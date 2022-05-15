@@ -2,17 +2,66 @@ import React,{useState,useRef,useEffect} from 'react'
 // import * as tf from '@tensorflow/tfjs';
 import * as tmImage from '@teachablemachine/image';
 import styled from "styled-components";
+// import { FaArrowAltCircleDown } from "react-icons/fa";
+import { BsFillArrowDownSquareFill } from "react-icons/bs";
 // import { render } from "react-dom";
 import { useNavigate } from "react-router-dom";
-
-// const URL = 'https://teachablemachine.withgoogle.com/models/F1nMeBJwX/';
-//원래꺼
-//const URL = 'https://teachablemachine.withgoogle.com/models/KAoZrcPlp/';
+import Button from '@mui/material/Button';
+import axios from 'axios';
 const URL = 'https://teachablemachine.withgoogle.com/models/NqT_4_VDW/';
 const modelURL = URL + 'model.json';
 const metadataURL = URL + 'metadata.json';
 
 let model
+
+const Btn=styled.button`
+   background-color:#9509fe;
+   width:130px;
+   padding:10px 10px;
+   border-radius:20px;
+   color:white;
+   font-size:15px;
+   font-weight:800;
+`;
+
+
+
+const ResultContainer=styled.div`
+    width:100%;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+`;
+
+const ReulstScore=styled.h1`
+    color:'black';
+    font-size:20px;
+    font-weight:bolder;
+    margin-right:5px;
+    @media (min-width: 800px) {
+      font-size:30px;
+  }
+`;
+const ReulstName=styled.h1`
+    color:'black';
+    font-size:20px;
+    font-weight:bolder;
+    // background-color:#304967;
+    margin-left:5px;
+    padding:5px 7px;
+    @media (min-width: 800px) {
+      font-size:30px;
+  }
+`;
+
+const MiddleContainer=styled.div`
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    margin-top:5%;
+`;
 
 const Container = styled.div`
   margin-top:30px;
@@ -45,7 +94,8 @@ const Image=styled.img`
 const TopStartLoading=styled.h1`
   font-size:20px;
   font-weight:bolder;   
-  color:#0f3457;
+  // color:#9509fe;
+  color : 'black';
   margin-top:3%;
   margin-bottom:30px;
   @media (min-width: 800px) {
@@ -57,7 +107,8 @@ const TopStartLoading=styled.h1`
 const TopStart=styled.h1`
   font-size:20px;
   font-weight:bolder;   
-  color:#0f3457;
+  // color:#9509fe;
+  color : 'black';
   margin-top:3%;
   @media (min-width: 800px) {
     font-size:30px;
@@ -69,7 +120,7 @@ const ImageUploadContainer=styled.input`
     height:100%;
     position:absolute;
     top:0;
-    // display:none;
+    display:none;
 `;
 
 const ImageContainer=styled.div`
@@ -98,6 +149,47 @@ const Foodschedule = ({history}) => {
     const [predictionArr,setPredictionArr]=useState([]);
     const [result,setResult]=useState(null);
     const [keyword,setKeyword]=useState(null);
+    //화면에 찍기 테스트
+
+    //for api
+    const foodInquire = (e) => {
+      e.preventDefault();
+      console.log(predictionArr[0].className);
+      axios({
+        url:'http://54.187.241.111/food/get_food_info/',
+        method:'post',
+        data:{
+          food_name : predictionArr[0].className,
+        }
+      }).then((response) => {
+        console.log(response);
+        alert("음식 조회에 성공하셨습니다.");
+        console.log(response.data.food_cal);
+        // REDIRECT
+      }).catch((error)=>{
+        console.error(error);
+        if (error.response) {
+          // 요청이 이루어졌으며 서버가 2xx의 범위를 벗어나는 상태 코드로 응답했습니다.
+          console.log(error.response.data);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+          if(error.response.status === 403) {
+            alert("뭔가 잘못하신 듯?");
+          }
+        }
+        else if (error.request) {
+          // 요청이 이루어 졌으나 응답을 받지 못했습니다.
+          // `error.request`는 브라우저의 XMLHttpRequest 인스턴스 또는
+          // Node.js의 http.ClientRequest 인스턴스입니다.
+          console.log(error.request);
+        }
+        else {
+          // 오류를 발생시킨 요청을 설정하는 중에 문제가 발생했습니다.
+          console.log('Error', error.message);
+        }
+        console.log(error.config);
+      })
+    }
 
 
     //react-router 사용
@@ -176,7 +268,36 @@ const Foodschedule = ({history}) => {
         </>
         }
       </ImageContainer>
+      {/* 여기부터 이어서 결과 확인할 수 있게  추가 */}
+      {showResult&&result!==null?
+        <>
+        <MiddleContainer>
+            <BsFillArrowDownSquareFill size={40} color="#323232"></BsFillArrowDownSquareFill>
+            <ResultContainer>
+                <ReulstScore>{showResult?`${(predictionArr[0].probability*100).toFixed(1)}%`:null}</ReulstScore>
+                <ReulstName>{showResult?predictionArr[0].className:null}</ReulstName>
+                
+            </ResultContainer>
+            {/* 조회하기 버튼 */}
+            <Btn
+              // href = "/"
+              type="submit"
+              fullWidth
+              variant="contained"
+              onClick={foodInquire}
+              sx={{ mt: 3, mb: 2, bgcolor:'#9509fe', borderColor:'#9509fe'}}
+              // color="success"
+            >
+              식단 정보 조회
+            </Btn>
+            {/* 조회하기 버튼 */}
+        </MiddleContainer>   
+      
+        </>
+      :null}
+      {/* 여기까지 */}
     </Container>
+
   )
 }
 
