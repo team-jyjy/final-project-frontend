@@ -25,6 +25,8 @@ const metadataURL = URL + 'metadata.json';
 
 let model
 
+
+
 const Btn=styled.button`
    background-color:#9509fe;
    width:130px;
@@ -183,7 +185,51 @@ const Foodschedule = ({history}) => {
     const [foodNa, setFoodNa] = useState(); //나트륨
     const [foodChole, setFoodChole] = useState(); //콜레스테롤
 
-    //for api
+    //식단 등록 api
+    const [foodtype, setFoodtype] = useState();
+
+    //식단 등록 api
+    const registration = (e) => {
+      e.preventDefault();
+      console.log("등록시도");
+      axios({
+        url:'http://54.187.241.111/food/update_user_food/',
+        method:'post',
+        data:{
+          id: 'junkyu',
+          food_name : predictionArr[0].className,
+          food_type : foodtype,
+        }
+      }).then((response) => {
+        console.log(response);
+        alert("식단 등록에 성공하였습니다.");
+        // REDIRECT
+      }).catch((error)=>{
+        console.error(error);
+        if (error.response) {
+          // 요청이 이루어졌으며 서버가 2xx의 범위를 벗어나는 상태 코드로 응답했습니다.
+          console.log(error.response.data);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+          if(error.response.status === 403) {
+            alert("다시");
+          }
+        }
+        else if (error.request) {
+          // 요청이 이루어 졌으나 응답을 받지 못했습니다.
+          // `error.request`는 브라우저의 XMLHttpRequest 인스턴스 또는
+          // Node.js의 http.ClientRequest 인스턴스입니다.
+          console.log(error.request);
+        }
+        else {
+          // 오류를 발생시킨 요청을 설정하는 중에 문제가 발생했습니다.
+          console.log('Error', error.message);
+        }
+        console.log(error.config);
+      })
+    }
+
+    //음식 조회 api
     const foodInquire = (e) => {
       e.preventDefault();
       console.log(predictionArr[0].className);
@@ -230,7 +276,7 @@ const Foodschedule = ({history}) => {
         }
         console.log(error.config);
       })
-    }
+    } //음식 조회 api end
 
 
     //react-router 사용
@@ -342,34 +388,31 @@ const Foodschedule = ({history}) => {
       {/* 여기까지 */}
     <div className='nutrients'>
       <div>
-      {foodCal!=null?<><span>칼로리 : </span><span>{foodCal!=null?foodCal:null}</span></>:null}
+      {foodCal!=null?<><span>탄수화물 : </span><span>{foodCarbo!=null?foodCarbo:null}</span></>:null}{foodCal?<span>g</span>:null}
       </div>
       <div>
-      {foodCal!=null?<><span>탄수화물 : </span><span>{foodCarbo!=null?foodCarbo:null}</span></>:null}
-      </div>
-      <div>
-      {foodCal!=null?<><SubdirectoryArrowRightIcon></SubdirectoryArrowRightIcon><span>당류 : </span><span>{foodSugar!=null?foodSugar:null}</span><hr></hr></>:null}
+      {foodCal!=null?<><SubdirectoryArrowRightIcon></SubdirectoryArrowRightIcon><span>당류 : </span><span>{foodSugar!=null?foodSugar:null}</span>{foodCal?<span>g</span>:null}<hr></hr></>:null}
       </div>
       
       <div>
-      {foodCal!=null?<><span>단백질 : </span><span>{foodProtein!=null?foodProtein:null}</span> <hr></hr></>:null}
+      {foodCal!=null?<><span>단백질 : </span><span>{foodProtein!=null?foodProtein:null}</span>{foodCal?<span>g</span>:null}<hr></hr></>:null}
       </div>
      
       <div>
-      {foodCal!=null?<><span>지방 : </span><span>{foodFat!=null?foodFat:null}</span></>:null}
+      {foodCal!=null?<><span>지방 : </span><span>{foodFat!=null?foodFat:null}</span></>:null}{foodCal?<span>g</span>:null}
       </div>
       <div>
-      {foodCal!=null?<><SubdirectoryArrowRightIcon></SubdirectoryArrowRightIcon><span>트랜스지방 : </span><span>{foodTransFat!=null?foodTransFat:null}</span></>:null}
+      {foodCal!=null?<><SubdirectoryArrowRightIcon></SubdirectoryArrowRightIcon><span>트랜스지방 : </span><span>{foodTransFat!=null?foodTransFat:null}</span></>:null}{foodCal?<span>g</span>:null}
       </div>
       <div>
-      {foodCal!=null?<><SubdirectoryArrowRightIcon></SubdirectoryArrowRightIcon><span >포화지방 : </span><span>{foodSaturatedFat!=null?foodSaturatedFat:null}</span><hr></hr></>:null}
+      {foodCal!=null?<><SubdirectoryArrowRightIcon></SubdirectoryArrowRightIcon><span >포화지방 : </span><span>{foodSaturatedFat!=null?foodSaturatedFat:null}</span>{foodCal?<span>g</span>:null}<hr></hr></>:null}
       </div>
     
       <div>
-      {foodCal!=null?<><span>나트륨 : </span><span>{foodNa!=null?foodNa:null}</span></>:null}
+      {foodCal!=null?<><span>나트륨 : </span><span>{foodNa!=null?foodNa:null}</span></>:null}{foodCal?<span>mg</span>:null}
       </div>
       <div>
-      {foodCal!=null?<><span>콜레스테롤 : </span><span>{foodChole!=null?foodChole:null}</span><hr></hr></>:null}
+      {foodCal!=null?<><span>콜레스테롤 : </span><span>{foodChole!=null?foodChole:null}</span>{foodCal?<span>mg</span>:null}<hr></hr></>:null}
       </div>
     </div>
 
@@ -390,6 +433,7 @@ const Foodschedule = ({history}) => {
           },
         }}/>} 
         label="아침"
+        onChange={({target:{value}})=>setFoodtype(value)}
         />
         <FormControlLabel 
         value="1" 
@@ -399,6 +443,7 @@ const Foodschedule = ({history}) => {
           },
         }}/>} 
         label="점심" 
+        onChange={({target:{value}})=>setFoodtype(value)}
         />
         <FormControlLabel 
         value="2" 
@@ -408,6 +453,7 @@ const Foodschedule = ({history}) => {
           },
         }}/>} 
         label="저녁" 
+        onChange={({target:{value}})=>setFoodtype(value)}
         // onChange={({target:{value}})=>setSex(value)}
         />
       </RadioGroup>
@@ -420,7 +466,7 @@ const Foodschedule = ({history}) => {
               // fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2,bgcolor:'#9509fe'}}
-              
+              onClick={registration}
             >
               식단 등록
             </CssButton>
