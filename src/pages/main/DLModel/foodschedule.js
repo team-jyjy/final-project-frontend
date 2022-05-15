@@ -11,6 +11,14 @@ import axios from 'axios';
 import "./foodschedule.css";
 import SubdirectoryArrowRightIcon from '@mui/icons-material/SubdirectoryArrowRight';
 import { NoBackpackSharp } from '@mui/icons-material';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Radio from '@mui/material/Radio';
+import Checkbox, { checkboxClasses } from '@mui/material/Checkbox';
+
+
 const URL = 'https://teachablemachine.withgoogle.com/models/NqT_4_VDW/';
 const modelURL = URL + 'model.json';
 const metadataURL = URL + 'metadata.json';
@@ -142,6 +150,18 @@ const ImageContainer=styled.div`
     box-shadow: 0px 3px 20px 10px rgba(0, 0, 0, 0.10);
   `;
 
+  const CssButton = styled(Button)({
+    '&:hover':{
+      backgroundColor:'#9509fe',
+      borderColor: '#b4cf66',
+    },
+    '&:active':{
+      backgroundColor:'#9509fe'
+    },
+    '&:focus':{
+      boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
+    },
+  })
 
 
 const Foodschedule = ({history}) => {
@@ -351,8 +371,60 @@ const Foodschedule = ({history}) => {
       <div>
       {foodCal!=null?<><span>콜레스테롤 : </span><span>{foodChole!=null?foodChole:null}</span><hr></hr></>:null}
       </div>
-   
     </div>
+
+    {/* 아침 점심 저녁 */}
+    {foodCal?<>
+    <FormControl>
+      <FormLabel id="demo-controlled-radio-buttons-group"></FormLabel>
+      <RadioGroup
+        row
+        aria-labelledby="demo-controlled-radio-buttons-group"
+        name="controlled-radio-buttons-group"
+      >
+        <FormControlLabel 
+        value="0" 
+        control={<Radio sx={{
+          [`&, &.${checkboxClasses.checked}`]: {
+            color: '#9509fe',
+          },
+        }}/>} 
+        label="아침"
+        />
+        <FormControlLabel 
+        value="1" 
+        control={<Radio sx={{
+          [`&, &.${checkboxClasses.checked}`]: {
+            color: '#9509fe',
+          },
+        }}/>} 
+        label="점심" 
+        />
+        <FormControlLabel 
+        value="2" 
+        control={<Radio sx={{
+          [`&, &.${checkboxClasses.checked}`]: {
+            color: '#9509fe',
+          },
+        }}/>} 
+        label="저녁" 
+        // onChange={({target:{value}})=>setSex(value)}
+        />
+      </RadioGroup>
+    </FormControl>
+    </>:null}
+    {/* 아침 점심 저녁 끝 */}
+    {foodCal?<>
+    <CssButton
+              type="submit"
+              // fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2,bgcolor:'#9509fe'}}
+              
+            >
+              식단 등록
+            </CssButton>
+            </>:null}
     </Container>
 
   )
