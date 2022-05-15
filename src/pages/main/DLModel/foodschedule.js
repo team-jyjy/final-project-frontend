@@ -1,22 +1,21 @@
-import * as React from 'react';
-import {Helmet} from "react-helmet";
-import {useEffect, useState, createRef, useRef} from 'react';
+import React,{useState,useRef,useEffect} from 'react'
+// import * as tf from '@tensorflow/tfjs';
 import * as tmImage from '@teachablemachine/image';
 import styled from "styled-components";
-import { useNavigate } from 'react-router-dom';
+// import { render } from "react-dom";
+import { useNavigate } from "react-router-dom";
 
-// 우리 꺼
+// const URL = 'https://teachablemachine.withgoogle.com/models/F1nMeBJwX/';
+//원래꺼
+//const URL = 'https://teachablemachine.withgoogle.com/models/KAoZrcPlp/';
 const URL = 'https://teachablemachine.withgoogle.com/models/NqT_4_VDW/';
-
-// 테스트 용 남의 거
-// const URL = 'https://teachablemachine.withgoogle.com/models/KAoZrcPlp/'; 
-const modelURL  = URL + 'model.json';
+const modelURL = URL + 'model.json';
 const metadataURL = URL + 'metadata.json';
-const weights = URL + 'model.weights.bin';
 
 let model
 
 const Container = styled.div`
+  margin-top:30px;
   margin-left:auto;
   margin-right:auto;
   width: 100vw;
@@ -89,74 +88,85 @@ const ImageContainer=styled.div`
     box-shadow: 0px 3px 20px 10px rgba(0, 0, 0, 0.10);
   `;
 
-const Foodschedule = () => {
-  /////
-  const [imgBase64, setImgBase64] = useState(""); // 파일 base64
-  const [imgFile, setImgFile] = useState(null);	//파일
-  const [loading,setLoading]=useState(false);
-  const [showResult,setShowResult]=useState(false);
-  const [predictionArr,setPredictionArr]=useState([]);
-  const [result,setResult]=useState(null);
-  const [keyword,setKeyword]=useState(null);
 
-  const inputRef = useRef();
-  const navigate = useNavigate();
 
-  async function init() {
-    model = await tmImage.load(modelURL, metadataURL);
-    // model = await tmImage.loadFromFiles(modelURL, weights, metadataURL);
-    //총 클래스 수
-    let maxPredictions;
-    maxPredictions = model.getTotalClasses();
-    console.log(model);
+const Foodschedule = ({history}) => {
+    const [imgBase64, setImgBase64] = useState(""); // 파일 base64
+    const [imgFile, setImgFile] = useState(null);   //파일
+    const [loading,setLoading]=useState(false);
+    const [showResult,setShowResult]=useState(false);
+    const [predictionArr,setPredictionArr]=useState([]);
+    const [result,setResult]=useState(null);
+    const [keyword,setKeyword]=useState(null);
+
+
+    //react-router 사용
+    const navigate=useNavigate();
+    // input 태그를 클릭하는 것과 같은 효과를 주기 위해서 사용
+    const inputRef=useRef();
+    
+  // Load the image model and setup the webcam
+    async function init() {
+
+      // let isIos = false; 
+      // // fix when running demo in ios, video will be frozen;
+      // if (window.navigator.userAgent.indexOf('iPhone') > -1 || window.navigator.userAgent.indexOf('iPad') > -1) {
+      //   isIos = true;
+      // }
+      // load the model and metadata
+      // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
+      // or files from your local hard drive
+      // Note: the pose library adds "tmImage" object to your window (window.tmImage)
+      model = await tmImage.load(modelURL, metadataURL);
+      //총 클래스 수
+      let maxPredictions;
+      maxPredictions = model.getTotalClasses();
   }
-
-  async function predict() {
-    // predict can take in an image, video or canvas html element
-    model = await tmImage.load(modelURL, metadataURL);
-    const tempImage = document.getElementById('srcImg');
-    const prediction = await model.predict(tempImage, false);
-    prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
-    console.log(model);
-    setPredictionArr(prediction)
-    setShowResult(true)
-    setLoading(false)
-    setResult(prediction[0].className)
-    console.log(prediction[0].className)
-  }
-
-  const handleChangeFile = (event) => {
-    setLoading(true);
-    setShowResult(false)
-    setPredictionArr(null);
-    setResult(null);
-
-    let reader = new FileReader();
-
-    reader.onloadend = () => {
-      // 2. 읽기가 완료되면 아래코드가 실행됩니다.
-      const base64 = reader.result;
-      if (base64) {
-        setImgBase64(base64.toString()); // 파일 base64 상태 업데이트
+  
+    async function predict() {
+      // predict can take in an image, video or canvas html element
+      model = await tmImage.load(modelURL, metadataURL);
+      const tempImage = document.getElementById('srcImg');
+      const prediction = await model.predict(tempImage, false);
+      prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
+      setPredictionArr(prediction)
+      setShowResult(true)
+      setLoading(false)
+      setResult(prediction[0].className)
+      console.log("가장높은확률 : ",prediction[0].className)
+      
+    }
+  
+    const handleChangeFile = (event) => {
+      setLoading(true);
+      setShowResult(false)
+      setPredictionArr(null);
+      setResult(null);
+  
+      let reader = new FileReader();
+  
+      reader.onloadend = () => {
+        // 2. 읽기가 완료되면 아래코드가 실행됩니다.
+        const base64 = reader.result;
+        if (base64) {
+          setImgBase64(base64.toString()); // 파일 base64 상태 업데이트
+        }
+      }
+      if (event.target.files[0]) {
+        reader.readAsDataURL(event.target.files[0]); // 1. 파일을 읽어 버퍼에 저장합니다.
+        setImgFile(event.target.files[0]); // 파일 상태 업데이트
+        init().then(
+          console.log("init 모델"),
+          predict()
+        );
+  
       }
     }
-    if (event.target.files[0]) {
-      reader.readAsDataURL(event.target.files[0]); // 1. 파일을 읽어 버퍼에 저장합니다.
-      setImgFile(event.target.files[0]); // 파일 상태 업데이트
-      init().then(
-        console.log("init 모델"),
-        predict()
-      );
-
-    }
-  }
 
 
-  /////
   return (
     <Container>
-      {/*  */}
-      {showResult?<TopStart>분석결과는?</TopStart>:<TopStartLoading>{loading?"잠시만 기다려주세요!":"사진을 업로드 해주세요!"}</TopStartLoading>}
+      {showResult?<TopStart>식단 분석 결과</TopStart>:<TopStartLoading>{loading?"식단을 분석 중입니다":"식단을 업로드 해주세요!"}</TopStartLoading>}
       <ImageContainer onClick={()=>{
           inputRef.current.click();
       }}>
@@ -166,9 +176,9 @@ const Foodschedule = () => {
         </>
         }
       </ImageContainer>
-     {/*  */}
     </Container>
-  );
+  )
 }
 
-export default Foodschedule;
+
+export default Foodschedule
