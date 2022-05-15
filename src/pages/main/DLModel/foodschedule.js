@@ -149,7 +149,16 @@ const Foodschedule = ({history}) => {
     const [predictionArr,setPredictionArr]=useState([]);
     const [result,setResult]=useState(null);
     const [keyword,setKeyword]=useState(null);
-    //화면에 찍기 테스트
+    //response data print
+    const [foodCal, setFoodCal] = useState();
+    const [foodCarbo, setFoodCarbo] = useState(); //탄수화물
+    const [foodSugar, setFoodSugar] = useState(); //당류
+    const [foodProtein, setFoodProtein] = useState(); //단백질
+    const [foodFat, setFoodFat] = useState(); //지방
+    const [foodTransFat, setFoodTransFat] = useState(); //트랜스지방
+    const [foodSaturatedFat, setFoodSaturatedFat] = useState(); //포화지방
+    const [foodNa, setFoodNa] = useState(); //나트륨
+    const [foodChole, setFoodChole] = useState(); //콜레스테롤
 
     //for api
     const foodInquire = (e) => {
@@ -164,7 +173,16 @@ const Foodschedule = ({history}) => {
       }).then((response) => {
         console.log(response);
         alert("음식 조회에 성공하셨습니다.");
-        console.log(response.data.food_cal);
+        // console.log(response.data.food_cal);
+        setFoodCal(response.data.food_cal);
+        setFoodCarbo(response.data.food_carbo)
+        setFoodSugar(response.data.food_sugar)
+        setFoodProtein(response.data.food_protein)
+        setFoodFat(response.data.food_fat)
+        setFoodTransFat(response.data.food_trans_fat)
+        setFoodSaturatedFat(response.data.food_saturated_fat)
+        setFoodNa(response.data.food_na)
+        setFoodChole(response.data.food_chole)
         // REDIRECT
       }).catch((error)=>{
         console.error(error);
@@ -296,6 +314,33 @@ const Foodschedule = ({history}) => {
         </>
       :null}
       {/* 여기까지 */}
+    <div>
+    {foodCal!=null?<><span>칼로리 : </span><span>{foodCal!=null?foodCal:null}</span></>:null}
+    </div>
+    <div>
+    {foodCal!=null?<><span>탄수화물 : </span><span>{foodCarbo!=null?foodCarbo:null}</span></>:null}
+    </div>
+    <div>
+    {foodCal!=null?<><span>당류 : </span><span>{foodSugar!=null?foodSugar:null}</span></>:null}
+    </div>
+    <div>
+    {foodCal!=null?<><span>단백질 : </span><span>{foodProtein!=null?foodProtein:null}</span></>:null}
+    </div>
+    <div>
+    {foodCal!=null?<><span>지방 : </span><span>{foodFat!=null?foodFat:null}</span></>:null}
+    </div>
+    <div>
+    {foodCal!=null?<><span>트랜스지방 : </span><span>{foodTransFat!=null?foodTransFat:null}</span></>:null}
+    </div>
+    <div>
+    {foodCal!=null?<><span>포화지방 : </span><span>{foodSaturatedFat!=null?foodSaturatedFat:null}</span></>:null}
+    </div>
+    <div>
+    {foodCal!=null?<><span>나트륨 : </span><span>{foodNa!=null?foodNa:null}</span></>:null}
+    </div>
+    <div>
+    {foodCal!=null?<><span>콜레스테롤 : </span><span>{foodChole!=null?foodChole:null}</span></>:null}
+    </div>
     </Container>
 
   )
