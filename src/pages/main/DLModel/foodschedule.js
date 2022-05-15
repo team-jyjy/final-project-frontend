@@ -8,6 +8,8 @@ import { BsFillArrowDownSquareFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import Button from '@mui/material/Button';
 import axios from 'axios';
+import "./foodschedule.css";
+import SubdirectoryArrowRightIcon from '@mui/icons-material/SubdirectoryArrowRight';
 const URL = 'https://teachablemachine.withgoogle.com/models/NqT_4_VDW/';
 const modelURL = URL + 'model.json';
 const metadataURL = URL + 'metadata.json';
@@ -172,7 +174,7 @@ const Foodschedule = ({history}) => {
         }
       }).then((response) => {
         console.log(response);
-        alert("음식 조회에 성공하셨습니다.");
+        // alert("음식 조회에 성공하셨습니다.");
         // console.log(response.data.food_cal);
         setFoodCal(response.data.food_cal);
         setFoodCarbo(response.data.food_carbo)
@@ -314,32 +316,38 @@ const Foodschedule = ({history}) => {
         </>
       :null}
       {/* 여기까지 */}
-    <div>
-    {foodCal!=null?<><span>칼로리 : </span><span>{foodCal!=null?foodCal:null}</span></>:null}
-    </div>
-    <div>
-    {foodCal!=null?<><span>탄수화물 : </span><span>{foodCarbo!=null?foodCarbo:null}</span></>:null}
-    </div>
-    <div>
-    {foodCal!=null?<><span>당류 : </span><span>{foodSugar!=null?foodSugar:null}</span></>:null}
-    </div>
-    <div>
-    {foodCal!=null?<><span>단백질 : </span><span>{foodProtein!=null?foodProtein:null}</span></>:null}
-    </div>
-    <div>
-    {foodCal!=null?<><span>지방 : </span><span>{foodFat!=null?foodFat:null}</span></>:null}
-    </div>
-    <div>
-    {foodCal!=null?<><span>트랜스지방 : </span><span>{foodTransFat!=null?foodTransFat:null}</span></>:null}
-    </div>
-    <div>
-    {foodCal!=null?<><span>포화지방 : </span><span>{foodSaturatedFat!=null?foodSaturatedFat:null}</span></>:null}
-    </div>
-    <div>
-    {foodCal!=null?<><span>나트륨 : </span><span>{foodNa!=null?foodNa:null}</span></>:null}
-    </div>
-    <div>
-    {foodCal!=null?<><span>콜레스테롤 : </span><span>{foodChole!=null?foodChole:null}</span></>:null}
+    <div className='nutrients'>
+      <div>
+      {foodCal!=null?<><span>칼로리 : </span><span>{foodCal!=null?foodCal:null}</span></>:null}
+      </div>
+      <div>
+      {foodCal!=null?<><span>탄수화물 : </span><span>{foodCarbo!=null?foodCarbo:null}</span></>:null}
+      </div>
+      <div>
+      {foodCal!=null?<><SubdirectoryArrowRightIcon></SubdirectoryArrowRightIcon><span>당류 : </span><span>{foodSugar!=null?foodSugar:null}</span><hr></hr></>:null}
+      </div>
+      
+      <div>
+      {foodCal!=null?<><span>단백질 : </span><span>{foodProtein!=null?foodProtein:null}</span> <hr></hr></>:null}
+      </div>
+     
+      <div>
+      {foodCal!=null?<><span>지방 : </span><span>{foodFat!=null?foodFat:null}</span></>:null}
+      </div>
+      <div>
+      {foodCal!=null?<><SubdirectoryArrowRightIcon></SubdirectoryArrowRightIcon><span>트랜스지방 : </span><span>{foodTransFat!=null?foodTransFat:null}</span></>:null}
+      </div>
+      <div>
+      {foodCal!=null?<><SubdirectoryArrowRightIcon></SubdirectoryArrowRightIcon><span >포화지방 : </span><span>{foodSaturatedFat!=null?foodSaturatedFat:null}</span><hr></hr></>:null}
+      </div>
+    
+      <div>
+      {foodCal!=null?<><span>나트륨 : </span><span>{foodNa!=null?foodNa:null}</span></>:null}
+      </div>
+      <div>
+      {foodCal!=null?<><span>콜레스테롤 : </span><span>{foodChole!=null?foodChole:null}</span><hr></hr></>:null}
+      </div>
+   
     </div>
     </Container>
 
