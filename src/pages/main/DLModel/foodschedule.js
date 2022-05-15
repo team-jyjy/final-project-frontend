@@ -10,6 +10,7 @@ import Button from '@mui/material/Button';
 import axios from 'axios';
 import "./foodschedule.css";
 import SubdirectoryArrowRightIcon from '@mui/icons-material/SubdirectoryArrowRight';
+import { NoBackpackSharp } from '@mui/icons-material';
 const URL = 'https://teachablemachine.withgoogle.com/models/NqT_4_VDW/';
 const modelURL = URL + 'model.json';
 const metadataURL = URL + 'metadata.json';
@@ -45,7 +46,7 @@ const ReulstScore=styled.h1`
       font-size:30px;
   }
 `;
-const ReulstName=styled.h1`
+const ResultName=styled.h1`
     color:'black';
     font-size:20px;
     font-weight:bolder;
@@ -219,7 +220,7 @@ const Foodschedule = ({history}) => {
     
   // Load the image model and setup the webcam
     async function init() {
-
+      setFoodCal(null);
       // let isIos = false; 
       // // fix when running demo in ios, video will be frozen;
       // if (window.navigator.userAgent.indexOf('iPhone') > -1 || window.navigator.userAgent.indexOf('iPad') > -1) {
@@ -285,6 +286,8 @@ const Foodschedule = ({history}) => {
         <ImageUploadContainer ref={inputRef} onChange={handleChangeFile} type="file" accept="image/*" />
         {imgBase64?<Image id="srcImg" src={imgBase64}></Image>: 
         <>
+        <div>여기를 클릭!</div>
+        <div>한 번에 한가지 음식만 업로드 해주세요!</div>
         </>
         }
       </ImageContainer>
@@ -293,12 +296,14 @@ const Foodschedule = ({history}) => {
         <>
         <MiddleContainer>
             <BsFillArrowDownSquareFill size={40} color="#323232"></BsFillArrowDownSquareFill>
-            <ResultContainer>
+            {/* <ResultContainer>
                 <ReulstScore>{showResult?`${(predictionArr[0].probability*100).toFixed(1)}%`:null}</ReulstScore>
                 <ReulstName>{showResult?predictionArr[0].className:null}</ReulstName>
-                
+            </ResultContainer> */}
+            <ResultContainer>
+                <ResultName>{result?predictionArr[0].className:null}</ResultName>{foodCal?<span>은(는)</span>:<span>의 식단 정보가 궁금하세요?</span>}&nbsp;
+                <ResultName>{foodCal!=null?<><span>{foodCal!=null?foodCal:null}</span></>:null}</ResultName>{foodCal?<ResultName>Kcal</ResultName>:null}{foodCal?<span>입니다</span>:null}
             </ResultContainer>
-            {/* 조회하기 버튼 */}
             <Btn
               // href = "/"
               type="submit"
@@ -310,7 +315,6 @@ const Foodschedule = ({history}) => {
             >
               식단 정보 조회
             </Btn>
-            {/* 조회하기 버튼 */}
         </MiddleContainer>   
       
         </>
