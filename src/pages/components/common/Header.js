@@ -18,7 +18,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import { withStyles } from "@material-ui/core/styles";
 import { typography } from '@mui/system';
 
-
 const theme = createTheme({
   typography: {
     fontFamily: 'EliceDigitalBaeum-Bd',
@@ -55,6 +54,7 @@ const Header = () => {
   const classes = useStyles();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [islogined, setLoginState] = React.useState(null);
   const pages = [
     {menu: '식단관리', link: "/foodschedule" }, 
     {menu: '운동', link: "/foodschedule" },
