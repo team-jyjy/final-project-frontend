@@ -9,6 +9,7 @@ import item1 from "./../../assets/images/profile.png"
 import { extendTheme } from '@chakra-ui/react';
 import { useEffect } from 'react';
 import axios from 'axios';
+import React,{useState,useRef} from 'react'
 
 const breakpoints = {
   sm: '320px',
@@ -21,6 +22,14 @@ const breakpoints = {
 const theme = extendTheme({breakpoints});
 
 const MyPage = () => {
+  const [nickname, setNickname] = useState("");
+  const [height, setHeight] = useState();
+  const [weight, setWeight] = useState();
+  const [age, setAge] = useState();
+  const [sex, setSex] = useState();
+  const [ir, setIr] = useState();
+  const [succesday, setSuccessday] = useState();
+
   //test 가라 mypage api
   useEffect(() => {
     console.log("마이페이지 로딩 완");
@@ -31,13 +40,21 @@ const MyPage = () => {
       url:'http://54.187.241.111/api/Info/', //서버 주소
       method:'post',
       data:{
-        id : 'junkyu',
+        id : 'man5',
         datetime : time,
       }
     }).then((response) => {
       console.log(response);
       alert("마이페이지 로딩에 성공하셨습니다.");
       //set data...
+      setNickname(response.data.nickname);
+      setHeight(response.data.height);
+      setWeight(response.data.weight);
+      setAge(response.data.age);
+      setSex(response.data.sex);
+      setIr(response.data.ir);
+      setSuccessday(response.data.success_day);
+
       // REDIRECT
     }).catch((error)=>{
       console.error(error);
@@ -76,24 +93,24 @@ const MyPage = () => {
 
               <div className='info'>
                 <div className='name'>
-                  <span id='name'>김국민</span><span>님</span>
+                  <span id='name'>{nickname?nickname:null}</span><span>님</span>
                 </div>
               
                 <div className='agesex'>
                   <span className='age'>
-                    <span>나이</span><span id='age'>25</span>
+                    <span>나이</span><span id='age'>{age?age:null}</span>
                   </span>
                   <span className='sex'>
-                    <span>성별</span><span id='sex'>남자</span>
+                    <span>성별</span><span id='sex'>{sex?sex:null}</span>
                   </span>
                 </div>
 
                 <div className='body'>
                   <span className="height">
-                    <span>키</span><span id='height'>161</span>
+                    <span>키</span><span id='height'>{height?height:null}</span>
                   </span>
                   <span className="weight">
-                    <span>몸무게</span><span id='weight'>50</span>
+                    <span>몸무게</span><span id='weight'>{weight?weight:null}</span>
                   </span>
                 </div>
             </div>
@@ -116,10 +133,10 @@ const MyPage = () => {
             <span id="username">최유연</span><span>님</span>
           </div>
           <div className='day'>
-            <span id="day">7</span><span>일 더 성공하면</span>
+            <span id="day">{succesday?succesday:null}</span><span>일 더 성공하면</span>
           </div>
           <div class="benifit">
-            <span>우대금리를 </span><span id="benefit">0.5</span>% 더
+            <span>우대금리를 </span><span id="benefit">{ir?ir:null}</span>% 더
           </div>
           <div>
             <span>적용받을 수 있어요!</span>
