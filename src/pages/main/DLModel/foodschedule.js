@@ -18,10 +18,13 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Radio from '@mui/material/Radio';
 import Checkbox, { checkboxClasses } from '@mui/material/Checkbox';
 import { Navigate } from 'react-router-dom';
+import {setToken} from "./../../../modules/loginStates"; //
+import {useSelector} from "react-redux";
 
 const URL = 'https://teachablemachine.withgoogle.com/models/NqT_4_VDW/';
 const modelURL = URL + 'model.json';
 const metadataURL = URL + 'metadata.json';
+
 
 let model
 
@@ -185,6 +188,7 @@ const Foodschedule = ({history}) => {
     const [foodNa, setFoodNa] = useState(); //나트륨
     const [foodChole, setFoodChole] = useState(); //콜레스테롤
     const navigate = useNavigate();
+    const token = useSelector(state => state.token);
     //식단 등록 api
     const [foodtype, setFoodtype] = useState();
 
@@ -193,7 +197,7 @@ const Foodschedule = ({history}) => {
       e.preventDefault();
       
       console.log("등록시도");
-      let token = localStorage.getItem("token");
+      // let token = localStorage.getItem("token");
       let config = {
         headers : {
           Authorization : "token " + token,

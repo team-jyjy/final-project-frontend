@@ -10,6 +10,8 @@ import { extendTheme } from '@chakra-ui/react';
 import { useEffect } from 'react';
 import axios from 'axios';
 import React,{useState,useRef} from 'react'
+import {setToken} from "./../../modules/loginStates"; //
+import {useSelector} from "react-redux";
 
 const breakpoints = {
   sm: '320px',
@@ -30,12 +32,13 @@ const MyPage = () => {
   const [ir, setIr] = useState();
   const [succesday, setSuccessday] = useState();
   const navigate = useNavigate();
+  const token = useSelector(state => state.token);
   //test 가라 mypage api
   useEffect(() => {
     console.log("마이페이지 로딩 완");
     
     //토큰 캐오기
-    let token = localStorage.getItem("token");
+    // let token = localStorage.getItem("token");
     console.log("로컬 스토리지의 토큰 꺼내오기 연습");
     console.log(token);
     let now = new Date();

@@ -4,15 +4,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-import { createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { Provider } from 'react-redux';
 import rootReducer from "./modules";
-import {configureStore} from "redux";
+import {createStore} from "redux";
 
 
 // store 생성
-const store = configureStore(rootReducer, composeWithDevTools());
+const store = createStore(rootReducer, composeWithDevTools());
 
 const rootNode = ReactDOM.createRoot(document.getElementById('root'));
   rootNode.render(

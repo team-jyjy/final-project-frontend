@@ -22,6 +22,8 @@ import FormControl from '@mui/material/FormControl';
 import axios from 'axios';
 import { useState } from 'react';
 import "./Signin.css"
+import {useDispatch} from "react-redux";
+import {setToken} from "./../../modules/loginStates";
 
 const CssTextField = styled(TextField)({
   '& label.Mui-focused':{
@@ -86,6 +88,7 @@ export default function Signin() {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const logIn = (e) => {
     e.preventDefault();
@@ -100,7 +103,8 @@ export default function Signin() {
       }
     }).then((response) => {
       console.log(response);
-      localStorage.setItem('token', response.data.token)
+      // localStorage.setItem('token', response.data.token);
+      dispatch(setToken(response.data.token));
       alert("로그인에 성공하셨습니다.");
       navigate('/');
       // REDIRECT

@@ -17,6 +17,9 @@ import logo from "../../../assets/images/logo.png";
 import { makeStyles } from '@material-ui/core/styles';
 import { withStyles } from "@material-ui/core/styles";
 import { typography } from '@mui/system';
+import {useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
+import {setToken} from "./../../../modules/loginStates";
 
 const theme = createTheme({
   typography: {
@@ -54,7 +57,20 @@ const Header = () => {
   const classes = useStyles();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-  const [islogined, setLoginState] = React.useState(null);
+  const token = useSelector(state => state.token);
+  const [logState, setLogState] = React.useState({text: null, isLogin: null});
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  React.useEffect(()=> {
+    console.log(token + "a");
+    if(token != null){
+      setLogState({text: "Logout", isLogin: true});
+    }else{
+      setLogState({text: "Login", isLogin: false});
+    }
+  },[token]);
+
   const pages = [
     {menu: '식단관리', link: "/foodschedule" }, 
     {menu: '운동', link: "/foodschedule" },
@@ -64,7 +80,10 @@ const Header = () => {
   const settings = [
     {myfunc: 'My Page', link:"/mypage"}, 
     {myfunc: 'Account', link:"/foodschedule"},
-    {myfunc: 'LogIn', link:"/signin"}];
+  ];
+
+
+
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -81,6 +100,18 @@ const Header = () => {
     setAnchorElUser(null);
     //여기에 click한 애가 몇번쨰인지 추려서 0번쨰 : 마이페이지.. 1번쨰 : account, 2번: login
   };
+
+  const handleLoginLogout = (e, isLogin) => {
+    console.log("aaa" + isLogin);
+    if(isLogin === true) {
+      // set null
+      dispatch(setToken(null));
+    } else {
+      // redirect
+      navigate('/signin');
+
+    }
+  }
 
   return (
     //시작
@@ -205,6 +236,9 @@ const Header = () => {
                     </MenuItem>
                   </Link>
                 ))}
+                <MenuItem onClick={(e)=>{handleLoginLogout(e, logState.isLogin)}}> 
+                  <Typography textAlign="center" >{logState.text}</Typography>
+                </MenuItem>
               </Menu>
             </Box>
           </Toolbar>
