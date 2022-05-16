@@ -1,0 +1,68 @@
+/* 폰트 적용 */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+* {
+font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+}
+
+/* 달력 내부 숫자 */
+.fc-daygrid-day-number {
+    text-decoration: none;
+    color: black;
+}
+
+/* 달력 요일 */
+.fc-col-header-cell-cushion  {
+    text-decoration: none;
+    color: black;
+}
+
+
+.fc .fc-scroller-liquid-absolute {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.ReactModal__Overlay {
+    position: fixed;
+    inset: 0px;
+    background-color: rgba(255, 255, 255, 0.75);
+    z-index: 1;
+}
+
+/* 모달창 안에 클로즈 버튼 */
+.food-type {
+    top:88%;
+    left:50%;
+    /* position: absolute; */
+    z-index: 5;
+    color: white;
+    background-color: #9509fe;
+    border-radius: 30px;
+    padding: .3rem 1.7rem;
+    margin: 0 auto;
+    border: none;
+    /* transform: translate(-50%,-50%); */
+}
+
+.kcal {
+    text-align: center;
+}
+
+.close-btn {
+    top:88%;
+    left:50%;
+    /* position: absolute; */
+    z-index: 5;
+    color: white;
+    background-color: #ffba4a;
+    border-radius: 30px;
+    padding: .3rem 1.7rem;
+    margin: 0 auto;
+    border: none;
+    transform: translate(130%, 70%);
+}
