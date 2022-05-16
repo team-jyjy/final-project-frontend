@@ -15,7 +15,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {makeStyles} from "@material-ui/core"
 import { hover } from '@testing-library/user-event/dist/hover';
 import { ClassNames } from '@emotion/react';
-
+import { useNavigate } from "react-router-dom";
 import {styled} from '@mui/material/styles'
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
@@ -85,6 +85,7 @@ const theme = createTheme(
 export default function Signin() {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const logIn = (e) => {
     e.preventDefault();
@@ -101,6 +102,7 @@ export default function Signin() {
       console.log(response);
       localStorage.setItem('token', response.data.token)
       alert("로그인에 성공하셨습니다.");
+      navigate('/');
       // REDIRECT
     }).catch((error)=>{
       console.error(error);

@@ -24,6 +24,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import item1 from "./../../assets/images/bg.jpg"
 import "./Signup.css"
+import { useNavigate } from "react-router-dom";
 
 const CssTextField = styled(TextField)({
   '& label.Mui-focused':{
@@ -106,6 +107,7 @@ export default function Signup() {
   const [age, setAge] = useState("");
   const [sex, setSex] = useState("");
   const [pa, setPa] = useState("");
+  const navigate = useNavigate();
 
   const joinIn = (e) => {
     e.preventDefault();
@@ -133,6 +135,7 @@ export default function Signup() {
     }).then((response) => {
       console.log(response);
       alert("회원가입에 성공하셨습니다.");
+      navigate('/signin');
       // REDIRECT
     }).catch((error)=>{
       console.error(error);

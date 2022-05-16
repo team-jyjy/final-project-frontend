@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import {Navigate} from 'react-router-dom';
 import profile from "../../assets/images/salad.jpg";
 import { Avatar } from '@mui/material';
@@ -29,10 +29,11 @@ const MyPage = () => {
   const [sex, setSex] = useState();
   const [ir, setIr] = useState();
   const [succesday, setSuccessday] = useState();
-
+  const navigate = useNavigate();
   //test 가라 mypage api
   useEffect(() => {
     console.log("마이페이지 로딩 완");
+    
     //토큰 캐오기
     let token = localStorage.getItem("token");
     console.log("로컬 스토리지의 토큰 꺼내오기 연습");
@@ -69,7 +70,13 @@ const MyPage = () => {
         console.log(error.response.status);
         console.log(error.response.headers);
         if(error.response.status === 403) {
-          alert("무언가가 잘못 된 듯요");
+          // Navigate('/signin');
+          // alert("무언가가 잘못 된 듯요");
+        }
+        if(error.response.status === 401) {
+          alert("로그인을 해주세요!");
+          navigate('/signin');
+          // alert("무언가가 잘못 된 듯요");
         }
       }
       else if (error.request) {

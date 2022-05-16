@@ -17,7 +17,7 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Radio from '@mui/material/Radio';
 import Checkbox, { checkboxClasses } from '@mui/material/Checkbox';
-
+import { Navigate } from 'react-router-dom';
 
 const URL = 'https://teachablemachine.withgoogle.com/models/NqT_4_VDW/';
 const modelURL = URL + 'model.json';
@@ -184,13 +184,14 @@ const Foodschedule = ({history}) => {
     const [foodSaturatedFat, setFoodSaturatedFat] = useState(); //포화지방
     const [foodNa, setFoodNa] = useState(); //나트륨
     const [foodChole, setFoodChole] = useState(); //콜레스테롤
-
+    const navigate = useNavigate();
     //식단 등록 api
     const [foodtype, setFoodtype] = useState();
 
     //식단 등록 api
     const registration = (e) => {
       e.preventDefault();
+      
       console.log("등록시도");
       let token = localStorage.getItem("token");
       let config = {
@@ -214,7 +215,11 @@ const Foodschedule = ({history}) => {
           console.log(error.response.status);
           console.log(error.response.headers);
           if(error.response.status === 403) {
-            alert("다시");
+            alert("흠");
+          }
+          if(error.response.status === 401) {
+            alert("로그인을 해주세요!");
+            navigate('/signin');
           }
         }
         else if (error.request) {
@@ -279,10 +284,6 @@ const Foodschedule = ({history}) => {
         console.log(error.config);
       })
     } //음식 조회 api end
-
-
-    //react-router 사용
-    const navigate=useNavigate();
     // input 태그를 클릭하는 것과 같은 효과를 주기 위해서 사용
     const inputRef=useRef();
     
