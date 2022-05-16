@@ -34,19 +34,23 @@ const MyPage = () => {
   useEffect(() => {
     console.log("마이페이지 로딩 완");
     //토큰 캐오기
+    let token = localStorage.getItem("token");
+    console.log("로컬 스토리지의 토큰 꺼내오기 연습");
+    console.log(token);
     let now = new Date();
     let time = now.getFullYear()+"-"+(now.getMonth()+1);
     console.log(time);
-    axios({
-      url:'http://54.187.241.111/api/Info/', //서버 주소
-      method:'post',
-      data:{
-        id : 'man5',
-        datetime : time,
+    let config = {
+      headers : {
+        Authorization : "token " + token,
       }
-    }).then((response) => {
+    }
+    let data = {
+      datetime : time,
+    }
+    axios.post('http://54.187.241.111/api/Info/',data, config).then((response) => {
       console.log(response);
-      alert("마이페이지 로딩에 성공하셨습니다.");
+      // alert("마이페이지 로딩에 성공하셨습니다.");
       //set data...
       setNickname(response.data.nickname);
       setHeight(response.data.height);
@@ -54,7 +58,7 @@ const MyPage = () => {
       setAge(response.data.age);
       setSex(response.data.sex);
       setIr(response.data.ir);
-      setSuccessday(response.data.success_day);
+      setSuccessday(30-response.data.success_day);
 
       // REDIRECT
     }).catch((error)=>{
@@ -131,7 +135,7 @@ const MyPage = () => {
         <div className='ment'>
 
           <div className="username">
-            <span id="username">최유연</span><span>님</span>
+            <span id="username">{nickname?nickname:null}</span><span>님</span>
           </div>
           <div className='day'>
             <span id="day">{succesday?succesday:null}</span><span>일 더 성공하면</span>

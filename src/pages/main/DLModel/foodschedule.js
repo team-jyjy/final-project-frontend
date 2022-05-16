@@ -192,15 +192,17 @@ const Foodschedule = ({history}) => {
     const registration = (e) => {
       e.preventDefault();
       console.log("등록시도");
-      axios({
-        url:'http://54.187.241.111/food/update_user_food/',
-        method:'post',
-        data:{
-          id: 'junkyu',
-          food_name : predictionArr[0].className,
-          food_type : foodtype,
+      let token = localStorage.getItem("token");
+      let config = {
+        headers : {
+          Authorization : "token " + token,
         }
-      }).then((response) => {
+      }
+      let data = {
+        food_name : predictionArr[0].className,
+        food_type : foodtype,
+      }
+      axios.post('http://54.187.241.111/food/update_user_food/',data, config).then((response) => {
         console.log(response);
         alert("식단 등록에 성공하였습니다.");
         // REDIRECT
