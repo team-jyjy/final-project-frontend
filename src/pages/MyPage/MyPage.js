@@ -33,6 +33,7 @@ const MyPage = () => {
   //test 가라 mypage api
   useEffect(() => {
     console.log("마이페이지 로딩 완");
+    //토큰 캐오기
     let now = new Date();
     let time = now.getFullYear()+"-"+(now.getMonth()+1);
     console.log(time);
