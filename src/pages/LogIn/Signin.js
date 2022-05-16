@@ -99,6 +99,7 @@ export default function Signin() {
       }
     }).then((response) => {
       console.log(response);
+      localStorage.setItem('token', response.data.token)
       alert("로그인에 성공하셨습니다.");
       // REDIRECT
     }).catch((error)=>{

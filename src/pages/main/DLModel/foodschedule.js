@@ -305,6 +305,7 @@ const Foodschedule = ({history}) => {
     async function predict() {
       // predict can take in an image, video or canvas html element
       model = await tmImage.load(modelURL, metadataURL);
+      console.log(model);
       const tempImage = document.getElementById('srcImg');
       const prediction = await model.predict(tempImage, false);
       prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
