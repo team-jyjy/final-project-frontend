@@ -7,6 +7,7 @@ import { CircularProgress, CircularProgressLabel } from '@chakra-ui/react'
 import "./MyPage.css"
 import item1 from "./../../assets/images/profile.png"
 import { extendTheme } from '@chakra-ui/react';
+import { useEffect } from 'react';
 
 const breakpoints = {
   sm: '320px',
@@ -19,6 +20,41 @@ const breakpoints = {
 const theme = extendTheme({breakpoints});
 
 const MyPage = () => {
+  //test 가라 mypage api
+  useEffect(() => {
+    axios({
+      url:'', //서버 주소
+      method:'',
+      data:{
+      }
+    }).then((response) => {
+      console.log(response);
+      alert("마이페이지 로딩에 성공하셨습니다.");
+      // REDIRECT
+    }).catch((error)=>{
+      console.error(error);
+      if (error.response) {
+        // 요청이 이루어졌으며 서버가 2xx의 범위를 벗어나는 상태 코드로 응답했습니다.
+        console.log(error.response.data);
+        console.log(error.response.status);
+        console.log(error.response.headers);
+        if(error.response.status === 403) {
+          alert("무언가가 잘못 된 듯요");
+        }
+      }
+      else if (error.request) {
+        // 요청이 이루어 졌으나 응답을 받지 못했습니다.
+        // `error.request`는 브라우저의 XMLHttpRequest 인스턴스 또는
+        // Node.js의 http.ClientRequest 인스턴스입니다.
+        console.log(error.request);
+      }
+      else {
+        // 오류를 발생시킨 요청을 설정하는 중에 문제가 발생했습니다.
+        console.log('Error', error.message);
+      }
+      console.log(error.config);
+    })
+  }, []);
   return (
     <div>
       <div className='Container1'>
