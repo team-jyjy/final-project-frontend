@@ -31,6 +31,7 @@ const MyPage = () => {
   const [sex, setSex] = useState();
   const [ir, setIr] = useState();
   const [succesday, setSuccessday] = useState();
+  const [successpercent, setSuccessPercent] = useState();
   const navigate = useNavigate();
   const token = useSelector(state => state.token);
   //test 가라 mypage api
@@ -63,6 +64,7 @@ const MyPage = () => {
       setSex(response.data.sex);
       setIr(response.data.ir);
       setSuccessday(30-response.data.success_day);
+      setSuccessPercent(Math.floor(30-response.data.success_day)/30);
 
       // REDIRECT
     }).catch((error)=>{
@@ -138,8 +140,8 @@ const MyPage = () => {
       <div className='mypf'>My 금융</div>
       <div className='inner'>
         <div className='graph'>
-        <CircularProgress value={40} color={deepPurple[200]} thickness={15} size={90}>
-          <CircularProgressLabel>40%</CircularProgressLabel>
+        <CircularProgress value={successpercent+"%"} color={deepPurple[200]} thickness={15} size={90}>
+          <CircularProgressLabel>{successpercent?successpercent:null}</CircularProgressLabel>
         </CircularProgress>
         </div>
         <div className='ment'>

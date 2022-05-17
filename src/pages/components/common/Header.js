@@ -230,7 +230,7 @@ const Header = () => {
                 onClose={handleCloseUserMenu}
               >
                 {settings.map((setting) => (
-                  <Link style={{ textDecoration: 'none' }} to={setting.link} key={setting.myfunc}>
+                  <Link style={{ textDecoration: 'none', color:'black'}} to={setting.link} key={setting.myfunc}>
                     <MenuItem key={setting.myfunc} onClick={handleCloseUserMenu}> 
                       <Typography textAlign="center" >{setting.myfunc}</Typography>
                     </MenuItem>
