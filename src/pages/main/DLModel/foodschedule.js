@@ -25,10 +25,7 @@ const URL = 'https://teachablemachine.withgoogle.com/models/NqT_4_VDW/';
 const modelURL = URL + 'model.json';
 const metadataURL = URL + 'metadata.json';
 
-
 let model
-
-
 
 const Btn=styled.button`
    background-color:#9509fe;
@@ -84,10 +81,16 @@ const Container = styled.div`
   margin-left:auto;
   margin-right:auto;
   width: 100vw;
-  height: 100vh;
+
+  //원래
+  height: 100vh; 
+
   display: flex;
   align-items: center;
+
+  // 원래
   background-color: white;
+
   flex-direction: column;
   position:relative;
   /* justify-content:space-evenly; */
@@ -352,6 +355,7 @@ const Foodschedule = ({history}) => {
 
 
   return (
+    <div className='wrapfoodschedule'>
     <Container>
       {showResult?<TopStart>식단 분석 결과</TopStart>:<TopStartLoading>{loading?"식단을 분석 중입니다":"식단을 업로드 해주세요!"}</TopStartLoading>}
       <ImageContainer onClick={()=>{
@@ -470,16 +474,17 @@ const Foodschedule = ({history}) => {
     {/* 아침 점심 저녁 끝 */}
     {foodCal?<>
     <CssButton
-              type="submit"
-              // fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2,bgcolor:'#9509fe'}}
-              onClick={registration}
-            >
-              식단 등록
-            </CssButton>
-            </>:null}
+      type="submit"
+      // fullWidth
+      variant="contained"
+      sx={{ mt: 3, mb: 2,bgcolor:'#9509fe'}}
+      onClick={registration}
+    >
+      식단 등록
+    </CssButton>
+    </>:null}
     </Container>
+    </div>
 
   )
 }

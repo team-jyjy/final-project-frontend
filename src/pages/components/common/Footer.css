@@ -1,6 +1,9 @@
 /* footer {
   position:fixed
 } */
+.wrapfoodschedule {
+  height : 150vmin;
+}
 
 footer {
   margin-top: 0px;

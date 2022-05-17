@@ -63,7 +63,7 @@ const Header = () => {
   const navigate = useNavigate();
 
   React.useEffect(()=> {
-    console.log(token + "a");
+    // console.log(token + "a");
     if(token != null){
       setLogState({text: "Logout", isLogin: true});
     }else{
@@ -102,7 +102,7 @@ const Header = () => {
   };
 
   const handleLoginLogout = (e, isLogin) => {
-    console.log("aaa" + isLogin);
+    
     if(isLogin === true) {
       // set null
       dispatch(setToken(null));
