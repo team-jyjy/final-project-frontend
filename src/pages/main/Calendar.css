@@ -5,6 +5,14 @@
 font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
 }
 
+/* 달력 크기 조정 */
+main {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
 /* 달력 내부 숫자 */
 .fc-daygrid-day-number {
     text-decoration: none;
@@ -18,6 +26,7 @@ font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, '
 }
 
 
+/* 모달창 조정 */
 .fc .fc-scroller-liquid-absolute {
     position: absolute;
     top: 0;
@@ -34,7 +43,7 @@ font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, '
     z-index: 1;
 }
 
-/* 모달창 안에 클로즈 버튼 */
+/* 모달창 타입 */
 .food-type {
     top:88%;
     left:50%;
@@ -49,20 +58,50 @@ font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, '
     /* transform: translate(-50%,-50%); */
 }
 
+/* 모달창 칼로리 중앙 정렬 */
 .kcal {
     text-align: center;
+    margin-top: 250px;
+    border: 1px solid white;
 }
 
+/* 모달창 클로즈 버튼 */
 .close-btn {
-    top:88%;
-    left:50%;
+    /* top:88%; */
+    /* left:50%; */
     /* position: absolute; */
     z-index: 5;
     color: white;
     background-color: #ffba4a;
     border-radius: 30px;
     padding: .3rem 1.7rem;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     border: none;
-    transform: translate(130%, 70%);
+    transform: translate(265%, 70%);
+    /* text-align: center; */
+    /* margin-left:auto; */
+    /* margin-right:auto; */
+    /* position: static; */
 }
+
+
+/* 파이그래프 왼쪽 정렬 */
+.pie-graph {
+    float:left;
+    border: 1px solid white;
+}
+
+
+/* 바그래프 오른쪽 정렬 */
+.bar-graph{
+    float:right;
+    border: 1px solid white;
+}
+
+
+/* 반응형 테스트 */
+/* @media only screen and (max-width: 695) {
+    .kcal {
+        background-color: red;
+    }
+} */
