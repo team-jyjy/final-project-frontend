@@ -120,7 +120,7 @@ export default function Signup() {
     console.log(sex);
     console.log(pa);
     axios({
-      url:'http://54.187.241.111/api/signup/', //서버 주소
+      url:'http://18.237.18.231/api/signup/', //서버 주소
       method:'post',
       data:{
         id : id,

@@ -207,7 +207,7 @@ const Foodschedule = ({history}) => {
         food_name : predictionArr[0].className,
         food_type : foodtype,
       }
-      axios.post('http://54.187.241.111/food/update_user_food/',data, config).then((response) => {
+      axios.post('http://18.237.18.231/food/update_user_food/',data, config).then((response) => {
         console.log(response);
         alert("식단 등록에 성공하였습니다.");
         // REDIRECT
@@ -245,7 +245,7 @@ const Foodschedule = ({history}) => {
       e.preventDefault();
       console.log(predictionArr[0].className);
       axios({
-        url:'http://54.187.241.111/food/get_food_info/',
+        url:'http://18.237.18.231/food/get_food_info/',
         method:'post',
         data:{
           food_name : predictionArr[0].className,

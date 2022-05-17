@@ -30,7 +30,7 @@ const MyPage = () => {
   const [age, setAge] = useState();
   const [sex, setSex] = useState();
   const [ir, setIr] = useState();
-  const [succesday, setSuccessday] = useState();
+  const [successday, setSuccessday] = useState();
   const [successpercent, setSuccessPercent] = useState();
   const navigate = useNavigate();
   const token = useSelector(state => state.token);
@@ -53,7 +53,7 @@ const MyPage = () => {
     let data = {
       datetime : time,
     }
-    axios.post('http://54.187.241.111/api/Info/',data, config).then((response) => {
+    axios.post('http://18.237.18.231/api/Info/',data, config).then((response) => {
       console.log(response);
       // alert("마이페이지 로딩에 성공하셨습니다.");
       //set data...
@@ -63,8 +63,8 @@ const MyPage = () => {
       setAge(response.data.age);
       setSex(response.data.sex);
       setIr(response.data.ir);
-      setSuccessday(30-response.data.success_day);
-      setSuccessPercent(Math.floor((30-response.data.success_day)/30));
+      setSuccessday(20-response.data.success_day);
+      setSuccessPercent(response.data.success_day/30*100);
 
       // REDIRECT
     }).catch((error)=>{
@@ -140,8 +140,8 @@ const MyPage = () => {
       <div className='mypf'>My 금융</div>
       <div className='inner'>
         <div className='graph'>
-        <CircularProgress value={successpercent+"%"} color={deepPurple[200]} thickness={15} size={90}>
-          <CircularProgressLabel>{successpercent?successpercent:null}</CircularProgressLabel>
+        <CircularProgress value={successpercent} color={deepPurple[200]} thickness={15} size={90}>
+          <CircularProgressLabel>{successpercent?successpercent:0}%</CircularProgressLabel>
         </CircularProgress>
         </div>
         <div className='ment'>
@@ -150,7 +150,7 @@ const MyPage = () => {
             <span id="username">{nickname?nickname:null}</span><span>님</span>
           </div>
           <div className='day'>
-            <span id="day">{succesday?succesday:null}</span><span>일 더 성공하면</span>
+            <span id="day">{successday?successday:null}</span><span>일 더 성공하면</span>
           </div>
           <div class="benifit">
             <span>우대금리를 </span><span id="benefit">{ir?ir:null}</span>% 더

@@ -95,7 +95,7 @@ export default function Signin() {
     console.log(id);
     console.log(password);
     axios({
-      url:'http://54.187.241.111/api/login/', //서버 주소
+      url:'http://18.237.18.231/api/login/', //서버 주소
       method:'post',
       data:{
         id : id,

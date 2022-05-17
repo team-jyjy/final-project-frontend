@@ -1,4 +1,23 @@
 import {Outlet, useNavigate} from 'react-router-dom';
+import * as React from 'react';
+import CssBaseline from '@mui/material/CssBaseline';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import Link from '@mui/material/Link';
+
+function Copyright() {
+  return (
+    <Typography variant="body2" color="text.secondary">
+      {'Copyright © '}
+      <Link color="inherit" href="https://mui.com/">
+        Your Website
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
+}
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -19,9 +38,26 @@ const Footer = () => {
           <Outlet>
           </Outlet>
         </main>
-      <footer style={{background : 'lightgray', padding:16, fontSize:24}}> 
-        <button onClick={goBack}>뒤에 </button>
-        <button onClick={goArticles}>게시글 dpd</button>
+      <footer> 
+      {/* <Box
+        component="footer"
+        sx={{
+          py: 3,
+          px: 2,
+          mt: 'auto',
+          backgroundColor: (theme) =>
+            theme.palette.mode === 'light'
+              ? theme.palette.grey[200]
+              : theme.palette.grey[800],
+        }}
+      >
+        <Container maxWidth="sm">
+          <Typography variant="body1">
+            My sticky footer can be found here.
+          </Typography>
+          <Copyright />
+        </Container>
+      </Box> */}
       </footer>
     </div>
   );
