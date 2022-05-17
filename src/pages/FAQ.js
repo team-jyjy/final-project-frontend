@@ -56,7 +56,8 @@ export default function FAQ() {
   };
 
   return (
-    <div style={{marginBottom:150}}>
+    // <div style={{marginBottom:150}}>
+    <div style={{marginBottom:10}}>
       <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} sx={{mx : "auto"}}>
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
           <Typography fontFamily={'EliceDigitalBaeum'}>식단 조절이 필요 없는 사람도 이용할 수 있나요?</Typography>
@@ -87,6 +88,9 @@ export default function FAQ() {
           </Typography>
         </AccordionDetails>
       </Accordion>
+      <br></br>
+      <br></br>
+      <br></br>
     </div>
   );
 }
