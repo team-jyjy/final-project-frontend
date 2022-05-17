@@ -64,7 +64,7 @@ const MyPage = () => {
       setSex(response.data.sex);
       setIr(response.data.ir);
       setSuccessday(30-response.data.success_day);
-      setSuccessPercent(Math.floor(30-response.data.success_day)/30);
+      setSuccessPercent(Math.floor((30-response.data.success_day)/30));
 
       // REDIRECT
     }).catch((error)=>{
