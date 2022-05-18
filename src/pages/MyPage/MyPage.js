@@ -105,6 +105,8 @@ const MyPage = () => {
     })
   }, []);
   return (
+  <>
+  {age?
     <div>
       <div className='Container1'>
         <div className='pfwrapper'> 
@@ -171,6 +173,8 @@ const MyPage = () => {
         </div>
       </div>
     </div>
+    :null}
+    </>
   );
 };
 
