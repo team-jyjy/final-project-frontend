@@ -43,28 +43,45 @@
 
 .age {
   display: inline-block;
-  /* background-color: blue; */
   width: 25vmin;
   box-sizing: border-box;
 }
 
 .sex {
   display: inline-block;
-  /* background-color: red; */
   width: 25vmin;
   box-sizing: border-box;
 }
 .height {
   display: inline-block;
-  /* background-color: red; */
   width: 25vmin;
   box-sizing: border-box;
 }
 .weight {
   display: inline-block;
-  /* background-color: blue; */
   width: 25vmin;
   box-sizing: border-box;
+}
+
+@media (max-width:600px){
+  .pfwrapper {
+    width: 80vmin;
+  }
+  .inner {
+    font-size: 3.5vmin;
+  }
+  .age {
+    width: 20vmin;
+  }
+  .sex {
+    width: 20vmin;
+  }
+  .height {
+    width: 20vmin;
+  }
+  .weight {
+    width: 20vmin;
+  }
 }
 
 /* 금융 */
@@ -111,9 +128,24 @@
 }
 
 .ment {
-  margin-left: 4vmin;
+  margin-left: 3vmin;
 }
 
 #benefit {
   padding-right: 0;
+}
+
+@media (max-width:600px){
+ .finance {
+   width: 80vmin;
+ }
+
+ .ment {
+   font-size: 3.7vmin;
+   margin-left: 1vmin;
+ }
+
+ .graph {
+   padding-bottom: 8.8vmin;
+ }
 }
