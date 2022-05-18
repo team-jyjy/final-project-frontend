@@ -104,7 +104,7 @@ const MyPage = () => {
           <div className='mypf'>My 프로필</div>
             <div className='inner'>
               <div className='avater {isMobile ? classes.mobile : classes.web}'>
-                <Avatar sx={{ bgcolor: deepPurple[200], width:120, height : 120,
+                <Avatar sx={{ marginLeft:'5px', bgcolor: deepPurple[200], width:120, height : 120,
                   width:{sm:110},height:{sm:110}}} src = {item1}></Avatar>
                 </div>
 

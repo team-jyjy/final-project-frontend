@@ -25,7 +25,7 @@ const URL = 'https://teachablemachine.withgoogle.com/models/NqT_4_VDW/';
 const modelURL = URL + 'model.json';
 const metadataURL = URL + 'metadata.json';
 
-let model
+let model;
 
 const Btn=styled.button`
    background-color:#9509fe;
@@ -200,7 +200,6 @@ const Foodschedule = ({history}) => {
       e.preventDefault();
       
       console.log("등록시도");
-      // let token = localStorage.getItem("token");
       let config = {
         headers : {
           Authorization : "token " + token,
@@ -297,15 +296,6 @@ const Foodschedule = ({history}) => {
   // Load the image model and setup the webcam
     async function init() {
       setFoodCal(null);
-      // let isIos = false; 
-      // // fix when running demo in ios, video will be frozen;
-      // if (window.navigator.userAgent.indexOf('iPhone') > -1 || window.navigator.userAgent.indexOf('iPad') > -1) {
-      //   isIos = true;
-      // }
-      // load the model and metadata
-      // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
-      // or files from your local hard drive
-      // Note: the pose library adds "tmImage" object to your window (window.tmImage)
       model = await tmImage.load(modelURL, metadataURL);
       //총 클래스 수
       let maxPredictions;
@@ -313,7 +303,6 @@ const Foodschedule = ({history}) => {
   }
   
     async function predict() {
-      // predict can take in an image, video or canvas html element
       model = await tmImage.load(modelURL, metadataURL);
       console.log(model);
       const tempImage = document.getElementById('srcImg');
@@ -324,7 +313,6 @@ const Foodschedule = ({history}) => {
       setLoading(false)
       setResult(prediction[0].className)
       console.log("가장높은확률 : ",prediction[0].className)
-      
     }
   
     const handleChangeFile = (event) => {
@@ -336,20 +324,18 @@ const Foodschedule = ({history}) => {
       let reader = new FileReader();
   
       reader.onloadend = () => {
-        // 2. 읽기가 완료되면 아래코드가 실행됩니다.
         const base64 = reader.result;
         if (base64) {
-          setImgBase64(base64.toString()); // 파일 base64 상태 업데이트
+          setImgBase64(base64.toString());
         }
       }
       if (event.target.files[0]) {
-        reader.readAsDataURL(event.target.files[0]); // 1. 파일을 읽어 버퍼에 저장합니다.
-        setImgFile(event.target.files[0]); // 파일 상태 업데이트
+        reader.readAsDataURL(event.target.files[0]);
+        setImgFile(event.target.files[0]);
         init().then(
           console.log("init 모델"),
           predict()
         );
-  
       }
     }
 
@@ -382,7 +368,7 @@ const Foodschedule = ({history}) => {
                 <ResultName>{result?predictionArr[0].className:null}</ResultName>{foodCal?<span>은(는)</span>:<span>의 식단 정보가 궁금하세요?</span>}&nbsp;
                 <ResultName>{foodCal!=null?<><span>{foodCal!=null?foodCal:null}</span></>:null}</ResultName>{foodCal?<ResultName>Kcal</ResultName>:null}{foodCal?<span>입니다</span>:null}
             </ResultContainer>
-            <Btn
+            <CssButton
               // href = "/"
               type="submit"
               fullWidth
@@ -392,7 +378,7 @@ const Foodschedule = ({history}) => {
               // color="success"
             >
               식단 정보 조회
-            </Btn>
+            </CssButton>
         </MiddleContainer>   
       
         </>
