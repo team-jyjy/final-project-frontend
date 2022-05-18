@@ -105,7 +105,7 @@ const MyPage = () => {
           <div className='inner'>
             <div className='avatar {isMobile ? classes.mobile : classes.web}'>
               <Avatar sx={{bgcolor: deepPurple[200], width:120, height : 120,
-                width:{sm:110},height:{sm:110}}} src = {item1}></Avatar>
+                width:{sm:120},height:{sm:120}}} src = {item1}></Avatar>
               </div>
 
             <div className='info'>
@@ -140,7 +140,7 @@ const MyPage = () => {
         <div className='mypf2'>My 금융</div>
         <div className='inner2'>
           <div className='graph'>
-          <CircularProgress value={successpercent} color={deepPurple[200]} thickness={15} size={90}>
+          <CircularProgress value={successpercent} color={deepPurple[200]} thickness={15} size={100}>
           {/* <CircularProgress value={successpercent} color={deepPurple[200]} thickness={15} size={{base:'90', sm:'70', md:'80'}}> */}
             <CircularProgressLabel>{successpercent?successpercent:0}%</CircularProgressLabel>
           </CircularProgress>
@@ -154,7 +154,7 @@ const MyPage = () => {
               <span id="day">{successday?successday:null}</span><span>일 더 성공하면</span>
             </div>
             <div class="benifit">
-              <span>우대금리를 </span><span id="benefit">{ir?ir:null}</span>% 더
+              <span>우대금리를 </span><span id="benefit">{ir?ir:null}</span><span>% 더</span>
             </div>
             <div>
               <span>적용받을 수 있어요!</span>

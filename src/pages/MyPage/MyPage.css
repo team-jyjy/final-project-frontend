@@ -1,11 +1,12 @@
 /*마이프로필*/
 .Container1 {
-  background-color: red;
-  padding: 10vmin;
+  /* background-color: red; */
+  padding: 10vmin 10vmin 5vmin;
+  font-family: 'EliceDigitalBaeum';
 }
 
 .pfwrapper {
-  background-color: blueviolet;
+  /* background-color: blueviolet; */
   width: 100vmin;
   margin: 0 auto;
 }
@@ -15,7 +16,7 @@
 }
 
 .avatar {
-  background-color: green;
+  /* background-color: green; */
   margin: 0 6vmin;
 }
 
@@ -23,7 +24,7 @@
   font-size: 4vmin;
   margin-top: 1vmin;
   height: 30vmin;
-  background-color: yellow;
+  /* background-color: yellow; */
   display: flex;
   align-items: center;
   border: 1px solid rgba(210, 215, 211, 1); 
@@ -32,15 +33,49 @@
 
 }
 
+.info span {
+    font-family: 'EliceDigitalBaeum';
+    /* padding-right: 5vmin; */
+    margin-right: 3vmin;
+    /* background-color: orange; */
+    /* box-sizing: border-box; */
+}
+
+.age {
+  display: inline-block;
+  /* background-color: blue; */
+  width: 25vmin;
+  box-sizing: border-box;
+}
+
+.sex {
+  display: inline-block;
+  /* background-color: red; */
+  width: 25vmin;
+  box-sizing: border-box;
+}
+.height {
+  display: inline-block;
+  /* background-color: red; */
+  width: 25vmin;
+  box-sizing: border-box;
+}
+.weight {
+  display: inline-block;
+  /* background-color: blue; */
+  width: 25vmin;
+  box-sizing: border-box;
+}
 
 /* 금융 */
 .Container2 {
-  background-color: blue;
-  padding: 10vmin;
+  /* background-color: blue; */
+  padding: 5vmin 10vmin 10vmin;
+  margin-bottom: 5vmin;
 }
 
 .finance {
-  background-color: aqua;
+  /* background-color: aqua; */
   width: 100vmin;
   margin: 0 auto;
 }
@@ -53,7 +88,7 @@
   font-size: 4vmin;
   margin-top: 1vmin;
   height: 30vmin;
-  background-color: olive;
+  /* background-color: olive; */
   display: flex;
   align-items: center;
   border: 1px solid rgba(210, 215, 211, 1); 
@@ -63,6 +98,22 @@
 }
 
 .graph {
-  background-color: plum;
-  margin: 0 6vmin;
+  /* background-color: plum; */
+  margin: 0 7vmin;
+  padding-bottom: 5vmin;
+  /* align-items: center; */
+}
+
+.ment span {
+  font-family: 'EliceDigitalBaeum';
+  padding-right: 3vmin;
+  /* background-color: skyblue; */
+}
+
+.ment {
+  margin-left: 4vmin;
+}
+
+#benefit {
+  padding-right: 0;
 }
