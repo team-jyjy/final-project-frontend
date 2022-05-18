@@ -1,254 +1,68 @@
+/*마이프로필*/
 .Container1 {
-  margin-top: 50px;
-  margin-left: 50px;
-  /* display: flex; */
-  padding: 10px;
+  background-color: red;
+  padding: 10vmin;
 }
 
-.wrapper{
+.pfwrapper {
+  background-color: blueviolet;
   width: 100vmin;
   margin: 0 auto;
 }
 
-.wrapper span{
-  color: rgba(79,84,86);
+.mypf1 {
+  font-size: 5vmin;
 }
 
-@media (max-width:1200px){
-  .wrapper{
-    width:80vmin;
-    margin: 0 auto;
-  }
+.avatar {
+  background-color: green;
+  margin: 0 6vmin;
 }
 
-
-.mypf {
-  /* margin-left: 120px; */
-  margin-left: 20px;
-  font-size:30px;
-  color:rgba(79,84,86);
-}
-@media (max-width:1200px){
-  .mypf {
-    font-size:25px;
-    margin-left: 30px;
-  }
-}
-
-@media (max-width:600px){
-  .mypf {
-    font-size:20px;
-    margin-left: 20px;
-  }
-}
-
-#pf {
-  width: 100%;
-  object-fit: cover;
-}
-
-.info {
-  /* background-color: aquamarine; */
-  /* font-size: 30px; */
-  font-size: 25px;
-  margin-left: 30px;
-}
-
-@media (max-width:1200px) {
-  .info {
-    width: 80vmin;
-    padding: 10px;
-    font-size: 20px;
-  }
-}
-
-@media (max-width:600px) {
-  .info {
-    width: 70vmin;
-    padding: 10px;
-    font-size: 13px;
-    margin-left: 10px;
-  }
-}
-
-@media (max-width:400px) {
-  .info {
-    width: 70vmin;
-    padding: 10px;
-    font-size: 5px;
-    margin-left: 10px;
-  }
-}
-
-.inner {
-  position: relative;
-  padding: 20px;
-  margin-top: 20px;
+.inner{
+  font-size: 4vmin;
+  margin-top: 1vmin;
+  height: 30vmin;
+  background-color: yellow;
   display: flex;
   align-items: center;
-  background-color: aqua;
-  width: 140vmin;
-  height: 30vmin;
-  /* margin-left: 120px; */
   border: 1px solid rgba(210, 215, 211, 1); 
   box-shadow: 3px 3px 3px gray;
   border-radius: 10px;
+
 }
 
-@media (max-width:1200px) {
-  .inner {
-    background-color: red;
-    width: 80vmin;
-    padding: 10px;
-    margin-left: 30px;
-  }
-}
 
-@media (max-width:600pc) {
-  .inner {
-    width: 70vmin;
-    padding: 10px;
-    /* margin-left: 20px; */
-  }
-}
-
-.info span{
-  padding-right: 8px;
-  /* box-sizing: border-box; */
-}
-.age {
-  display: inline-block;
-  /* background-color: blue; */
-  width: 20vmin;
-  box-sizing: border-box;
-}
-
-.sex {
-  display: inline-block;
-  /* background-color: red; */
-  width: 20vmin;
-  box-sizing: border-box;
-}
-.height {
-  display: inline-block;
-  /* background-color: red; */
-  width: 20vmin;
-  box-sizing: border-box;
-}
-.weight {
-  display: inline-block;
-  /* background-color: blue; */
-  width: 20vmin;
-  box-sizing: border-box;
-}
-
-#age {
-  /* background-color: aqua; */
-  float: right;
-}
-
-#sex {
-  /* background-color: aqua; */
-  float: right;
-}
-
-#height {
-  /* background-color: aqua; */
-  float: right;
-}
-
-#weight {
-  /* background-color: aqua; */
-  float: right;
-}
-
-/* finance */
+/* 금융 */
 .Container2 {
-  margin-top: 50px;
-  margin-left: 110px;
-  margin-bottom: 150px;
-  padding: 10px;
-  /* background-color: aliceblue; */
+  background-color: blue;
+  padding: 10vmin;
 }
 
-@media (max-width:1200px){
-  .Container2{
-    margin-left: 70px;
-  }
-  
-}
-
-.finance{
+.finance {
+  background-color: aqua;
   width: 100vmin;
   margin: 0 auto;
 }
 
-@media (max-width:1200px){
-  .finance{
-    width:80vmin;
-    margin: 0 auto;
-  }
+.mypf2 {
+  font-size: 5vmin;
 }
 
-.inner2{
-  padding: 20px;
-  margin-top: 20px;
-  width: 120vmin;
-  height: 20vmin;
-  border: 1px solid rgba(210, 215, 211, 1);
+.inner2 {
+  font-size: 4vmin;
+  margin-top: 1vmin;
+  height: 30vmin;
+  background-color: olive;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(210, 215, 211, 1); 
   box-shadow: 3px 3px 3px gray;
   border-radius: 10px;
+
 }
 
-@media (max-width:1200px) {
-  .inner2 {
-    width: 80vmin;
-    padding: 10px;
-    margin-left: 30px;
-  }
-}
-
-@media (max-width:600pc) {
-  .inner2 {
-    width: 70vmin;
-    padding: 10px;
-    margin-left: 20px;
-  }
-}
-
-.graph{
-  margin-left: 20px;
-  margin-bottom: 35px;
-}
-
-.ment {
-  margin-left: 80px;
-  font-size: 25px;
-  color: rgba(79,84,86);
-}
-
-@media (max-width:1200px) {
-  .ment {
-    width: 80vmin;
-    padding: 10px;
-    font-size: 20px;
-  }
-}
-
-@media (max-width:600px) {
-  .ment {
-    width: 70vmin;
-    padding: 10px;
-    font-size: 13px;
-    margin-left: 10px;
-  }
-}
-
-@media (max-width:400px) {
-  .ment {
-    width: 70vmin;
-    padding: 10px;
-    font-size: 5px;
-    margin-left: 10px;
-  }
+.graph {
+  background-color: plum;
+  margin: 0 6vmin;
 }
