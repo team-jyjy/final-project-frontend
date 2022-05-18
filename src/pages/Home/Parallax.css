@@ -45,6 +45,7 @@ body {
 
 .copy {
   font-size: 3rem;
+  font-family: 'EliceDigitalBaeum';
 }
 
 @media (max-width:600px) {
@@ -170,6 +171,10 @@ body {
   margin: 0 auto;
   border: none;
   transform: translate(-50%,-50%);
+}
+
+p {
+  font-family: 'EliceDigitalBaeum';
 }
 
 
