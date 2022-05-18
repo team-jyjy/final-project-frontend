@@ -26,6 +26,8 @@ import item1 from "./../../assets/images/bg.jpg"
 import "./Signup.css"
 import { useNavigate } from "react-router-dom";
 
+import Swal from 'sweetalert2';
+
 const CssTextField = styled(TextField)({
   '& label.Mui-focused':{
     color: '#9509fe',
@@ -134,7 +136,15 @@ export default function Signup() {
       }
     }).then((response) => {
       console.log(response);
-      alert("회원가입에 성공하셨습니다.");
+      // alert("회원가입에 성공하셨습니다.");
+      Swal.fire({
+        position: 'top-middle',
+        icon: 'success',
+        title: '회원가입에 성공하셨습니다.',
+        showConfirmButton: false,
+        timer: 1500
+      })
+
       navigate('/signin');
       // REDIRECT
     }).catch((error)=>{

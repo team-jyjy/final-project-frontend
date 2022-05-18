@@ -20,10 +20,13 @@ import Checkbox, { checkboxClasses } from '@mui/material/Checkbox';
 import { Navigate } from 'react-router-dom';
 import {setToken} from "./../../../modules/loginStates"; //
 import {useSelector} from "react-redux";
+import Swal from 'sweetalert2';
 
 const URL = 'https://teachablemachine.withgoogle.com/models/NqT_4_VDW/';
 const modelURL = URL + 'model.json';
 const metadataURL = URL + 'metadata.json';
+
+// const Swal = require('sweetalert2');
 
 let model;
 
@@ -211,7 +214,17 @@ const Foodschedule = ({history}) => {
       }
       axios.post('http://18.237.18.231/food/update_user_food/',data, config).then((response) => {
         console.log(response);
-        alert("식단 등록에 성공하였습니다.");
+        // 원래
+        // alert("식단 등록에 성공하였습니다.");
+        Swal.fire({
+          position: 'top-middle',
+          icon: 'success',
+          title: '식단 등록에 성공하셨습니다.',
+          showConfirmButton: false,
+          timer: 1500
+        })
+
+
         // REDIRECT
       }).catch((error)=>{
         console.error(error);
@@ -224,7 +237,12 @@ const Foodschedule = ({history}) => {
             alert("흠");
           }
           if(error.response.status === 401) {
-            alert("로그인을 해주세요!");
+            // alert("로그인을 해주세요!");
+            Swal.fire(
+              '로그인을 하셨나요?',
+              '로그인 화면으로 이동합니다.',
+              'question'
+            )
             navigate('/signin');
           }
         }

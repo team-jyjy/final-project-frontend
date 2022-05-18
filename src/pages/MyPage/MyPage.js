@@ -13,6 +13,8 @@ import React,{useState,useRef} from 'react'
 import {setToken} from "./../../modules/loginStates"; //
 import {useSelector} from "react-redux";
 
+import Swal from 'sweetalert2';
+
 const breakpoints = {
   sm: '320px',
   md: '768px',
@@ -79,7 +81,12 @@ const MyPage = () => {
           // alert("무언가가 잘못 된 듯요");
         }
         if(error.response.status === 401) {
-          alert("로그인을 해주세요!");
+          // alert("로그인을 해주세요!");
+          Swal.fire(
+            '로그인을 하셨나요?',
+            '로그인 화면으로 이동합니다.',
+            'question'
+          )
           navigate('/signin');
           // alert("무언가가 잘못 된 듯요");
         }

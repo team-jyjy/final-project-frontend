@@ -25,6 +25,8 @@ import "./Signin.css"
 import {useDispatch} from "react-redux";
 import {setToken} from "./../../modules/loginStates";
 
+import Swal from 'sweetalert2';
+
 const CssTextField = styled(TextField)({
   '& label.Mui-focused':{
     color: '#9509fe',
@@ -105,7 +107,14 @@ export default function Signin() {
       console.log(response);
       // localStorage.setItem('token', response.data.token);
       dispatch(setToken(response.data.token));
-      alert("로그인에 성공하셨습니다.");
+      // alert("로그인에 성공하셨습니다.");
+      Swal.fire({
+        position: 'top-middle',
+        icon: 'success',
+        title: '로그인에 성공하셨습니다.',
+        showConfirmButton: false,
+        timer: 1500
+      })
       navigate('/');
       // REDIRECT
     }).catch((error)=>{
@@ -116,7 +125,13 @@ export default function Signin() {
         console.log(error.response.status);
         console.log(error.response.headers);
         if(error.response.status === 403) {
-          alert("아이디나 비밀번호를 다시 입력하세요");
+          // alert("아이디나 비밀번호를 다시 입력하세요");
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: '아이디나 비번을 다시 입력하세요!',
+            footer: '<a href="">왜 이런 문제가 발생하는 건가요?</a>'
+          })
         }
       }
       else if (error.request) {
