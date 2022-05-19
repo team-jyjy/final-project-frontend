@@ -157,7 +157,12 @@ export default function Signup() {
         console.log(error.response.status);
         console.log(error.response.headers);
         if(error.response.status === 403) {
-          alert("이미 가입된 아이디입니다. 혹은 파라미터가 부족합니다");
+          Swal.fire({
+            icon: 'error',
+            title: '이미 가입된 아이디입니다.',
+            text: '혹은 파라미터가 부족합니다.',
+            footer: '<a href="">왜 이런 문제가 발생하는 건가요?</a>'
+          })
         }
       }
       else if (error.request) {

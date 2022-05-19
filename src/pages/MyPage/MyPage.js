@@ -77,8 +77,12 @@ const MyPage = () => {
         console.log(error.response.status);
         console.log(error.response.headers);
         if(error.response.status === 403) {
-          // Navigate('/signin');
-          // alert("무언가가 잘못 된 듯요");
+          Swal.fire({
+            icon: 'error',
+            title: '오류 발생!',
+            text: '엑세스가 거부되었습니다.',
+            footer: '<a href="">왜 이런 문제가 발생하는 건가요?</a>'
+          })
         }
         if(error.response.status === 401) {
           // alert("로그인을 해주세요!");

@@ -234,7 +234,12 @@ const Foodschedule = ({history}) => {
           console.log(error.response.status);
           console.log(error.response.headers);
           if(error.response.status === 403) {
-            alert("흠");
+            Swal.fire({
+              icon: 'error',
+              title: '오류 발생!',
+              text: '엑세스가 거부되었습니다.',
+              footer: '<a href="">왜 이런 문제가 발생하는 건가요?</a>'
+            })
           }
           if(error.response.status === 401) {
             // alert("로그인을 해주세요!");
@@ -292,7 +297,12 @@ const Foodschedule = ({history}) => {
           console.log(error.response.status);
           console.log(error.response.headers);
           if(error.response.status === 403) {
-            alert("뭔가 잘못하신 듯?");
+            Swal.fire({
+              icon: 'error',
+              title: '오류 발생!',
+              text: '엑세스가 거부되었습니다.',
+              footer: '<a href="">왜 이런 문제가 발생하는 건가요?</a>'
+            })
           }
         }
         else if (error.request) {
