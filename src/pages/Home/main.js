@@ -10,10 +10,10 @@ import { fontFamily } from '@mui/system';
 const mainFeaturedPost = {
   title: '당신만의 건강 관리 도우미',
   description:
-    '인공 지능 Assistant JYGY와 함께 건강한 생활을 유지해보세요!',
+    '인공 지능 Assistant JYGY와 함께 "건강한 생활"'+'을 유지해보세요!',
   image: img,
   imageText: 'main image description',
-  linkText: 'Join Us',
+  linkText: '회원가입 하기',
 };
 
 const theme = createTheme({

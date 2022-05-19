@@ -20,6 +20,7 @@ import { typography } from '@mui/system';
 import {useSelector} from "react-redux";
 import {useDispatch} from "react-redux";
 import {setToken} from "./../../../modules/loginStates";
+import ua from "./../../../assets/images/profile.png";
 
 const theme = createTheme({
   typography: {
@@ -61,13 +62,16 @@ const Header = () => {
   const [logState, setLogState] = React.useState({text: null, isLogin: null});
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [usravatar, setUserAvatar] = React.useState("/static/images/avatar/2.jpg");
 
   React.useEffect(()=> {
     // console.log(token + "a");
     if(token != null){
       setLogState({text: "Logout", isLogin: true});
+      setUserAvatar(ua);
     }else{
       setLogState({text: "Login", isLogin: false});
+      setUserAvatar(null);
     }
   },[token]);
 
@@ -209,7 +213,7 @@ const Header = () => {
             <Box sx={{ flexGrow: 0}}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{p: 0 }}>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                  <Avatar alt="Remy Sharp" src={usravatar}/>
                 </IconButton>
               </Tooltip>
               <Menu
