@@ -35,18 +35,18 @@ const Footer = () => {
             <div className="col-xs-6 col-md-3">
               <h6>Categories</h6>
               <ul className="footer-links">
-                <li><a href="http://scanfcode.com/category/c-language/">팀 지지</a></li>
-                <li><a href="http://scanfcode.com/category/front-end-development/">지지 합류하기</a></li>
+                <li><a href="#">팀 지지</a></li>
+                <li><a href="#">지지 합류하기</a></li>
               </ul>
             </div>
             <div className="col-xs-6 col-md-3">
               <h6>Quick Links</h6>
               <ul className="footer-links">
-                <li><a href="http://scanfcode.com/about/">공지사항</a></li>
-                <li><a href="http://scanfcode.com/contact/">자주묻는 질문</a></li>
-                <li><a href="http://scanfcode.com/contribute-at-scanfcode/">이용약관</a></li>
-                <li><a href="http://scanfcode.com/privacy-policy/">개인정보처리방침</a></li>
-                <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
+                <li><a href="#">공지사항</a></li>
+                <li><a href="#">자주묻는 질문</a></li>
+                <li><a href="#">이용약관</a></li>
+                <li><a href="#">개인정보처리방침</a></li>
+                <li><a href="#">Sitemap</a></li>
               </ul>
             </div>
           </div>
