@@ -1,4 +1,4 @@
-// 처음 구현한 코드
+// 0518 오전0112 성공하다!!!!!
 // import * as React from 'react';
 import React, { useState } from 'react';
 import FullCalendar from '@fullcalendar/react'; // must go before plugins
@@ -10,7 +10,7 @@ import yesimg from './../../assets/images/yes.png';
 import ModalComp from './ModalComp'
 import {useNavigate} from 'react-router-dom'
 
-// 백엔드로
+// 백엔드 소통용
 import axios from 'axios';
 import {useSelector} from "react-redux";
 
@@ -20,43 +20,76 @@ const CalanderWrapper = styled.div`
   position: 'relative',
 `
 
-// 캘린더 시작
+//// 캘린더 시작!
 const Calendar = () => {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [modalIsOpen, setModalIsOpen] = useState(false);  // 모달창 상태 디폴트 off
+
   // 날짜 데이터 상태로 받기(for modal)
   const [date, setDate] = useState('테스트');
 
-  //////////////// 달력 이모지 표시를 위한 통신
+  // 상세보기를 위한 상태 정의
+  const [nickname, setNickname] = useState('김민지');
+  const [carbo, setCarbo] = useState(50);
+  const [protein, setProtein] = useState(30);
+  const [fat, setFat] = useState(20);
+  const [breakfast, setBreakfast] = useState(800);
+  const [lunch, setLunch] = useState(700);
+  const [dinner, setDinner] = useState(900);
+  const [totalcal, setTotalcal] = useState(2400);
+  const [goalcal, setGoalcal] = useState(2500);
+
+  //// 통신 시작
   const token = useSelector(state => state.token);
   const navigate = useNavigate();
 
-  // 백에 보내줄 데이터
-  let now = new Date();
-  let time = now.getFullYear()+"-"+(now.getMonth()+1);
-  let day = now.getFullYear()+"-"+(now.getMonth()+1)+"-"+now.getDate();
+  // 달력 이모지를 위한 상태 정의
+  const [events, setEvents] = useState([]);
 
-  // 백에서 받을 데이터
-  // const success = [];
+  // response 미리 정의해서 비동기에서 글로벌로 저장해두기
+  const [repons, SetRepons] = useState();
 
-  //백에 보내기
 
+  //백엔드와 통신
   useEffect(() => {
     console.log("캘린더 로딩 완");
+    // 백엔드에 보내줄 데이터
     let now = new Date();
-    let time = now.getFullYear()+"-"+(now.getMonth()+1);
-    console.log(time);
-    console.log("token :");
-    console.log(token);
+    let time = now.getFullYear()+"-"+(now.getMonth()+1)+"-"+now.getDate();
+    // let time = '2022-5-17'
+    // console.log(time);
+    // console.log("token :");
+    // console.log(token);
     let config = {
       headers : {
         Authorization : "token " + token,
       }
     }
+
     let data = {
       datetime : time,
     }
-    axios.post('http://54.187.241.111/food/calendar_view/',data, config).then((response) => {
-      console.log(response);
+
+    axios.post('http://18.237.18.231/food/calendar_day_info/',data, config).then((response) => {
+      // 응답 받으면
+      // console.log(response);
+      console.log('응답데이터확인')
+      console.log(response.data);
+      SetRepons(response.data)  // 글로벌에 저장
+
+      // response 받은 값 길이만큼 반복 -> 성공한 날짜만 이벤트 띄우기(조건문 1로 바꿔줘야함/ 일단 데이터 없어서 0으로함)
+      var events = [];
+      for (var i=0;i<response.data.length;i++) {
+        if (response.data[i].success_day === 1) {
+          let now1 = new Date(2022, 5, response.data[i].day);
+          let time1 = now1.getFullYear()+"-"+((now1.getMonth()) > 9 ? (now1.getMonth()).toString() : "0" + (now1.getMonth())) +"-"+((now1.getDate()) > 9 ? (now1.getDate()).toString() : "0" + (now1.getDate()));
+          var e = { title: '', date: time1, color: '#ffba4a' };
+          events.push(e);
+        }
+      }
+
+      console.log(events);
+      setEvents(events);
+      setNickname(response.data[0].nickname)
       // REDIRECT
     }).catch((error)=>{
       console.error(error);
@@ -82,50 +115,33 @@ const Calendar = () => {
   }, []);
 
 
-
-  ////////////////// 상세보기를 위한 상태 정의
-  const [nickname, setNickname] = useState('김준규');
-  const [carbo, setCarbo] = useState(50);
-  const [protein, setProtein] = useState(30);
-  const [fat, setFat] = useState(20);
-  const [breakfast, setBreakfast] = useState(800);
-  const [lunch, setLunch] = useState(700);
-  const [dinner, setDinner] = useState(900);
-  const [totalcal, setTotalcal] = useState(2400);
-  const [goalcal, setGoalcal] = useState(2500);
-
   // 날짜 클릭 함수
-  // const handleDateClick = (arg) => {
-  //   // alert(arg.dateStr)
-  //   setModalIsOpen(true)
-  //   setDate(arg.dateStr) // 모달로 넘길 날짜
-  //   // console.log(data)  //2022-05-01 이렇게 나옴
+  const handleDateClick = (arg) => {
+    // alert(arg.dateStr)
+    setModalIsOpen(true)
+    setDate(arg.dateStr) // 모달로 넘길 날짜
+    // console.log(data)  //2022-05-01 이렇게 나옴
 
-  //   //백에 보내기
-  //   let data = {
-  //     datetime : day,
-  //   }
+    // 날짜만 빼서 위에 비동기에서 받아온 응답에 인덱싱
+    const day = arg.dateStr.substring(8, date.length) - 1
+    console.log(repons[day])
+    const day_info = repons[day]
 
-  //   axios.post('http://54.187.241.111/food/calendar_day_info/',data, config).then((response) => {
-  //   // console.log(response);
-  //   //set data...
-  //   setNickname(response.nickname)
-  //   setCarbo(response.ratio_carbo)
-  //   setProtein(response.ratio_protein)
-  //   setFat(response.ratio_fat)
-  //   setBreakfast(response.breakfast_cal)
-  //   setLunch(response.lunch_cal)
-  //   setDinner(response.dinner_cal)
-  //   setTotalcal(response.total_cal)
-  //   setGoalcal(response.goal_cal)
-
-  //   // REDIRECT
-  //   }) // axios
-
-  // }
+    // 모달에 넘길 데이터들 세팅
+    // setCarbo(day_info.ratio_carbo)
+    setCarbo(parseFloat(day_info.ratio_carbo))
+    setProtein(parseFloat(day_info.ratio_protein))
+    setFat(parseFloat(day_info.ratio_fat))
+    setBreakfast(day_info.breakfast_cal)
+    setLunch(day_info.lunch_cal)
+    setDinner(day_info.dinner_cal)
+    setTotalcal(day_info.total_cal)
+    setGoalcal(day_info.goal_cal)
+  }
 
   function renderEventContent(eventInfo) {
     // 이 자리에 삼항연산자 걸기 -> const로 새로 선언한 애를 밑에 넣어주기
+    //
 
     return (
       <>
@@ -137,28 +153,21 @@ const Calendar = () => {
         {/* <span style = {{color: 'white'}}><b>__</b></span> */}
 
         <img src = { yesimg } alt = 'noting' style = {{height: '40%', width: '40%', margin_left: 'auto', margin_right: 'auto'}} />
-        <span style = {{color: 'white'}}><b>완료!</b></span>
+        <span style = {{color: 'white'}}><b>성공!</b></span>
       </>
     )
   }
 
   return (
     <CalanderWrapper>
-      <FullCalendar style={{}}
+      <FullCalendar
         plugins={[ dayGridPlugin, interactionPlugin ]}
         eventContent={renderEventContent}
         initialView="dayGridMonth"
-        // dateClick={handleDateClick}
+        dateClick={handleDateClick}
 
         // 이벤트 표시
-        events={[
-          { title: '1500kcal',
-          date: '2022-05-14',
-          color: '#9509fe' },
-          { title: '1400kcal',
-          date: '2022-05-15',
-          color: '#ffba4a'},
-        ]}
+        events={ events}
         />
 
     {/* 자식에게 물려주기 */}

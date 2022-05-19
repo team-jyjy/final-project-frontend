@@ -5,9 +5,14 @@
   height : 150vmin;
 }
 
+#bt {
+  border-top: 1px solid #9509fe;
+}
+
 footer {
   margin-top: 0px;
 }
+
 .site-footer
 {
   /* background-color:#9509fe; */

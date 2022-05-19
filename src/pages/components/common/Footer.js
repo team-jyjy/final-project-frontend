@@ -26,7 +26,7 @@ const Footer = () => {
         <button onClick={goArticles}>게시글 dpd</button>
         </footer> */}
         <footer className="site-footer">
-        <div className="container">
+        <div className="container" id="bt">
           <div className="row">
             <div className="col-sm-12 col-md-6">
               <h6>About</h6>

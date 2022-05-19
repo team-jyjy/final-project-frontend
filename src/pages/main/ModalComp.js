@@ -32,11 +32,13 @@ function ModalComp({modalIsOpen, setModalIsOpen, date, nickname, carbo, protein,
     const pie_series = [carbo, protein, fat]
     const pie_options = {
         chart: {
-            width: 300,
+            // width: 300,
             type: 'pie',
         },
 
     labels: ['탄수화물', '단백질', '지방'],
+
+    colors:['#ff9999', '#FFE67D', '#99cccc'],
 
     responsive: [{
         breakpoint: 480,
@@ -56,11 +58,12 @@ function ModalComp({modalIsOpen, setModalIsOpen, date, nickname, carbo, protein,
         chart: {
             // height: 380,
             type: 'bar',
+            // foreColor: 'black',
         },
 
         plotOptions: {
             bar: {
-            borderRadius: 4,  // 테두리 둥굴게
+            borderRadius: 3,  // 테두리 둥굴게
             horizontal: false,
             }
         },
@@ -72,6 +75,14 @@ function ModalComp({modalIsOpen, setModalIsOpen, date, nickname, carbo, protein,
         yaxis: {
             labels: {
                 show: false
+            }
+        },
+
+        colors: ['#C8F5FA'],
+
+        dataLabels: {
+            style: {
+                colors: ['#333']
             }
         },
     }
@@ -97,7 +108,7 @@ function ModalComp({modalIsOpen, setModalIsOpen, date, nickname, carbo, protein,
                         options={pie_options}
                         series={pie_series}
                         type="pie"
-                        width={350}
+                        // width={350}
                         />
                     </div>
 
@@ -113,15 +124,15 @@ function ModalComp({modalIsOpen, setModalIsOpen, date, nickname, carbo, protein,
                     <div className='kcal'>
                         <div>
                             <p></p>
-                            <span className='food-type'>🥗 아침</span> {breakfast}kcal
+                            <span className='food-type'> 🥗 아침</span> &nbsp; {breakfast}kcal
                             <p></p>
                         </div>
                         <div>
-                            <span className='food-type'>🥘 점심</span> {lunch}kcal
+                            <span className='food-type'>🥘 점심</span> &nbsp; {lunch}kcal
                             <p></p>
                         </div>
                         <div>
-                            <span className='food-type'>🍽 저녁</span>  {dinner}kcal
+                            <span className='food-type'>🍽 저녁</span> &nbsp; {dinner}kcal
                         </div>
                     </div>
 
