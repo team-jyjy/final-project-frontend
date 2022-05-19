@@ -33,7 +33,9 @@ export default function Parallax() {
           // backgroundPositionY: 'calc((position / 2)/window.innerHeight*100%)',
         }}
       >
-        <div className="copy animate__animated animate__slideInRight animate__slower animate__infinite" style={{color:'#5F5A64'}}><p>사진 업로드 한번으로<br></br>칼로리와 <br></br>영양 성분 정보를 <br></br>확인해보세요</p></div>
+        <div className="copy animate__animated animate__slideInRight animate__slower animate__infinite" 
+        // style={{color:'#5F5A64'}}
+        ><p>사진 업로드 한번으로<br></br>칼로리와 <br></br>영양 성분 정보를 <br></br>확인해보세요</p></div>
         </div>
       </div>
       
