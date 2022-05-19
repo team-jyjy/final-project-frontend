@@ -13,7 +13,7 @@ import {useNavigate} from 'react-router-dom'
 // 백엔드 소통용
 import axios from 'axios';
 import {useSelector} from "react-redux";
-
+import Swal from 'sweetalert2';
 import styled from 'styled-components';
 
 const CalanderWrapper = styled.div`
@@ -100,7 +100,11 @@ const Calendar = () => {
         if(error.response.status === 403) {
         }
         if(error.response.status === 401) {
-          alert("오잉");
+          Swal.fire(
+            '로그인을 하셨나요?',
+            '로그인 화면으로 이동합니다.',
+            'question'
+          )
           navigate('/signin');
         }
       }
