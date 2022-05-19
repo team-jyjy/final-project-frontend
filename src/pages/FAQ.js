@@ -60,31 +60,34 @@ export default function FAQ() {
     <div style={{marginBottom:10}}>
       <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} sx={{mx : "auto"}}>
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography fontFamily={'EliceDigitalBaeum'}>식단 조절이 필요 없는 사람도 이용할 수 있나요?</Typography>
+          <Typography fontFamily={'EliceDigitalBaeum'}>운동 서비스는 언제 오픈 예정인가요?</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography fontFamily={'EliceDigitalBaeum'}>
-            닙!
+          A. 2022년 6월 중에 오픈 예정입니다. 현재 Team JYGY에서 열심히 개발 중이니 기대해주세요!
           </Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')} sx={{mx : "auto"}}>
         <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-          <Typography fontFamily={'EliceDigitalBaeum'}>보험은 어쩌구 저쩌구 인가요!?</Typography>
+          <Typography fontFamily={'EliceDigitalBaeum'}>중도에 포기하면 금리 혜택에 불이익이 있나요?</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography fontFamily={'EliceDigitalBaeum'}>
-            예 예 고객님
+            A. 챌린지 중도 포지시, 기본 금리 혜택인 1.5%가 적용됩니다
           </Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')} sx={{mx: "auto"}}>
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-          <Typography fontFamily={'EliceDigitalBaeum'}>다른 서비스 어쩌구 저쩌구 할 계획은요!?</Typography>
+          <Typography fontFamily={'EliceDigitalBaeum'}>적금 상품 가입은 어디에서 할 수 있나요?</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography fontFamily={'EliceDigitalBaeum'}>
-            업습니다!!
+           KB challennge 적금의 경우 모바일과 홈페이지 3가지 채널을 통해 가입 가능합니다.<br></br>
+우선, 모바일의 경우 KB국민은행의 어플리케이션인 KB스타뱅킹을 통해 가입가능합니다.<br></br>
+홈페이지에서는 KB모바일브랜치를 통해 별도의 앱 설치나 공인인증서 없이도 상품의 가입이 가능합니다.<br></br>
+마지막으론 KB국민은행 영업지점을 방문해주시면 좀 더 상세한 설명과 함께 해당 상품을 이용하길 수 있습니다.<br></br>
           </Typography>
         </AccordionDetails>
       </Accordion>

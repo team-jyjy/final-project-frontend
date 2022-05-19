@@ -43,37 +43,37 @@ const theme = createTheme({
 
 const tiers = [
   {
-    title: '무료 이용',
-    price: '0',
+    title: '12개월',
+    price: '2.15',
     description: [
-      '식단 관리 1달 무료 이용',
-      '어쩌구',
-      '저쩌구'
+      '기본 금리 1.5%',
+      '챌린지 성공 시,',
+      '우대 금리 0.65%'
     ],
-    buttonText: '회원가입 후 이용',
+    buttonText: '가입하기',
     buttonVariant: 'outlined',
   },
   {
-    title: '1년 정액권',
+    title: '24개월',
     subheader: 'Most popular',
-    price: '5',
+    price: '2.25',
     description: [
-      '최대 3달의 식단 관리',
-      '어쩌구',
-      '저쩌구'
+      '기본 금리 1.5%',
+      '챌린지 성공 시,',
+      '우대 금리 0.75%'
     ],
-    buttonText: '지금 바로 시작하기',
+    buttonText: '가입하기',
     buttonVariant: 'contained',
   },
   {
-    title: '평생 회원',
-    price: '4',
+    title: '36개월',
+    price: '2.45',
     description: [
-      '평생 식단 관리 가능(?)',
-      '어쩌구',
-      '저쩌구'
+      '기본 금리 1.5%',
+      '챌린지 성공 시,',
+      '우대 금리 0.95%'
     ],
-    buttonText: 'Contact us',
+    buttonText: '가입하기',
     buttonVariant: 'outlined',
   },
 ];
@@ -93,7 +93,7 @@ function PricingContent() {
           gutterBottom
           fontFamily={'EliceDigitalBaeum'}
         >
-          나의 건강관리
+          KB Challenge 적금
         </Typography>
         <Typography
           fontSize={'2.5vw'}
@@ -101,7 +101,7 @@ function PricingContent() {
           color="text.secondary" 
           component="p"
           fontFamily={'EliceDigitalBaeum'}>
-          적합한 플랜을 찾아보세요
+          원하는 기간을 선택해보세요
         </Typography>
       </Container>
       {/* End hero unit */}
@@ -143,11 +143,11 @@ function PricingContent() {
                       }}
                     >
                         <Typography component="h2" fontSize={'3vw'} fontFamily={'EliceDigitalBaeum'} sx={{color:'black'}}>
-                          ${tier.price}
+                          {tier.price}
                         </Typography>
 
                       <Typography fontSize={'2.5vw'} color="text.secondary" fontFamily={'EliceDigitalBaeum'}>
-                        /mo
+                        %
                       </Typography>
                     </Box>
                     <ul>

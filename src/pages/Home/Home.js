@@ -5,6 +5,7 @@ import "./Home.css"
 import styled from "styled-components"
 import Parallax from "./Parallax"
 import Main from './main'
+import ReactTypingEffectDemo from "./typing"
 const Home = () => {
   return (
     <div className='Container'>
@@ -13,6 +14,8 @@ const Home = () => {
       <Parallax />
 
       <Pricing />
+
+      <ReactTypingEffectDemo />
 
       <div className="faq">
         <p id="faqs"  style={{marginTop : 170, marginBottom : 20, fontFamily : 'EliceDigitalBaeum', color:'black'}}>
@@ -23,6 +26,7 @@ const Home = () => {
 
       <FAQ />
 
+      
     </div>
 
   );

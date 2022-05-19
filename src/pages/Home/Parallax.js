@@ -33,7 +33,7 @@ export default function Parallax() {
           // backgroundPositionY: 'calc((position / 2)/window.innerHeight*100%)',
         }}
       >
-        <div className="copy animate__animated animate__slideInRight animate__slower animate__infinite"><p>사진 업로드 하나로 <br></br>칼로리와 <br></br>영양 성분 정보를 <br></br>받아보세요</p></div>
+        <div className="copy animate__animated animate__slideInRight animate__slower animate__infinite" style={{color:'#5F5A64'}}><p>사진 업로드 한번으로<br></br>칼로리와 <br></br>영양 성분 정보를 <br></br>확인해보세요</p></div>
         </div>
       </div>
       
@@ -41,7 +41,7 @@ export default function Parallax() {
       <div
         className="bg2"
       >
-        <div className="copy animate__animated animate__slideInLeft animate__slower animate__infinite" >~~하세요<br></br> JYGY가 <br></br>정확한 운동량을 카운트 해드립니다</div>
+        <div className="copy animate__animated animate__slideInLeft animate__slower animate__infinite" >집에서 편하게 <br></br>운동하세요,<br></br> JYGY가 <br></br>정확한 운동량을 카운트 해드립니다</div>
         </div>
       </div>
 
@@ -62,8 +62,8 @@ export default function Parallax() {
 
       <div className="">
         <p className="desc2 animate__animated animate__fadeIn animate__slower animate__delay-4s animate__infinite">
-          여기서 끝이냐구요?<br></br>
-          금융 혜택이 <br></br>당신을 기다리고 있습니다.
+          여기서 끝이 아닙니다.<br></br>
+          금융 혜택이 <br></br>당신을 기다리고 있어요!
         </p>
         <div className="item4Container">
           <img className = "item4" src={item4}>
@@ -77,7 +77,7 @@ export default function Parallax() {
       </div>
 
       {/*  */}
-      <ReactTypingEffectDemo />
+      
     </div>
     
   );

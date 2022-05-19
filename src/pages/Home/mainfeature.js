@@ -24,7 +24,7 @@ function MainFeaturedPost(props) {
         sx={{
           position: 'relative',
           backgroundColor: 'none',
-          color: '#fff',
+          color: '#46057f',
           mb: 4,
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
