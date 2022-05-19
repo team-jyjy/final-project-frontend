@@ -27,6 +27,7 @@ import "./Signup.css"
 import { useNavigate } from "react-router-dom";
 
 import Swal from 'sweetalert2';
+import { textDecoration } from '@chakra-ui/react';
 
 const CssTextField = styled(TextField)({
   '& label.Mui-focused':{
@@ -80,6 +81,7 @@ const CssButton = styled(Button)({
     boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
   },
 })
+
 
 function Copyright(props) {
   return (
@@ -351,8 +353,9 @@ export default function Signup() {
                       color: '#9509fe',
                     },
                   }}/>}
-                  label="회원 약관 및 개인정보 처리방침에 동의합니다. (필수)"
+                  label="회원 약관에 동의합니다."
                 />
+                <span onClick={()=>window.open('https://imdona.notion.site/JYGY-cd17ae0ac03f445f92408fbc98c23b8f', '_blank')} style={{color:'blue', textDecoration:'underline'}}>필수</span>
               </Grid>
               <Grid item xs={12}>
                 <FormControlLabel
@@ -362,8 +365,9 @@ export default function Signup() {
                       color: '#9509fe',
                     },
                   }}/>}
-                  label="광고 동의 (선택)"
+                  label="개인정보 처리방침에 동의합니다."
                 />
+                <span onClick={()=>window.open('https://imdona.notion.site/88e6f39e74f54098bef460a74ec4dd0e', '_blank')} style={{color:'blue', textDecoration:'underline'}}>필수</span>
               </Grid>
             </Grid>
             <CssButton

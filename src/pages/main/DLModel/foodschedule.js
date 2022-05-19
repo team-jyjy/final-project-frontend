@@ -361,7 +361,7 @@ const Foodschedule = ({history}) => {
   return (
     <div className='wrapfoodschedule'>
     <Container>
-      {showResult?<TopStart>식단 분석 결과</TopStart>:<TopStartLoading>{loading?"식단을 분석 중입니다":"식단을 업로드 해주세요!"}</TopStartLoading>}
+      {showResult?<TopStart>식단 분석 결과</TopStart>:<TopStartLoading>{loading?"식단을 분석 중 입니다":"식단을 업로드 해주세요!"}</TopStartLoading>}
       <ImageContainer onClick={()=>{
           inputRef.current.click();
       }}>
