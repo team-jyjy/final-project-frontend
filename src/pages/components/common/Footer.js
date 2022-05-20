@@ -62,12 +62,12 @@ const Footer = () => {
               </p>
             </div>
             <div className="col-md-4 col-sm-6 col-xs-12">
-              <ul className="social-icons">
+              {/* <ul className="social-icons">
                 <li><a className="facebook" href="#"><i className="fa fa-facebook" /></a></li>
                 <li><a className="twitter" href="#"><i className="fa fa-twitter" /></a></li>
                 <li><a className="dribbble" href="#"><i className="fa fa-dribbble" /></a></li>
                 <li><a className="linkedin" href="#"><i className="fa fa-linkedin" /></a></li>   
-              </ul>
+              </ul> */}
             </div>
           </div>
         </div>

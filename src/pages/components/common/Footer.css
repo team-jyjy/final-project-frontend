@@ -106,9 +106,18 @@ footer {
   #bt {
     border-top: none;
   }
+
+  .copyright-text {
+    display: none;
+  }
 }
 @media (max-width:767px)
 {
+
+  .copyright-text {
+    display: none;
+  }
+  
   .site-footer
   {
     padding-bottom:0
