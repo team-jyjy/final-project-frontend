@@ -142,7 +142,7 @@ function PricingContent() {
                         mb: 2,
                       }}
                     >
-                        <Typography component="h2" fontSize={'3vw'} fontFamily={'EliceDigitalBaeum'} sx={{color:'black'}}>
+                        <Typography component="h2" fontSize={'3.5vw'} fontFamily={'EliceDigitalBaeum'} sx={{color:'black'}}>
                           {tier.price}
                         </Typography>
 
@@ -155,7 +155,7 @@ function PricingContent() {
                         <Typography
                           component="li"
                           // variant="subtitle1"
-                          fontSize={'1.5vw'}
+                          fontSize={'2vw'}
                           align="center"
                           key={line}
                           fontFamily={'EliceDigitalBaeum'}
