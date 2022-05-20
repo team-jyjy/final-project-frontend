@@ -77,7 +77,7 @@ const Header = () => {
 
   const pages = [
     {menu: '식단관리', link: "/foodschedule" }, 
-    {menu: '운동', link: "/foodschedule" },
+    {menu: '운동', link: "/exercise" },
     {menu: '캘린더', link: "/calendar" }, 
     {menu: '상품소개', link: "/product" }];
 

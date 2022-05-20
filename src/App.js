@@ -11,6 +11,7 @@ import Responsive from "./pages/responsive"
 import Foodschedule from "./pages/main/DLModel/foodschedule"
 import Product from "./pages/main/Product"
 import Calendar from "./pages/main/Calendar"
+import Exercise  from "./pages/main/Exercise";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
           <Route path="/foodschedule" element = {<Foodschedule/>}/>
           <Route path ="/calendar" element = {<Calendar/>}/>
           <Route path="/product" element = {<Product/>}/>
+          <Route path="/exercise" element = {<Exercise/>}/>
           {/* <Route path="/profiles/:username" element={<Profile />}/> */}
           </Route>
         </Route>

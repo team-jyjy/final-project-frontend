@@ -1,6 +1,7 @@
 /* footer {
   position:fixed
 } */
+
 .wrapfoodschedule {
   height : 150vmin;
 }
@@ -93,6 +94,18 @@ footer {
   {
     margin-bottom:30px
   }
+
+  .footer-links {
+    display: none;
+  }
+
+  .text-justify {
+    display: none;
+  }
+
+  #bt {
+    border-top: none;
+  }
 }
 @media (max-width:767px)
 {
@@ -103,6 +116,10 @@ footer {
   .site-footer .copyright-text,.site-footer .social-icons
   {
     text-align:center
+  }
+
+  .footer-links {
+    display: none;
   }
 }
 .social-icons

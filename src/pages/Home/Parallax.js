@@ -26,38 +26,31 @@ export default function Parallax() {
   return (
     <div className="wrapper">
       <div className="bg1Container">
-      <div
-        className="bg1"
-        style={{
-          // backgroundPositionY: position / 2,
-          // backgroundPositionY: 'calc((position / 2)/window.innerHeight*100%)',
-        }}
-      >
+      <div className="bg1" >
         <div className="copy animate__animated animate__slideInRight animate__slower animate__infinite" 
-        style={{color:'#5F5A64'}}
-        ><p>사진 업로드 한번으로<br></br>칼로리와 <br></br>영양 성분 정보를 <br></br>확인해보세요</p></div>
+        style={{color:'#5F5A64'}}>
+          <p>사진 업로드 한번으로<br></br>칼로리와 <br></br>영양 성분 정보를 <br></br>확인해보세요</p>
+        </div>
         </div>
       </div>
       
-      <div className="bg2Container ">
-      <div
-        className="bg2"
-      >
-        <div className="copy animate__animated animate__slideInLeft animate__slower animate__infinite" style={{color:'#5F5A64'}}>집에서 편하게 <br></br>운동하세요,<br></br> JYGY가 <br></br>정확한 운동량을 카운트 해드립니다</div>
+      <div className="C2">
+        <div className="copy animate__animated animate__slideInLeft animate__slower animate__infinite" style={{color:'#5F5A64'}}>
+          집에서 편하게 운동하세요,<br></br> JYGY가 정확한 운동량을 카운트 해드립니다
         </div>
       </div>
 
-    <div className="">
+      <div className="item2Container">
+        <img className="item2" src={item2}></img>
+      </div>
+
+    <div className="C3">
       <p className="desc animate__animated animate__fadeIn animate__slower animate__delay-4s animate__infinite" style={{color:'#5F5A64'}}>
         JYGY와 함께한 건강한 생활을 <br></br>한눈에 확인하세요
       </p>
 
         <div className="item3Container">
-          <img className = "item3" src={item3} 
-          // style={{
-          //     opacity: (position - 900) / 50,
-          //   }}
-            >
+          <img className = "item3" src={item3}>
           </img>
         </div>
       </div>

@@ -30,7 +30,9 @@ const Footer = () => {
           <div className="row">
             <div className="col-sm-12 col-md-6">
               <h6>About</h6>
-              <p className="text-justify">KB IT'S YOUR LIFE 4조 TEAM JYGY<br></br><i>김한결 박서영 임민정 정유정 최유연<br></br></i> support@jygy.com <br></br>전화번호: 420-95-414-319-329 </p>
+              <p className="text-justify">KB IT'S YOUR LIFE 4조 TEAM JYGY<br></br><i>김한결 박서영 임민정 정유정 최유연<br></br></i> support@jygy.com
+               {/* <br></br>전화번호: 420-95-414-319-329  */}
+               </p>
             </div>
             <div className="col-xs-6 col-md-3">
               <h6>Categories</h6>
@@ -46,7 +48,7 @@ const Footer = () => {
                 <li><a href="#">자주묻는 질문</a></li>
                 <li><a href="#">이용약관</a></li>
                 <li><a href="#">개인정보처리방침</a></li>
-                <li><a href="#">Sitemap</a></li>
+                {/* <li><a href="#">Sitemap</a></li> */}
               </ul>
             </div>
           </div>
