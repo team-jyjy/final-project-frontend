@@ -153,8 +153,8 @@ const MyPage = () => {
         <div className='mypf2'>My 금융</div>
         <div className='inner2'>
           <div className='graph'>
-          <CircularProgress value={successpercent} color={deepPurple[200]} thickness={15} size={100}>
-          {/* <CircularProgress value={successpercent} color={deepPurple[200]} thickness={15} size={{base:'90', sm:'70', md:'80'}}> */}
+          <CircularProgress value={successpercent} color={deepPurple[200]} thickness={15} size={90}>
+          {/* <CircularProgress value={successpercent} color={deepPurple[200]} thickness={15} size={{base:90, sm:70, md:80}}> */}
             <CircularProgressLabel>{successpercent?successpercent:0}%</CircularProgressLabel>
           </CircularProgress>
           </div>

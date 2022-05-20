@@ -146,6 +146,8 @@
  }
 
  .graph {
+   /* background-color: red; */
+   padding-top: 6vmin;
    padding-bottom: 8.8vmin;
  }
 }
