@@ -27,11 +27,11 @@ const Footer = () => {
         </footer> */}
         <footer className="site-footer">
         <div className="container" id="bt">
-          <div className="row">
+          <div className="row" id="hide1">
             <div className="col-sm-12 col-md-6">
               <h6>About</h6>
               <p className="text-justify">KB IT'S YOUR LIFE 4조 TEAM JYGY<br></br><i>김한결 박서영 임민정 정유정 최유연<br></br></i> support@jygy.com
-               {/* <br></br>전화번호: 420-95-414-319-329  */}
+               <br></br>전화번호: 420-95-414-319-329 
                </p>
             </div>
             <div className="col-xs-6 col-md-3">

@@ -64,7 +64,7 @@ export default function FAQ() {
         </AccordionSummary>
         <AccordionDetails>
           <Typography fontFamily={'EliceDigitalBaeum'}>
-          A. 2022년 6월 중에 오픈 예정입니다. 현재 Team JYGY에서 열심히 개발 중이니 기대해주세요!
+          2022년 6월 중에 오픈 예정입니다. 현재 Team JYGY에서 열심히 개발 중이니 기대해주세요!
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -74,7 +74,7 @@ export default function FAQ() {
         </AccordionSummary>
         <AccordionDetails>
           <Typography fontFamily={'EliceDigitalBaeum'}>
-            A. 챌린지 중도 포지시, 기본 금리 혜택인 1.5%가 적용됩니다
+            챌린지 중도 포지시, 기본 금리 혜택인 1.5%가 적용됩니다
           </Typography>
         </AccordionDetails>
       </Accordion>
