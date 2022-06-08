@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+## AI 건강 Assistant JYGY  
+---  
+## FrontEnd
+- 기술 스택 : React, Axios, Redux  
+- 배포 : Amazon AWS S3
+- API : RestAPI    
+<br> 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---  
+<br>  
 
-## Available Scripts
+# Intro  
+## 개발 Architecture  
+![image](https://user-images.githubusercontent.com/73763069/172562421-d4662b48-57c0-45a0-aa22-8153dd61f69c.png)
+<br>  
+## AI Architecture  
+![image](https://user-images.githubusercontent.com/73763069/172562673-690e89a7-4208-43c8-8086-53c950f740b2.png)
+<br>  
+## 통합 Architecture  
+![image](https://user-images.githubusercontent.com/73763069/172563504-ecfe9371-4e24-4084-ab2e-8c58db9ca4c1.png)
+<br>  
+<br>  
 
-In the project directory, you can run:
+# 사용자 관점 분석
+## 요구사항 명세서  
+![image](https://user-images.githubusercontent.com/73763069/172563678-d7e09dc8-04d7-4f76-90c9-4cf26d0780cf.png)
+<br>  
+## UML  
+![image](https://user-images.githubusercontent.com/73763069/172563595-bbe63731-31f9-48bb-8559-bf71b1b3ff4e.png)
+<br>  
+## Event Flow  
+![image](https://user-images.githubusercontent.com/73763069/172563828-4db88ad9-4722-4c1f-9898-a6f37b10ccab.png)
+<br>    
+<br>  
 
-### `npm start`
+# 화면 Template
+## 화면 구성 초안 설계  
+![image](https://user-images.githubusercontent.com/73763069/172564011-a99d1517-0b4d-4daa-9a1d-ea04340b66d2.png)
+<br>  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 와이어프레임 설계  
+![image](https://user-images.githubusercontent.com/73763069/172564161-8c39383f-9d2a-474c-b1d7-b07cd434d44c.png)
+<br>  
+<br>  
+  
+# 구현 - Web
+## 식단 업로드
+![image](https://user-images.githubusercontent.com/73763069/172565115-6a77bc8b-0fc2-42d2-823f-fc184ccaac45.png)
+  
+## 캘린더 
+![image](https://user-images.githubusercontent.com/73763069/172565289-9abcece1-f741-4b65-aa2e-d3ff86ae4b20.png)
+![image](https://user-images.githubusercontent.com/73763069/172565389-597c3fba-d174-4657-bb83-ff0d84475e2a.png)
+  
+## 마이페이지
+![image](https://user-images.githubusercontent.com/73763069/172565483-eb06946d-6eb9-4e11-bc12-0ffdcda41020.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# 구현 - App
+![image](https://user-images.githubusercontent.com/73763069/172565624-c6cb9be0-9c9d-4c4c-ac5e-5743fbba83de.png)
 
-### `npm test`
+# 서비스 기획 및 발전 방향  
+## 서비스 기획  
+![image](https://user-images.githubusercontent.com/73763069/172566163-d6240694-446c-4ca0-871b-552db4f8c382.png)
+  
+## Target 분석  
+![image](https://user-images.githubusercontent.com/73763069/172566277-11a2153c-1b85-4f55-8e01-663e8d19750c.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 발전방향  
+![image](https://user-images.githubusercontent.com/73763069/172566333-9c6a977e-3319-4712-9d34-143e5ce418d4.png)
+---
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
